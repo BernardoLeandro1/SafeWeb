@@ -1,0 +1,17 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Olá, vem vindo ao SafeWeb",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Vais aprender muitas coisas novas neste jogo.",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":1
+    }
+]
