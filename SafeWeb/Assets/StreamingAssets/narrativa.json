@@ -11,7 +11,72 @@
     "showdialogue": "Vais aprender muitas coisas novas neste jogo.",
     "name": "Foxie",
     "displaycamera": "foxCam",
-    "nextnode": 0,
+    "nextnode": 3,
     "lastnode":1
+    },
+    {
+    "node": 3,
+    "showchoicepanel":[
+      {"nextnode": 4, "showdialogue": "Did you remember to put on sunscreen?"},
+      {"nextnode": 10, "showdialogue": "You could run faster with better running shoes."}
+    ],
+    "nextnode": 0,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Primeira Opção",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Primeira Opção",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Primeira Opção",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+      "node": 7,
+      "showdialogue": "Primeira Opção",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 8,
+      "lastnode":6
+    },
+    {
+      "node": 8,
+      "showdialogue": "Primeira Opção",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 9,
+      "lastnode":7
+    },
+    {
+      "node": 9,
+      "showdialogue": "Primeira Opção",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 0,
+      "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "Segunda Opção",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":3
     }
 ]

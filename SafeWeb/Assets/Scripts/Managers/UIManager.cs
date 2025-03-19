@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,14 +12,22 @@ public class UIManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
+    public GameObject choiceBox;
+
+    public Button forward;
+    public Button backward;
+
     private string dialogueChecker = "";
     public bool lineFinish = false;
     private float textSpeed = 0.05f;
 
+    ChoicesPanelManager choicePanel;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        choicePanel = ChoicesPanelManager.instance;
     }
 
     // Update is called once per frame
@@ -36,6 +46,11 @@ public class UIManager : MonoBehaviour
         StopAllCoroutines();
         dialogueText.text = string.Empty;
         StartCoroutine(TypeLine(dialogue));
+    }
+
+    public void ShowTextAfterBackwords(string name, string dialogue){
+        nameText.text = name;
+        dialogueText.text = dialogue;
     }
 
     IEnumerator TypeLine(string dialogue)
@@ -82,5 +97,19 @@ public class UIManager : MonoBehaviour
         StopAllCoroutines();
         dialogueText.text = dialogueChecker;
         lineFinish = true;
+    }
+
+    public void DisplayChoicesPanel(DialogueChoices[] choices)
+    {
+        StopAllCoroutines();
+        ToggleChoiceCanvas(boolean: true);
+        StartCoroutine(choicePanel.GenerateChoices(choices));
+    }
+
+    public void ToggleChoiceCanvas(bool boolean)
+    {
+        choiceBox.gameObject.SetActive(boolean);
+        forward.interactable = !boolean;
+        backward.interactable = !boolean;
     }
 }
