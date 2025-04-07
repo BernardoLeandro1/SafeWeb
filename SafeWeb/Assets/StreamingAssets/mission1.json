@@ -1,0 +1,16 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Este é o inicio da primeira missão",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+        "node": 2,
+        "showdialogue": "free mode",
+        "name": "Foxie",
+        "displaycamera": "foxCam",
+        "nextnode": 3
+        }
+]

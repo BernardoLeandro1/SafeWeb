@@ -17,6 +17,12 @@ public class UIManager : MonoBehaviour
     public Button forward;
     public Button backward;
 
+    public Image fadeInStart;
+
+    public GameObject toDoList;
+
+    public TMP_Text toDoListText;
+
     private string dialogueChecker = "";
     public bool lineFinish = false;
     private float textSpeed = 0.05f;
@@ -28,6 +34,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         choicePanel = ChoicesPanelManager.instance;
+        
     }
 
     // Update is called once per frame
@@ -111,5 +118,14 @@ public class UIManager : MonoBehaviour
         choiceBox.gameObject.SetActive(boolean);
         forward.interactable = !boolean;
         backward.interactable = !boolean;
+    }
+
+    public void DisplayToDoList(string toDo){
+        toDoList.SetActive(true);
+        toDoListText.text = toDo;
+    }
+
+    public void HideToDoList(){
+        toDoList.SetActive(false);
     }
 }

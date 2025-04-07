@@ -6,9 +6,16 @@ using UnityEngine;
 public class NodeManager : MonoBehaviour
 {
     UIManager uIManager;
+    LogicManager logicManager;
+
+    MissionManager missionManager;
     List<DialogueNode> dialogueNodes;
+
+    
     int node = 0;
     int lastNode = 0;
+
+    bool firstTime = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -19,6 +26,9 @@ public class NodeManager : MonoBehaviour
     void Start()
     {
         uIManager = GetComponent<UIManager>();
+        logicManager = GetComponent<LogicManager>();
+        missionManager = GetComponent<MissionManager>();
+       //NextNode();
     }
 
     // Update is called once per frame
@@ -33,36 +43,44 @@ public class NodeManager : MonoBehaviour
         dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
     }
 
+    
+
     public void NextNode(){
         //GET info from nodes and put it on screen
-        if(node<0){
-            uIManager.ShowText("Desenvolvedor de Jogo", "É tudo, por agora!");
-            lastNode = dialogueNodes.Count-1;
-            
-        }
-        else if(dialogueNodes[node].ShowChoicePanel!=null){
-            // List<DialogueChoices> choices2 = new ();
-            // foreach(var choice in dialogueNodes[node].ShowChoicePanel)
-            // {
-            //     if(choice.NextNode==0){       
-            //         var _choice = new DialogueChoices(choice.NextNode+1, choice.ShowDialogue);
-            //         choices2.Add(_choice);
-            //     }
-            //     else{
-            //         var _choice = new DialogueChoices(choice.NextNode, choice.ShowDialogue);
-            //         choices2.Add(_choice);
-            //     }
+        if(!firstTime){
+            if(missionManager.IsMissionActive()){
+                missionManager.NextNodeMissions();
+            }
+            else if(node<0){
+                uIManager.ShowText("Desenvolvedor de Jogo", "É tudo, por agora!");
+                lastNode = dialogueNodes.Count-1;
+                firstTime=true;
                 
-            // }
-            // DialogueChoices[] choices = dialogueNodes[node].ShowChoicePanel.ToArray();
-            uIManager.DisplayChoicesPanel(dialogueNodes[node].ShowChoicePanel.ToArray());
-            
+            }
+            else if(dialogueNodes[node].ShowChoicePanel!=null){
+                uIManager.DisplayChoicesPanel(dialogueNodes[node].ShowChoicePanel.ToArray());
+                
+            }
+            else if(dialogueNodes[node].ShowDialogue.Contains("free mode")){
+                if(dialogueNodes[node].AvailableMissions!=null){
+                    string toDoList = "";
+                    foreach (var number in dialogueNodes[node].AvailableMissions){
+                        missionManager.GetMissions()[number].available = true;
+                        toDoList += missionManager.GetMissions()[number].Description + "\n";
+                    }
+                    uIManager.DisplayToDoList(toDoList);
+                }
+                logicManager.ChangeMode();
+                lastNode = dialogueNodes[node].LastNode-1;
+                node = dialogueNodes[node].NextNode - 1;
+                
+            }
+            else{
+                uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
+                lastNode = dialogueNodes[node].LastNode-1;
+                node = dialogueNodes[node].NextNode - 1;
+            } 
         }
-        else{
-            uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
-            lastNode = dialogueNodes[node].LastNode-1;
-            node = dialogueNodes[node].NextNode - 1;
-        } 
     }
 
     public void HasChoosen(int index){
@@ -75,18 +93,35 @@ public class NodeManager : MonoBehaviour
 
     public void LastNode(){
         //GET info from nodes and put it on screen
-        if(dialogueNodes[lastNode].ShowChoicePanel!=null){
-            uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode-1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode-1].ShowDialogue);
-            uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
-        }
-        else if(lastNode >= 0){
-            uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
-            node = dialogueNodes[lastNode].NextNode - 1;
-            lastNode = dialogueNodes[lastNode].LastNode-1;
+        if(!firstTime){
+            if(missionManager.IsMissionActive()){
+                missionManager.LastNodeMissions();
+            }
+            else if(dialogueNodes[lastNode].ShowChoicePanel!=null){
+                uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode-1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode-1].ShowDialogue);
+                uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
+            }
+            else if(dialogueNodes[lastNode].ShowDialogue.Contains("free mode")){
+                if(dialogueNodes[lastNode].AvailableMissions!=null){
+                    string toDoList = "";
+                    foreach (var number in dialogueNodes[lastNode].AvailableMissions){
+                        missionManager.GetMissions()[number].available = true;
+                        toDoList += missionManager.GetMissions()[number].Description + "\n";
+                        //Debug.Log(missions[number].Description);
+                    }
+                    uIManager.DisplayToDoList(toDoList);
+                }
+                logicManager.ChangeMode();
+                lastNode = dialogueNodes[lastNode].LastNode-1;
+                node = dialogueNodes[lastNode].NextNode - 1;
+            }
+            else if(lastNode >= 0){
+                uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
+                node = dialogueNodes[lastNode].NextNode - 1;
+                lastNode = dialogueNodes[lastNode].LastNode-1;
+            }
         }
     }
-
-    
 }
 
 
@@ -100,6 +135,8 @@ public class DialogueNode{
     public int LastNode{get;set;}
 
     public List<DialogueChoices> ShowChoicePanel { get; set; }
+
+    public List<int> AvailableMissions { get; set; }
 
 }
 
@@ -115,3 +152,4 @@ public class DialogueChoices
         this.ShowDialogue = showDialogue;
     }
 }
+

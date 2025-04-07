@@ -76,7 +76,23 @@
     "showdialogue": "Segunda Opção",
     "name": "Foxie",
     "displaycamera": "foxCam",
-    "nextnode": 0,
+    "nextnode": 11,
     "lastnode":3
+    },
+    {
+      "node": 11,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "availablemissions" : [0,1,2,3],
+      "nextnode": 12,
+      "lastnode":10
+    },
+    {
+      "node": 12,
+      "showdialogue": "Continua o diálogo.",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 13
     }
 ]
