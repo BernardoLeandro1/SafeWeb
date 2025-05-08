@@ -6,6 +6,10 @@ public class LogicManager : MonoBehaviour
     private string mode;
 
     public CinemachineCamera cam;
+
+    public GameObject player;
+
+    public Transform freePlayer;
     private CinemachineCamera activeCam;
 
     private NodeManager nodeManager;
@@ -37,22 +41,26 @@ public class LogicManager : MonoBehaviour
        
     }
 
-    public void ChangeMode(GameObject interactObj = null){
+    public void ChangeMode(GameObject interactObj = null, string stringObj = null){
         if(GetMode() == "free"){
             if(interactObj.gameObject.transform.childCount > 0){
                 if(interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>()!=null){
                     if(interactObj.gameObject.GetComponent<MissionIDs>()!=null){
-                        mode = "lock";
-                        activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
-                        activeCam.gameObject.SetActive(true);
-                        cam.gameObject.SetActive(false);
-                        uIManager.ChangeUI();
-                        uIManager.HideToDoList();
-                        Cursor.lockState = CursorLockMode.None;
-                        Cursor.visible = true;
-                        missionManager.SelectMission(interactObj.gameObject.GetComponent<MissionIDs>().GetMissionID());
-                        currentMissionObject = interactObj;
-                        missionManager.NextNodeMissions();
+                        if(currentMissionObject == null || interactObj == currentMissionObject){
+                            mode = "lock";
+                            activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
+                            activeCam.gameObject.SetActive(true);
+                            cam.gameObject.SetActive(false);
+                            uIManager.ChangeUI();
+                            uIManager.HideToDoList();
+                            Cursor.lockState = CursorLockMode.None;
+                            Cursor.visible = true;
+                            missionManager.SelectMission(interactObj.gameObject.GetComponent<MissionIDs>().GetMissionID());
+                            currentMissionObject = interactObj;
+                            missionManager.NextNodeMissions();
+                            player.GetComponent<Rigidbody>().isKinematic = true;
+                        }
+                        
                     }
                     else if (hasDoneMission==true){
                         mode = "lock";
@@ -65,6 +73,7 @@ public class LogicManager : MonoBehaviour
                         Cursor.visible = true;
                         nodeManager.NextNode();
                         hasDoneMission = false;
+                        player.GetComponent<Rigidbody>().isKinematic = true;
                     }
                     
                 }
@@ -72,12 +81,19 @@ public class LogicManager : MonoBehaviour
         }
         else{
             mode = "free";
+            if(stringObj != null){
+                player.transform.position = freePlayer.position;
+                cam.GetComponent<CinemachinePanTilt>().PanAxis.Value=0f;
+                cam.GetComponent<CinemachinePanTilt>().TiltAxis.Value=0f;
+            }
             activeCam.gameObject.SetActive(false);
             cam.gameObject.SetActive(true);
-            activeCam = cam;
+            activeCam = cam; 
             uIManager.ChangeUI();
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            player.GetComponent<Rigidbody>().isKinematic = false;
+            
         }
     }
 

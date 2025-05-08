@@ -70,7 +70,7 @@ public class NodeManager : MonoBehaviour
                     }
                     uIManager.DisplayToDoList(toDoList);
                 }
-                logicManager.ChangeMode();
+                logicManager.ChangeMode(stringObj: "chair");
                 lastNode = dialogueNodes[node].LastNode-1;
                 node = dialogueNodes[node].NextNode - 1;
                 

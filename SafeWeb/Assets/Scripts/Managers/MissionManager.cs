@@ -44,7 +44,11 @@ public class MissionManager : MonoBehaviour
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
-        
+        else if(currentMission==missions[1]){
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission2.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
     }
 
     // Update is called once per frame
@@ -72,13 +76,20 @@ public class MissionManager : MonoBehaviour
         if(dialogueNodes[node].ShowChoicePanel!=null){
             uIManager.DisplayChoicesPanel(dialogueNodes[node].ShowChoicePanel.ToArray());
         }
-        else if(dialogueNodes[node].ShowDialogue.Contains("free mode")){
+        else if(dialogueNodes[node].ShowDialogue.Contains("end of mission")){
             lastNode = 0;
             node = 0;
             logicManager.MissionComplete();
             uIManager.DisplayToDoList("Volta ao teu lugar");
             logicManager.ChangeMode();
             currentMission = null;
+        }
+        else if(dialogueNodes[node].ShowDialogue.Contains("free mode")){
+            lastNode = dialogueNodes[node].LastNode-1;
+            node = dialogueNodes[node].NextNode - 1;
+            // mudar isto para passar apenas o que está a seguir a free mode ou algo do género
+            //uIManager.DisplayToDoList("Volta ao teu lugar");
+            logicManager.ChangeMode();
         }
         else{
             uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);

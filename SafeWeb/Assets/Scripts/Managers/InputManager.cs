@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.Escape)){
             if(logicManager.GetMode()=="lock"){
-                logicManager.ChangeMode();
+                logicManager.ChangeMode(stringObj:"chair");
             }
         }
     }

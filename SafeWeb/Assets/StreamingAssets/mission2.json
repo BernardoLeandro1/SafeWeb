@@ -1,0 +1,33 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Este é o inicio da segunda missão",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "free mode",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode": 1
+
+    },
+    {
+    "node": 3,
+    "showdialogue": "Continuação da segunda missão",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode": 2
+    },
+    {
+    "node": 4,
+    "showdialogue": "end of mission",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 3
+    }
+]

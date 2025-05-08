@@ -7,10 +7,10 @@
     "nextnode": 2
     },
     {
-        "node": 2,
-        "showdialogue": "free mode",
-        "name": "Foxie",
-        "displaycamera": "foxCam",
-        "nextnode": 3
-        }
+    "node": 2,
+    "showdialogue": "end of mission",
+    "name": "Foxie",
+    "displaycamera": "foxCam",
+    "nextnode": 3
+    }
 ]
