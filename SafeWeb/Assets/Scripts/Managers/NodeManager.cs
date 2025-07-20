@@ -28,7 +28,7 @@ public class NodeManager : MonoBehaviour
         uIManager = GetComponent<UIManager>();
         logicManager = GetComponent<LogicManager>();
         missionManager = GetComponent<MissionManager>();
-       //NextNode();
+        //NextNode();
     }
 
     // Update is called once per frame

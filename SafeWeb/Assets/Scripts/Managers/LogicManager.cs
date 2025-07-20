@@ -33,6 +33,7 @@ public class LogicManager : MonoBehaviour
         missionManager = GetComponent<MissionManager>();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        cam.GetComponent<CinemachineInputAxisController>().enabled = false;
     }
 
     // Update is called once per frame
@@ -86,6 +87,7 @@ public class LogicManager : MonoBehaviour
                 cam.GetComponent<CinemachinePanTilt>().PanAxis.Value=0f;
                 cam.GetComponent<CinemachinePanTilt>().TiltAxis.Value=0f;
             }
+            cam.GetComponent<CinemachineInputAxisController>().enabled = true;
             activeCam.gameObject.SetActive(false);
             cam.gameObject.SetActive(true);
             activeCam = cam; 

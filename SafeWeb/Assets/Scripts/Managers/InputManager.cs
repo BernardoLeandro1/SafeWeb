@@ -19,7 +19,9 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E)){
-            if(logicManager.GetMode()=="free"){
+            Debug.Log(logicManager.GetMode());
+            if (logicManager.GetMode() == "free")
+            {
                 logicManager.Interaction();
             }
         }
