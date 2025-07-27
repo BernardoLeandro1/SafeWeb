@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject toDoList;
 
+    public GameObject phone;
+
     public TMP_Text toDoListText;
 
     private string dialogueChecker = "";
@@ -34,20 +36,22 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         choicePanel = ChoicesPanelManager.instance;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void ChangeUI(){
+    public void ChangeUI()
+    {
         dialogBox.SetActive(!dialogBox.activeSelf);
     }
 
-    public void ShowText(string name, string dialogue){
+    public void ShowText(string name, string dialogue)
+    {
         lineFinish = false;
         nameText.text = name;
         StopAllCoroutines();
@@ -55,7 +59,8 @@ public class UIManager : MonoBehaviour
         StartCoroutine(TypeLine(dialogue));
     }
 
-    public void ShowTextAfterBackwords(string name, string dialogue){
+    public void ShowTextAfterBackwords(string name, string dialogue)
+    {
         nameText.text = name;
         dialogueText.text = dialogue;
     }
@@ -69,24 +74,30 @@ public class UIManager : MonoBehaviour
         int i = 0;
         foreach (char c in chars)
         {
-            if (c == char.Parse("\n")){
-                if(i>charBreak){
-                    charBreak += i%charBreak;
-                    i=0;
+            if (c == char.Parse("\n"))
+            {
+                if (i > charBreak)
+                {
+                    charBreak += i % charBreak;
+                    i = 0;
                 }
-                else{
+                else
+                {
                     charBreak += i;
-                    i=0;
+                    i = 0;
                 }
             }
             i++;
         }
-        while(charBreak <= chars.Length){
-            if(chars[charBreak] == char.Parse(" ")){
+        while (charBreak < chars.Length)
+        {
+            if (chars[charBreak] == char.Parse(" "))
+            {
                 chars[charBreak] = char.Parse("\n");
                 charBreak += 72;
             }
-            else{
+            else
+            {
                 charBreak--;
             }
         }
@@ -120,12 +131,24 @@ public class UIManager : MonoBehaviour
         backward.interactable = !boolean;
     }
 
-    public void DisplayToDoList(string toDo){
+    public void DisplayToDoList(string toDo)
+    {
         toDoList.SetActive(true);
         toDoListText.text = toDo;
     }
 
-    public void HideToDoList(){
+    public void HideToDoList()
+    {
         toDoList.SetActive(false);
+    }
+
+    public void DisplayPhone()
+    { 
+        HideToDoList();
+        phone.SetActive(true);
+    }
+    public void HidePhone()
+    {
+        phone.SetActive(false);
     }
 }

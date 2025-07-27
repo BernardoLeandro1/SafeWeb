@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Maria",
+        "photo": "maria.png",
+        "day": 1
+    },
+    {
+        "name": "Ana",
+        "photo": "ana.png",
+        "day": 1
+    },
+    {
+        "name": "Roberto",
+        "photo": "roberto.png",
+        "day": 1
+    },
+    {
+        "name": "João",
+        "photo": "joao.png",
+        "day": 1
+    },
+    {
+        "name": "António",
+        "photo": "antonio.png",
+        "day": 1
+    },
+    {
+        "name": "Clara",
+        "photo": "clara.png",
+        "day": 1
+    }
+]

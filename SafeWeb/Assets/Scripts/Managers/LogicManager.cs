@@ -39,15 +39,22 @@ public class LogicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
-    public void ChangeMode(GameObject interactObj = null, string stringObj = null){
-        if(GetMode() == "free"){
-            if(interactObj.gameObject.transform.childCount > 0){
-                if(interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>()!=null){
-                    if(interactObj.gameObject.GetComponent<MissionIDs>()!=null){
-                        if(currentMissionObject == null || interactObj == currentMissionObject){
+
+    public void ChangeMode(GameObject interactObj = null, string stringObj = null)
+    {
+        if (GetMode() == "free")
+        {
+            if (interactObj.gameObject.transform.childCount > 0)
+            {
+                if (interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>() != null)
+                {
+                    if (interactObj.gameObject.GetComponent<MissionIDs>() != null)
+                    {
+                        if (currentMissionObject == null || interactObj == currentMissionObject)
+                        {
                             mode = "lock";
                             activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
                             activeCam.gameObject.SetActive(true);
@@ -61,9 +68,10 @@ public class LogicManager : MonoBehaviour
                             missionManager.NextNodeMissions();
                             player.GetComponent<Rigidbody>().isKinematic = true;
                         }
-                        
+
                     }
-                    else if (hasDoneMission==true){
+                    else if (hasDoneMission == true)
+                    {
                         mode = "lock";
                         activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
                         activeCam.gameObject.SetActive(true);
@@ -76,51 +84,77 @@ public class LogicManager : MonoBehaviour
                         hasDoneMission = false;
                         player.GetComponent<Rigidbody>().isKinematic = true;
                     }
-                    
+
                 }
             }
         }
-        else{
+        else
+        {
             mode = "free";
-            if(stringObj != null){
+            if (stringObj != null)
+            {
                 player.transform.position = freePlayer.position;
-                cam.GetComponent<CinemachinePanTilt>().PanAxis.Value=0f;
-                cam.GetComponent<CinemachinePanTilt>().TiltAxis.Value=0f;
+                cam.GetComponent<CinemachinePanTilt>().PanAxis.Value = 0f;
+                cam.GetComponent<CinemachinePanTilt>().TiltAxis.Value = 0f;
             }
             cam.GetComponent<CinemachineInputAxisController>().enabled = true;
             activeCam.gameObject.SetActive(false);
             cam.gameObject.SetActive(true);
-            activeCam = cam; 
+            activeCam = cam;
             uIManager.ChangeUI();
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             player.GetComponent<Rigidbody>().isKinematic = false;
-            
+
         }
     }
 
-    public string GetMode(){
+    public string GetMode()
+    {
         return mode;
     }
 
-    public void MissionComplete() {
+    public void MissionComplete()
+    {
         currentMissionObject.gameObject.GetComponent<MissionIDs>().MissionSolved();
+        currentMissionObject.transform.parent.gameObject.SetActive(false);
         currentMissionObject = null;
         hasDoneMission = true;
     }
 
-    public void Interaction(){
-        if(GetMode()=="free"){
+    public void Interaction()
+    {
+        if (GetMode() == "free")
+        {
             // Interaction ray
             Ray r = new Ray(activeCam.transform.position, activeCam.transform.forward);
             // If the ray catches anything in the range, it will try to interact with it
-            if (Physics.Raycast(r, out RaycastHit hitInfo, interactRange)){
-                if (hitInfo.collider.gameObject!=null){
-                    Debug.Log(hitInfo.collider.gameObject.name );
+            if (Physics.Raycast(r, out RaycastHit hitInfo, interactRange))
+            {
+                if (hitInfo.collider.gameObject != null)
+                {
+                    Debug.Log(hitInfo.collider.gameObject.name);
                     ChangeMode(hitInfo.collider.gameObject);
-                }            
+                }
             }
         }
-        
+
+    }
+
+    public void ActivatePhone()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        cam.GetComponent<CinemachinePanTilt>().enabled = false;
+        mode = "lock";
+        player.GetComponent<Rigidbody>().isKinematic = true;
+    }
+    public void DeactivatePhone()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        cam.GetComponent<CinemachinePanTilt>().enabled = true;
+        mode = "free";
+        player.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

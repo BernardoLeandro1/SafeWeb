@@ -13,12 +13,15 @@ public class MissionManager : MonoBehaviour
     UIManager uIManager;
     LogicManager logicManager;
 
-    MissionManager missionManager;
+    PhoneManager phoneManager;
+
     List<DialogueNode> dialogueNodes;
 
-    
+
     int node = 0;
     int lastNode = 0;
+
+    public bool isWaiting = false;
 
     void Awake()
     {
@@ -29,23 +32,39 @@ public class MissionManager : MonoBehaviour
     {
         uIManager = GetComponent<UIManager>();
         logicManager = GetComponent<LogicManager>();
-        missionManager = GetComponent<MissionManager>();
+        phoneManager = GetComponent<PhoneManager>();
     }
 
-    public void OpenMissionsFile(){
+    public void OpenMissionsFile()
+    {
         StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "missions.json"));
         var json = reader.ReadToEnd();
         missions = JsonConvert.DeserializeObject<List<Mission>>(json);
     }
 
-    public void OpenCurrentMissionsFile(){
-        if(currentMission==missions[0]){
+    public void OpenCurrentMissionsFile()
+    {
+        if (currentMission == missions[0])
+        {
             StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission1.json"));
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
-        else if(currentMission==missions[1]){
+        else if (currentMission == missions[1])
+        {
             StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission2.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[2])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission3.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[3])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission4.json"));
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
@@ -54,71 +73,110 @@ public class MissionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public List<Mission> GetMissions(){
+    public List<Mission> GetMissions()
+    {
         return missions;
     }
 
-    public void SelectMission(int missionId){
+    public void SelectMission(int missionId)
+    {
         currentMission = missions[missionId];
         OpenCurrentMissionsFile();
+        MissionOnGoing();
     }
 
-    public bool IsMissionActive(){
+    public bool IsMissionActive()
+    {
         return currentMission != null;
     }
 
 
-    public void NextNodeMissions(){
+    public void NextNodeMissions()
+    {
         //GET info from nodes and put it on screen  
-        if(dialogueNodes[node].ShowChoicePanel!=null){
+        if (dialogueNodes[node].ShowChoicePanel != null)
+        {
             uIManager.DisplayChoicesPanel(dialogueNodes[node].ShowChoicePanel.ToArray());
         }
-        else if(dialogueNodes[node].ShowDialogue.Contains("end of mission")){
+        else if (dialogueNodes[node].ShowDialogue.Contains("end of mission"))
+        {
             lastNode = 0;
             node = 0;
+            isWaiting = false;
             logicManager.MissionComplete();
             uIManager.DisplayToDoList("Volta ao teu lugar");
             logicManager.ChangeMode();
             currentMission = null;
         }
-        else if(dialogueNodes[node].ShowDialogue.Contains("free mode")){
-            lastNode = dialogueNodes[node].LastNode-1;
+        else if (dialogueNodes[node].ShowDialogue.Contains("free mode"))
+        {
+            if (dialogueNodes[node].ToDo != null)
+            {
+                uIManager.DisplayToDoList(dialogueNodes[node].ToDo.Split(".")[0]);
+                if (dialogueNodes[node].ToDo.Contains("Aceita ou recusa"))
+                {
+                    phoneManager.SetDay(int.Parse(dialogueNodes[node].ToDo.Split(".")[1]));
+                }
+            }
+            lastNode = dialogueNodes[node].LastNode - 1;
             node = dialogueNodes[node].NextNode - 1;
             // mudar isto para passar apenas o que está a seguir a free mode ou algo do género
             //uIManager.DisplayToDoList("Volta ao teu lugar");
             logicManager.ChangeMode();
+            MissionOnGoing();
         }
-        else{
+        else
+        {
             uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
-            lastNode = dialogueNodes[node].LastNode-1;
+            lastNode = dialogueNodes[node].LastNode - 1;
             node = dialogueNodes[node].NextNode - 1;
-        } 
-    }
-    
-
-    public void HasChoosen(int index){
-        node = index-1;
-        Debug.Log("node: " + node);
-        lastNode = dialogueNodes[node].LastNode-1;
-        uIManager.ToggleChoiceCanvas(false);
-        NextNodeMissions();
+        }
     }
 
-    public void LastNodeMissions(){
+
+    public void UpdateNodes(int node1, int lastNode1)
+    {
+        node = node1;
+        lastNode = lastNode1;
+    }
+    public void UpdateNodes()
+    {
+        node++;
+        lastNode++;
+    }
+
+    public void LastNodeMissions()
+    {
         //GET info from nodes and put it on screen
-        if(dialogueNodes[lastNode].ShowChoicePanel!=null){
-            uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode-1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode-1].ShowDialogue);
+        if (dialogueNodes[lastNode].ShowChoicePanel != null)
+        {
+            uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode - 1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode - 1].ShowDialogue);
             uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
         }
-        else if(lastNode >= 0){
+        else if (lastNode >= 0)
+        {
             uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
             node = dialogueNodes[lastNode].NextNode - 1;
-            lastNode = dialogueNodes[lastNode].LastNode-1;
+            lastNode = dialogueNodes[lastNode].LastNode - 1;
         }
     }
+
+
+    public void MissionOnGoing()
+    {
+        if (currentMission == missions[0] || currentMission == missions[1])
+        {
+            isWaiting = true;
+        }
+        else
+        {
+            isWaiting = false;
+        }
+    } 
+
 }
 public class Mission
 { 

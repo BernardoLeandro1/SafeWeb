@@ -1,0 +1,74 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Chegaste a casa e fosta falar com os teus pais.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Olá, tudo bem?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Sim e contigo?",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Pais, os meus amigos mostraram-me uma rede social nova.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Eles queriam que eu criasse conta com eles, mas eu decidi perguntar-vos primeiro. Posso?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Tens de ter muito cuidado nas redes sociais. Mas, como tomaste essa decisão, eu e a tua mãe achamos que podes criar conta.",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "free mode",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+
+
+
+
+
+
+
+
+    {
+    "node": 3,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    }
+
+]

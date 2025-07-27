@@ -1,0 +1,67 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com o António.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Olá, tudo bem?",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá, tudo e contigo?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Também. Estou a ver o resumo dos jogos do fim-de-semana. Queres ver comigo?",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showchoicepanel":[
+      {"nextnode": 6, "showdialogue": "Sim."},
+      {"nextnode": 7, "showdialogue": "Não."}
+    ],
+    "nextnode": 0,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Passas o resto do intervalo a ver os jogos com o António. A campainha toca e está na hora de voltar ao teu lugar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Deixas o António a ver os restantes jogos sozinho. Entretanto, a campainha toca e está na hora de voltar ao teu lugar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":5
+    },
+    {
+    "node": 8,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":7
+    }
+
+]

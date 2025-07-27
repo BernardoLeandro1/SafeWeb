@@ -1,33 +1,133 @@
 [
     {
     "node": 1,
-    "showdialogue": "Este é o inicio da segunda missão",
-    "name": "Foxie",
+    "showdialogue": "Foste falar com a Maria. Ela e o João estavam a conversar sobre uma nova rede social sensação 'Cheese!'.",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 2
     },
     {
     "node": 2,
-    "showdialogue": "free mode",
-    "name": "Foxie",
+    "showdialogue": "Olá, tudo bem?",
+    "name": "Maria",
     "displaycamera": "foxCam",
     "nextnode": 3,
-    "lastnode": 1
-
+    "lastnode":1
     },
     {
     "node": 3,
-    "showdialogue": "Continuação da segunda missão",
-    "name": "Foxie",
+    "showdialogue": "Olá, tudo e convosco?",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 4,
-    "lastnode": 2
+    "lastnode":2
     },
     {
     "node": 4,
-    "showdialogue": "end of mission",
-    "name": "Foxie",
+    "showdialogue": "Também. Estávamos aqui a falar da nova rede social.",
+    "name": "João",
     "displaycamera": "foxCam",
-    "nextnode": 3
+    "nextnode": 5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Que rede social?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Da 'Cheese'! Ainda não tens conta? Devias criar.",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "O que fazes?",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 8,
+    "showchoicepanel":[
+      {"nextnode": 9, "showdialogue": "Crias conta."},
+      {"nextnode": 0, "showdialogue": "Não crias conta."}
+    ],
+    "nextnode": 0,
+    "lastnode":7
+    },
+    {
+    "node": 9,
+    "showdialogue": "Pegas no teu telemóvel, descarregas a aplicação e decides criar conta.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "free mode",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":9,
+    "todo": "Pega no teu telemóvel (P)."
+    },
+    {
+    "node": 11,
+    "showdialogue": "Agora que criaste conta, vou-te mandar um pedido de amizade.",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode": 12,
+    "lastnode":10
+    },
+    {
+    "node": 12,
+    "showdialogue": "Eu também! Aceita o meu primeiro!",
+    "name": "João",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":11
+    },
+    {
+    "node": 13,
+    "showdialogue": "free mode",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 14,
+    "lastnode":12,
+    "todo": "Aceita ou recusa os pedidos de amizade (P).1"
+    },
+    {
+    "node": 14,
+    "showdialogue": "Após analisares todos os pedidos, voltas para o pé da Maria e do João.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":13
+    },
+    {
+    "node": 15,
+    "showdialogue": "Passados uns minutos de conversa, toca a campainha e está na hora de começar uma nova aula.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 16,
+    "lastnode":14
+    },
+    {
+    "node": 16,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 17,
+    "lastnode":15
     }
+
 ]

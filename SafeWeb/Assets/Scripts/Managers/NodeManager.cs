@@ -84,11 +84,20 @@ public class NodeManager : MonoBehaviour
     }
 
     public void HasChoosen(int index){
-        node = index-1;
-        Debug.Log("node: " + node);
-        lastNode = dialogueNodes[node].LastNode-1;
-        uIManager.ToggleChoiceCanvas(false);
-        NextNode();
+        if (missionManager.IsMissionActive())
+        {
+            missionManager.UpdateNodes(index - 1, dialogueNodes[node].LastNode - 1);
+            uIManager.ToggleChoiceCanvas(false);
+            missionManager.NextNodeMissions();
+        }
+        else
+        {
+            node = index-1;
+            Debug.Log("node: " + node);
+            lastNode = dialogueNodes[node].LastNode-1;
+            uIManager.ToggleChoiceCanvas(false);
+            NextNode();
+        }
     }
 
     public void LastNode(){
@@ -125,18 +134,22 @@ public class NodeManager : MonoBehaviour
 }
 
 
-public class DialogueNode{
-    public int Node{get;set;}
-    public string Name{get;set;}
-    public string ShowDialogue{get;set;}
-    public string DisplayCamera{get;set;}
-    public int NextNode{get;set;}
+public class DialogueNode
+{
+    public int Node { get; set; }
+    public string Name { get; set; }
+    public string ShowDialogue { get; set; }
+    public string DisplayCamera { get; set; }
+    public string ToDo { get; set; }
+    public int NextNode { get; set; }
 
-    public int LastNode{get;set;}
+    public int LastNode { get; set; }
 
     public List<DialogueChoices> ShowChoicePanel { get; set; }
 
     public List<int> AvailableMissions { get; set; }
+    
+
 
 }
 

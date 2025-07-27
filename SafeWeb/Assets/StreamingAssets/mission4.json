@@ -1,0 +1,66 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com a Ana.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Olá, tudo bem?",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá, tudo e contigo?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Também. Estou a fazer os meus trabalhos de casa, queres juntar-te a mim?",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showchoicepanel":[
+      {"nextnode": 6, "showdialogue": "Sim."},
+      {"nextnode": 7, "showdialogue": "Não."}
+    ],
+    "nextnode": 0,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Juntas-te à Ana e fazem os trabalhos de casa em conjunto.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Recusas a oferta da Ana e vais lanchar. Entretanto, a campainha toca e está na hora de voltar ao teu lugar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+        {
+    "node": 8,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":7
+    }
+]
