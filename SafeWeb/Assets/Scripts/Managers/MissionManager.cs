@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class MissionManager : MonoBehaviour
     LogicManager logicManager;
 
     PhoneManager phoneManager;
+
+    CharactersManager charactersManager;
 
     List<DialogueNode> dialogueNodes;
 
@@ -33,6 +36,7 @@ public class MissionManager : MonoBehaviour
         uIManager = GetComponent<UIManager>();
         logicManager = GetComponent<LogicManager>();
         phoneManager = GetComponent<PhoneManager>();
+        charactersManager = GetComponent<CharactersManager>();
     }
 
     public void OpenMissionsFile()
@@ -109,6 +113,16 @@ public class MissionManager : MonoBehaviour
             logicManager.MissionComplete();
             uIManager.DisplayToDoList("Volta ao teu lugar");
             logicManager.ChangeMode();
+            charactersManager.ChangeCubes(1);  
+            if (currentMission.Id == 0 || currentMission.Id == 1)
+            {
+                missions[0].available = false;
+                missions[1].available = false;
+            }
+            else
+            {
+                currentMission.available = false;
+            }
             currentMission = null;
         }
         else if (dialogueNodes[node].ShowDialogue.Contains("free mode"))
@@ -141,11 +155,6 @@ public class MissionManager : MonoBehaviour
     {
         node = node1;
         lastNode = lastNode1;
-    }
-    public void UpdateNodes()
-    {
-        node++;
-        lastNode++;
     }
 
     public void LastNodeMissions()
@@ -180,13 +189,15 @@ public class MissionManager : MonoBehaviour
 }
 public class Mission
 { 
+    public int Id { get; private set; }
     public string Name { get; private set; }
 
     public string Description { get; private set; }
 
     public bool available { get; set; } = false;
 
-    public Mission(string name, string description){
+    public Mission(int id ,string name, string description){
+        this.Id = id;
         this.Name = name;
         this.Description = description;
     }

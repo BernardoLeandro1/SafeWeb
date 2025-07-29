@@ -70,6 +70,19 @@ public class NodeManager : MonoBehaviour
                     }
                     uIManager.DisplayToDoList(toDoList);
                 }
+                else
+                {
+                    string toDoList = "";
+                    foreach (var mission in missionManager.GetMissions())
+                    {
+                        if (mission.available == true)
+                        {
+                            toDoList += mission.Description + "\n";
+                        }
+                        //Debug.Log(missions[number].Description);
+                    }
+                    uIManager.DisplayToDoList(toDoList);
+                }
                 logicManager.ChangeMode(stringObj: "chair");
                 lastNode = dialogueNodes[node].LastNode-1;
                 node = dialogueNodes[node].NextNode - 1;
@@ -111,11 +124,26 @@ public class NodeManager : MonoBehaviour
                 uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
             }
             else if(dialogueNodes[lastNode].ShowDialogue.Contains("free mode")){
-                if(dialogueNodes[lastNode].AvailableMissions!=null){
+                if (dialogueNodes[lastNode].AvailableMissions != null)
+                {
                     string toDoList = "";
-                    foreach (var number in dialogueNodes[lastNode].AvailableMissions){
+                    foreach (var number in dialogueNodes[lastNode].AvailableMissions)
+                    {
                         missionManager.GetMissions()[number].available = true;
                         toDoList += missionManager.GetMissions()[number].Description + "\n";
+                        //Debug.Log(missions[number].Description);
+                    }
+                    uIManager.DisplayToDoList(toDoList);
+                }
+                else
+                {
+                    string toDoList = "";
+                    foreach (var mission in missionManager.GetMissions())
+                    {
+                        if (mission.available == true)
+                        {
+                            toDoList += mission.Description + "\n";
+                        }
                         //Debug.Log(missions[number].Description);
                     }
                     uIManager.DisplayToDoList(toDoList);

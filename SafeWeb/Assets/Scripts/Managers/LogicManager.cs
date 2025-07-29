@@ -19,6 +19,8 @@ public class LogicManager : MonoBehaviour
 
     private MissionManager missionManager;
 
+    private CharactersManager charactersManager;
+
     private GameObject currentMissionObject;
 
     private bool hasDoneMission = false;
@@ -31,6 +33,7 @@ public class LogicManager : MonoBehaviour
         uIManager = GetComponent<UIManager>();
         nodeManager = GetComponent<NodeManager>();
         missionManager = GetComponent<MissionManager>();
+        charactersManager = GetComponent<CharactersManager>();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         cam.GetComponent<CinemachineInputAxisController>().enabled = false;
@@ -64,9 +67,15 @@ public class LogicManager : MonoBehaviour
                             Cursor.lockState = CursorLockMode.None;
                             Cursor.visible = true;
                             missionManager.SelectMission(interactObj.gameObject.GetComponent<MissionIDs>().GetMissionID());
+                            if (currentMissionObject == null)
+                            {
+                                charactersManager.Wave(interactObj.transform.parent.gameObject);
+                            }
+                            charactersManager.ChangeCubes(0);
                             currentMissionObject = interactObj;
                             missionManager.NextNodeMissions();
                             player.GetComponent<Rigidbody>().isKinematic = true;
+
                         }
 
                     }
@@ -83,6 +92,9 @@ public class LogicManager : MonoBehaviour
                         nodeManager.NextNode();
                         hasDoneMission = false;
                         player.GetComponent<Rigidbody>().isKinematic = true;
+                        charactersManager.UpdateCharacters();
+                        charactersManager.HideCharacters();
+                        charactersManager.ChangeCubes(2);
                     }
 
                 }
@@ -105,7 +117,7 @@ public class LogicManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             player.GetComponent<Rigidbody>().isKinematic = false;
-
+            charactersManager.DisplayCharacters();
         }
     }
 
@@ -116,8 +128,9 @@ public class LogicManager : MonoBehaviour
 
     public void MissionComplete()
     {
+
         currentMissionObject.gameObject.GetComponent<MissionIDs>().MissionSolved();
-        currentMissionObject.transform.parent.gameObject.SetActive(false);
+        //currentMissionObject.transform.parent.gameObject.SetActive(false);
         currentMissionObject = null;
         hasDoneMission = true;
     }
