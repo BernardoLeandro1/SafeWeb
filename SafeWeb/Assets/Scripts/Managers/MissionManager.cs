@@ -18,11 +18,15 @@ public class MissionManager : MonoBehaviour
 
     CharactersManager charactersManager;
 
+    NodeManager nodeManager;
+
     List<DialogueNode> dialogueNodes;
 
 
     int node = 0;
     int lastNode = 0;
+
+    int conta = 0;
 
     public bool isWaiting = false;
 
@@ -37,6 +41,7 @@ public class MissionManager : MonoBehaviour
         logicManager = GetComponent<LogicManager>();
         phoneManager = GetComponent<PhoneManager>();
         charactersManager = GetComponent<CharactersManager>();
+        nodeManager = GetComponent<NodeManager>();
     }
 
     public void OpenMissionsFile()
@@ -69,6 +74,12 @@ public class MissionManager : MonoBehaviour
         else if (currentMission == missions[3])
         {
             StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission4.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[4])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission5.json"));
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
@@ -111,19 +122,31 @@ public class MissionManager : MonoBehaviour
             node = 0;
             isWaiting = false;
             logicManager.MissionComplete();
-            uIManager.DisplayToDoList("Volta ao teu lugar");
-            logicManager.ChangeMode();
-            charactersManager.ChangeCubes(1);  
-            if (currentMission.Id == 0 || currentMission.Id == 1)
+            charactersManager.ChangeCubes(1);
+            if (currentMission.Id != 4)
             {
-                missions[0].available = false;
-                missions[1].available = false;
+                uIManager.DisplayToDoList("Volta ao teu lugar. (E)");
+                logicManager.ChangeMode();
+                if (currentMission.Id == 0 || currentMission.Id == 1)
+                {
+                    missions[0].available = false;
+                    missions[1].available = false;
+                }
+                else
+                {
+                    currentMission.available = false;
+                }
+                currentMission = null;
             }
             else
             {
                 currentMission.available = false;
+                currentMission = null;
+                nodeManager.NextNode();
             }
-            currentMission = null;
+
+
+
         }
         else if (dialogueNodes[node].ShowDialogue.Contains("free mode"))
         {
@@ -145,8 +168,39 @@ public class MissionManager : MonoBehaviour
         else
         {
             uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
-            lastNode = dialogueNodes[node].LastNode - 1;
-            node = dialogueNodes[node].NextNode - 1;
+            if (dialogueNodes[node].CheckCond != null)
+            {
+                if (dialogueNodes[node].CheckCond.Contains("conta1"))
+                {
+                    conta = 1;
+                    node = dialogueNodes[node].NextNode - 1;
+                    lastNode = dialogueNodes[node].LastNode - 1;
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("conta0"))
+                {
+                    conta = 0;
+                    node = dialogueNodes[node].NextNode - 1;
+                    lastNode = dialogueNodes[node].LastNode - 1;
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("conta"))
+                {
+                    if (conta == 0)
+                    {
+                        node = 4;
+                        lastNode = 3;
+                    }
+                    else if (conta == 1)
+                    {
+                        node = 11;
+                        lastNode = 3;
+                    }
+                }
+            }
+            else
+            {
+                node = dialogueNodes[node].NextNode - 1;
+                lastNode = dialogueNodes[node].LastNode - 1;
+            }
         }
     }
 
@@ -168,8 +222,40 @@ public class MissionManager : MonoBehaviour
         else if (lastNode >= 0)
         {
             uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
-            node = dialogueNodes[lastNode].NextNode - 1;
-            lastNode = dialogueNodes[lastNode].LastNode - 1;
+
+            if (dialogueNodes[node].CheckCond != null)
+            {
+                if (dialogueNodes[node].CheckCond.Contains("conta1"))
+                {
+                    conta = 1;
+                    node = dialogueNodes[lastNode].NextNode - 1;
+                    lastNode = dialogueNodes[lastNode].LastNode - 1;
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("conta0"))
+                {
+                    conta = 0;
+                    node = dialogueNodes[lastNode].NextNode - 1;
+                    lastNode = dialogueNodes[lastNode].LastNode - 1;
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("conta"))
+                {
+                    if (conta == 0)
+                    {
+                        node = 4;
+                        lastNode = 3;
+                    }
+                    else if (conta == 1)
+                    {
+                        node = 11;
+                        lastNode = 3;
+                    }
+                }
+            }
+            else
+            {
+                node = dialogueNodes[lastNode].NextNode - 1;
+                lastNode = dialogueNodes[lastNode].LastNode - 1;
+            }
         }
     }
 

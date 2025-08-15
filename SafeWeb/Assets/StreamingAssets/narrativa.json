@@ -15,24 +15,27 @@
     "lastnode":1
     },
     {
-    "node": 3,
-    "showdialogue": "Hoje, a primeira aula é de História. Tu adoras História e conhecer o passado do mundo.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 4,
-    "lastnode":2
+      "node": 3,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 4,
+      "lastnode":2,
+      "todo": "Sair de Casa. (E)"
     },
     {
-    "node": 4,
-    "showdialogue": "A Sala de Aula é espaçosa, com janelas grandes que deixam entrar muita luz natural. As paredes são verdes e decoradas com cartazes de projetos e trabalhos dos alunos.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 5,
-    "lastnode":3
+      "node": 4,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 5,
+      "lastnode":3,
+      "todo": "Vai para o teu lugar. (E)"
     },
+
     {
     "node": 5,
-    "showdialogue": "Na frente da sala, Há algumas prateleiras com livros de vários géneros, um quadro branco onde os professores escrevem a matéria, exercícios e trabalhos de casa e a secretária destes.",
+    "showdialogue": "Hoje, a primeira aula é de História. Tu adoras História e conhecer o passado do mundo.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 6,
@@ -40,40 +43,40 @@
     },
     {
     "node": 6,
-    "showdialogue": "A aula termina e vai ter com os teus amigos.",
+    "showdialogue": "A Sala de Aula é espaçosa, com janelas grandes que deixam entrar muita luz natural. As paredes são verdes e decoradas com cartazes de projetos e trabalhos dos alunos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 7,
     "lastnode":5
     },
     {
-      "node": 7,
-      "showdialogue": "free mode",
-      "name": "Foxie",
-      "displaycamera": "foxCam",
-      "availablemissions" : [0,1,2,3],
-      "nextnode": 8,
-      "lastnode":6
+    "node": 7,
+    "showdialogue": "Na frente da sala, Há algumas prateleiras com livros de vários géneros, um quadro branco onde os professores escrevem a matéria, exercícios e trabalhos de casa e a secretária destes.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
     },
     {
     "node": 8,
-    "showdialogue": "Começa uma nova aula. Desta vez de Ciências. A aula de hoje foi prática e fizeram alguns exercícios e atividades interessantes.",
+    "showdialogue": "A aula termina e vai ter com os teus amigos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 9,
     "lastnode":7
     },
     {
-    "node": 9,
-    "showdialogue": "Estavam todos bastante animados e focados no trabalho que desenvolveram na aula.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 10,
-    "lastnode":8
+      "node": 9,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "availablemissions" : [0,1,2,3],
+      "nextnode": 10,
+      "lastnode":8
     },
     {
     "node": 10,
-    "showdialogue": "Quando a campainha tocou, ficaram tristes porque a aula foi divertida e passou bastante rápido.",
+    "showdialogue": "Começa uma nova aula. Desta vez de Ciências. A aula de hoje foi prática e fizeram alguns exercícios e atividades interessantes.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 11,
@@ -81,39 +84,39 @@
     },
     {
     "node": 11,
-    "showdialogue": "Pelo lado positivo, começou um novo intervalo e podes voltar a falar com alguns dos teus amigos.",
+    "showdialogue": "Estavam todos bastante animados e focados no trabalho que desenvolveram na aula.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 12,
     "lastnode":10
     },
     {
-      "node": 12,
-      "showdialogue": "free mode",
-      "name": "Foxie",
-      "displaycamera": "foxCam",
-      "nextnode": 13,
-      "lastnode":11
+    "node": 12,
+    "showdialogue": "Quando a campainha tocou, ficaram tristes porque a aula foi divertida e passou bastante rápido.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":11
     },
     {
     "node": 13,
-    "showdialogue": "Acaba o intervalo e começa uma nova aula. Esta é de inglês.",
+    "showdialogue": "Pelo lado positivo, começou um novo intervalo e podes voltar a falar com alguns dos teus amigos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 14,
     "lastnode":12
     },
     {
-    "node": 14,
-    "showdialogue": "Tu adoras ouvir música em, inglês e ver séries com os teus pais.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 15,
-    "lastnode":13
+      "node": 14,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 15,
+      "lastnode":13
     },
     {
     "node": 15,
-    "showdialogue": "Para ti, esta aula é fácil. No entanto, estás sempre atento, porque podes aprender novas palavras e expressões.",
+    "showdialogue": "Acaba o intervalo e começa uma nova aula. Esta é de inglês.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 16,
@@ -121,145 +124,86 @@
     },
     {
     "node": 16,
-    "showdialogue": "A aula passou bastante rápido, sem grandes acontecimentos e a campainha tocou para um novo intervalo.",
+    "showdialogue": "Tu adoras ouvir música em, inglês e ver séries com os teus pais.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 17,
     "lastnode":15
     },
     {
-      "node": 17,
-      "showdialogue": "free mode",
-      "name": "Foxie",
-      "displaycamera": "foxCam",
-      "nextnode": 18,
-      "lastnode":16
+    "node": 17,
+    "showdialogue": "Para ti, esta aula é fácil. No entanto, estás sempre atento, porque podes aprender novas palavras e expressões.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 18,
+    "lastnode":16
     },
     {
     "node": 18,
-    "showdialogue": "A última aula começa e passa a correr. Chegaste ao toque de saída sem dar por ela e a aula passou-te ao lado.",
+    "showdialogue": "A aula passou bastante rápido, sem grandes acontecimentos e a campainha tocou para um novo intervalo.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 19,
     "lastnode":17
     },
     {
-    "node": 19,
-    "showdialogue": "Saíste da sala de aula e despediste-te dos teus amigos, a correr para ir apanhar o autocarro, para ir para casa.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 20,
-    "lastnode":18
-    },
-    {
-      "node": 20,
+      "node": 19,
       "showdialogue": "free mode",
       "name": "Foxie",
       "displaycamera": "foxCam",
-      "nextnode": 21,
-      "lastnode":19
+      "nextnode": 20,
+      "lastnode":18
+    },
+    {
+    "node": 20,
+    "showdialogue": "A última aula começa e passa a correr. Chegaste ao toque de saída sem dar por ela e a aula passou-te ao lado.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 21,
+    "lastnode":19
     },
     {
     "node": 21,
-    "showdialogue": "Chegaste a casa. Foste para a sala de estar, ter com os teus pais.",
+    "showdialogue": "Saíste da sala de aula e despediste-te dos teus amigos, a correr para ir apanhar o autocarro, para ir para casa.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 22,
     "lastnode":20
     },
     {
-    "node": 22,
-    "showdialogue": "No centro da sala, há um sofá confortável, coberto por almofadas coloridas, em frente a uma pequena mesa de madeira onde estão livros e um comando de televisão. Uma televisão está montada na parede, ao lado de uma estante repleta de jogos de tabuleiro e livros infantis.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 23,
-    "lastnode":21
-    },
-
-
-
-
-
-
-    {
-    "node": 3,
-    "showchoicepanel":[
-      {"nextnode": 4, "showdialogue": "Did you remember to put on sunscreen?"},
-      {"nextnode": 10, "showdialogue": "You could run faster with better running shoes."}
-    ],
-    "nextnode": 0,
-    "lastnode":2
-    },
-    {
-    "node": 4,
-    "showdialogue": "Primeira Opção",
-    "name": "Foxie",
-    "displaycamera": "foxCam",
-    "nextnode": 5,
-    "lastnode":3
-    },
-    {
-    "node": 5,
-    "showdialogue": "Primeira Opção",
-    "name": "Foxie",
-    "displaycamera": "foxCam",
-    "nextnode": 6,
-    "lastnode":4
-    },
-    {
-    "node": 6,
-    "showdialogue": "Primeira Opção",
-    "name": "Foxie",
-    "displaycamera": "foxCam",
-    "nextnode": 7,
-    "lastnode":5
-    },
-    {
-      "node": 7,
-      "showdialogue": "Primeira Opção",
-      "name": "Foxie",
-      "displaycamera": "foxCam",
-      "nextnode": 8,
-      "lastnode":6
-    },
-    {
-      "node": 8,
-      "showdialogue": "Primeira Opção",
-      "name": "Foxie",
-      "displaycamera": "foxCam",
-      "nextnode": 9,
-      "lastnode":7
-    },
-    {
-      "node": 9,
-      "showdialogue": "Primeira Opção",
-      "name": "Foxie",
-      "displaycamera": "foxCam",
-      "nextnode": 0,
-      "lastnode":8
-    },
-    {
-    "node": 10,
-    "showdialogue": "Segunda Opção",
-    "name": "Foxie",
-    "displaycamera": "foxCam",
-    "nextnode": 11,
-    "lastnode":3
-    },
-    {
-      "node": 11,
+      "node": 22,
       "showdialogue": "free mode",
       "name": "Foxie",
       "displaycamera": "foxCam",
-      "availablemissions" : [0,1,2,3],
-      "nextnode": 12,
-      "lastnode":10
+      "nextnode": 23,
+      "lastnode":21,
+      "todo":"Volta para casa. (E)"
     },
     {
-      "node": 12,
-      "showdialogue": "Continua o diálogo.",
+      "node": 23,
+      "showdialogue": "continua free",
       "name": "Foxie",
       "displaycamera": "foxCam",
-      "nextnode": 13
+      "nextnode": 24,
+      "lastnode":22,
+      "todo":"Vai falar com os teus pais. (E)",
+      "availablemissions":[4]
+    },
+
+    {
+      "node": 24,
+      "showdialogue": "FIM",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": -1,
+      "lastnode":23
     }
+    
+
+
+
+
+
+
+    
 ]

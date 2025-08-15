@@ -237,7 +237,7 @@ public class PhoneManager : MonoBehaviour
             registButton.SetActive(false);
             uIManager.HidePhone();
             logicManager.DeactivatePhone();
-            uIManager.DisplayToDoList("Volta a falar com a Maria e o João");
+            uIManager.DisplayToDoList("Volta a falar com eles. (E)");
             missionManager.isWaiting = false;
         }
 
@@ -253,9 +253,9 @@ public class PhoneManager : MonoBehaviour
             missionManager.isWaiting = false;
             if (currentDay == 1)
             {
-                 uIManager.HidePhone();
+                uIManager.HidePhone();
                 logicManager.DeactivatePhone();
-                uIManager.DisplayToDoList("Volta a falar com a Maria e o João.");
+                uIManager.DisplayToDoList("Volta a falar com eles. (E)");
                 //missionManager.UpdateNodes();
                 //missionManager.NextNodeMissions();
             }
@@ -274,7 +274,7 @@ public class PhoneManager : MonoBehaviour
             {
                 uIManager.HidePhone();
                 logicManager.DeactivatePhone();
-                uIManager.DisplayToDoList("Volta a falar com a Maria e o João.");
+                uIManager.DisplayToDoList("Volta a falar com eles. (E)");
                 //missionManager.UpdateNodes();
                 //missionManager.NextNodeMissions();
             }

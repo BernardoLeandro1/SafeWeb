@@ -10,6 +10,12 @@ public class LogicManager : MonoBehaviour
     public GameObject player;
 
     public Transform freePlayer;
+
+
+    public Transform casaPlayer;
+
+
+    public Transform salaPlayer;
     private CinemachineCamera activeCam;
 
     private NodeManager nodeManager;
@@ -23,7 +29,7 @@ public class LogicManager : MonoBehaviour
 
     private GameObject currentMissionObject;
 
-    private bool hasDoneMission = false;
+    private bool hasDoneMission = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,7 +62,7 @@ public class LogicManager : MonoBehaviour
                 {
                     if (interactObj.gameObject.GetComponent<MissionIDs>() != null)
                     {
-                        if (currentMissionObject == null || interactObj == currentMissionObject)
+                        if ((currentMissionObject == null || interactObj == currentMissionObject) && hasDoneMission == false)
                         {
                             mode = "lock";
                             activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
@@ -67,10 +73,11 @@ public class LogicManager : MonoBehaviour
                             Cursor.lockState = CursorLockMode.None;
                             Cursor.visible = true;
                             missionManager.SelectMission(interactObj.gameObject.GetComponent<MissionIDs>().GetMissionID());
-                            if (currentMissionObject == null)
+                            if (currentMissionObject == null && !interactObj.name.Contains("door"))
                             {
                                 charactersManager.Wave(interactObj.transform.parent.gameObject);
                             }
+
                             charactersManager.ChangeCubes(0);
                             currentMissionObject = interactObj;
                             missionManager.NextNodeMissions();
@@ -92,11 +99,30 @@ public class LogicManager : MonoBehaviour
                         nodeManager.NextNode();
                         hasDoneMission = false;
                         player.GetComponent<Rigidbody>().isKinematic = true;
+                        charactersManager.unlockCharacters = true;
                         charactersManager.UpdateCharacters();
                         charactersManager.HideCharacters();
                         charactersManager.ChangeCubes(2);
+                        freePlayer.position = player.transform.position;
+                        currentMissionObject = null;
                     }
 
+                }
+                else
+                {
+                    Debug.Log(charactersManager.solved);
+                    //interactObj.GetComponent<Animator>().SetTrigger("Open");
+                    if (interactObj.name.Contains("escola") && charactersManager.solved >= 6)
+                    {
+                        player.transform.position = casaPlayer.position;
+                        nodeManager.NextNode();
+                    }
+                    else if (interactObj.name.Contains("casa") && charactersManager.solved == 0)
+                    {
+                        player.transform.position = salaPlayer.position;
+                        nodeManager.NextNode();
+                    }
+                    
                 }
             }
         }
@@ -106,7 +132,7 @@ public class LogicManager : MonoBehaviour
             if (stringObj != null)
             {
                 player.transform.position = freePlayer.position;
-                cam.GetComponent<CinemachinePanTilt>().PanAxis.Value = 0f;
+                cam.GetComponent<CinemachinePanTilt>().PanAxis.Value = 180f;
                 cam.GetComponent<CinemachinePanTilt>().TiltAxis.Value = 0f;
             }
             cam.GetComponent<CinemachineInputAxisController>().enabled = true;
@@ -131,7 +157,6 @@ public class LogicManager : MonoBehaviour
 
         currentMissionObject.gameObject.GetComponent<MissionIDs>().MissionSolved();
         //currentMissionObject.transform.parent.gameObject.SetActive(false);
-        currentMissionObject = null;
         hasDoneMission = true;
     }
 

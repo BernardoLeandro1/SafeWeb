@@ -58,7 +58,7 @@
     "node": 8,
     "showchoicepanel":[
       {"nextnode": 9, "showdialogue": "Crias conta."},
-      {"nextnode": 0, "showdialogue": "Não crias conta."}
+      {"nextnode": 18, "showdialogue": "Não crias conta."}
     ],
     "nextnode": 0,
     "lastnode":7
@@ -69,7 +69,8 @@
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 10,
-    "lastnode":8
+    "lastnode":8,
+    "checkcond": "conta1"
     },
     {
     "node": 10,
@@ -126,8 +127,33 @@
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",
-    "nextnode": 17,
+    "nextnode": 0,
     "lastnode":15
+    },
+    {
+    "node": 17,
+    "showdialogue": "Recusaste criar conta ao pé dos teus amigos. Eles compreenderam a tua decisão.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 18,
+    "lastnode":8,
+    "checkcond": "conta0"
+    },
+    {
+    "node": 18,
+    "showdialogue": "Continuaram a conversar sobre outro assunto e, passados uns minutos, toca a campainha e está na hora de começar uma nova aula.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 19,
+    "lastnode":17
+    },
+    {
+    "node": 19,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":18
     }
 
 ]

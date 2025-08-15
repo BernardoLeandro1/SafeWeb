@@ -12,6 +12,10 @@ public class CharactersManager : MonoBehaviour
 
     public GameObject ana;
 
+    public GameObject mae;
+    public GameObject pai;
+
+
     public GameObject cubejoao;
     public GameObject cubemaria;
     public GameObject cubeantonio;
@@ -21,6 +25,10 @@ public class CharactersManager : MonoBehaviour
 
 
     public GameObject characters;
+
+    public bool unlockCharacters = false;
+
+    public int solved = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,11 +49,15 @@ public class CharactersManager : MonoBehaviour
 
     public void DisplayCharacters()
     {
-        characters.SetActive(true);
+        if (unlockCharacters)
+        {
+            characters.SetActive(true);
+        }
     }
 
     public void UpdateCharacters()
     {
+
         ChangeCubes(3);
         if (joao.GetComponentInChildren<MissionIDs>().isSolved())
         {
@@ -54,6 +66,7 @@ public class CharactersManager : MonoBehaviour
             maria.SetActive(false);
             maria.GetComponentInChildren<MissionIDs>().MissionSolved();
             cubemaria.SetActive(false);
+            solved += 2;
         }
         if (maria.GetComponentInChildren<MissionIDs>().isSolved())
         {
@@ -62,16 +75,31 @@ public class CharactersManager : MonoBehaviour
             cubejoao.SetActive(false);
             maria.SetActive(false);
             cubemaria.SetActive(false);
+            solved += 2;
         }
         if (ana.GetComponentInChildren<MissionIDs>().isSolved())
         {
             ana.SetActive(false);
             cubeana.SetActive(false);
+            solved++;
         }
         if (antonio.GetComponentInChildren<MissionIDs>().isSolved())
         {
             antonio.SetActive(false);
             cubeantonio.SetActive(false);
+            solved++;
+        }
+        if (solved >= 4)
+        {
+            solved++;
+            pai.SetActive(true);
+            mae.SetActive(true);
+        }
+        if (pai.GetComponentInChildren<MissionIDs>().isSolved())
+        {
+            solved = 0;
+            pai.SetActive(false);
+            mae.SetActive(false);
         }
     }
 
@@ -127,6 +155,11 @@ public class CharactersManager : MonoBehaviour
         {
             joao.GetComponent<Animator>().SetTrigger("Wave");
             maria.GetComponent<Animator>().SetTrigger("Wave");
+        }
+        else if (character.gameObject.name.Contains("dad"))
+        {
+            pai.GetComponent<Animator>().SetTrigger("Wave");
+            mae.GetComponent<Animator>().SetTrigger("Wave");
         }
         else
         {

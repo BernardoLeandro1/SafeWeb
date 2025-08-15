@@ -14,7 +14,7 @@ public class NodeManager : MonoBehaviour
     
     int node = 0;
     int lastNode = 0;
-
+    //int conta = 0;
     bool firstTime = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -48,23 +48,29 @@ public class NodeManager : MonoBehaviour
     public void NextNode(){
         //GET info from nodes and put it on screen
         if(!firstTime){
-            if(missionManager.IsMissionActive()){
+            if (missionManager.IsMissionActive())
+            {
                 missionManager.NextNodeMissions();
             }
-            else if(node<0){
+            else if (node < 0)
+            {
                 uIManager.ShowText("Desenvolvedor de Jogo", "É tudo, por agora!");
-                lastNode = dialogueNodes.Count-1;
-                firstTime=true;
-                
+                lastNode = dialogueNodes.Count - 1;
+                firstTime = true;
+
             }
-            else if(dialogueNodes[node].ShowChoicePanel!=null){
+            else if (dialogueNodes[node].ShowChoicePanel != null)
+            {
                 uIManager.DisplayChoicesPanel(dialogueNodes[node].ShowChoicePanel.ToArray());
-                
+
             }
-            else if(dialogueNodes[node].ShowDialogue.Contains("free mode")){
-                if(dialogueNodes[node].AvailableMissions!=null){
+            else if (dialogueNodes[node].ShowDialogue.Contains("free mode"))
+            {
+                if (dialogueNodes[node].AvailableMissions != null)
+                {
                     string toDoList = "";
-                    foreach (var number in dialogueNodes[node].AvailableMissions){
+                    foreach (var number in dialogueNodes[node].AvailableMissions)
+                    {
                         missionManager.GetMissions()[number].available = true;
                         toDoList += missionManager.GetMissions()[number].Description + "\n";
                     }
@@ -83,15 +89,61 @@ public class NodeManager : MonoBehaviour
                     }
                     uIManager.DisplayToDoList(toDoList);
                 }
-                logicManager.ChangeMode(stringObj: "chair");
-                lastNode = dialogueNodes[node].LastNode-1;
+                if (dialogueNodes[node].ToDo != null)
+                {
+                    uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
+                }
+                if (dialogueNodes[node].ShowDialogue.Contains("free mode v2"))
+                {
+                    logicManager.ChangeMode();
+                }
+                else
+                {
+                    logicManager.ChangeMode(stringObj: "chair");
+                }
+                lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
-                
+
             }
-            else{
-                uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
-                lastNode = dialogueNodes[node].LastNode-1;
+            else if (dialogueNodes[node].ShowDialogue.Contains("continua free"))
+            {
+                if (dialogueNodes[node].ToDo != null)
+                {
+                    uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
+                }
+                lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
+            }
+            else
+            {
+                uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
+                lastNode = dialogueNodes[node].LastNode - 1;
+                node = dialogueNodes[node].NextNode - 1;
+                // if (dialogueNodes[node].CheckCond != null)
+                // {
+                //     if (dialogueNodes[node].CheckCond.Contains("conta"))
+                //     {
+                //         if (conta == 1)
+                //         {
+                //             node = 4;
+                //             lastNode = 3;
+                //         }
+                //         else if (conta == 0)
+                //         {
+                //             node = 10;
+                //             lastNode = 3;
+                //         }
+                //     }
+                //     else if (dialogueNodes[node].CheckCond.Contains("conta1"))
+                //     {
+                //         conta = 1;
+                //     }
+                //     if (dialogueNodes[node].CheckCond.Contains("conta0"))
+                //     {
+                //         conta = 0;
+                //     }
+                // }
+                
             } 
         }
     }
@@ -173,11 +225,15 @@ public class DialogueNode
 
     public int LastNode { get; set; }
 
+    public string CheckCond { get; set; }
+
     public List<DialogueChoices> ShowChoicePanel { get; set; }
 
     public List<int> AvailableMissions { get; set; }
-    
 
+
+    
+    
 
 }
 
