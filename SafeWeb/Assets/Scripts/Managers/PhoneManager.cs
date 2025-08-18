@@ -126,7 +126,6 @@ public class PhoneManager : MonoBehaviour
             Debug.Log(friend.Day);
             if (friend.Day == day)
             {
-                Debug.Log("Friends will be added1");
                 ShowFriendRequests(friend.Photo, friend.Name);
             }
         }
