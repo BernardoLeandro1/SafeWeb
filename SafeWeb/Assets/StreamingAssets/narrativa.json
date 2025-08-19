@@ -189,14 +189,38 @@
       "todo":"Vai falar com os teus pais. (E)",
       "availablemissions":[4]
     },
-
     {
       "node": 24,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 25,
+      "lastnode":23,
+      "todo":"Vai para o teu quarto. (E)"
+    },
+    {
+      "node": 25,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 26,
+      "lastnode":24,
+      "todo":"Vai para a cama. (E)"
+    },
+    {
+      "node": 26,
+      "showdialogue": "End Day.",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 27,
+      "lastnode":25
+    },
+
+    {
+      "node": 27,
       "showdialogue": "FIM",
       "name": "Narrador",
-      "displaycamera": "foxCam",
-      "nextnode": -1,
-      "lastnode":23
+      "nextnode": -1
     }
     
 

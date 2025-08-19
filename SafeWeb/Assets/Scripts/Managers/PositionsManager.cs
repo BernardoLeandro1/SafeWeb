@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class PositionsManager : MonoBehaviour
 {
+    public GameObject sala1;
+    public GameObject sala2;
+    public GameObject sala3;
+    public GameObject sala4;
+    public GameObject sala5;
     public Transform playerSalaPosition1;
     public Transform playerSalaPosition2;
     public Transform playerSalaPosition3;
@@ -34,6 +39,8 @@ public class PositionsManager : MonoBehaviour
             playerSalaPosition2.gameObject.SetActive(true);
             playerCasaPosition1.gameObject.SetActive(false);
             playerCasaPosition2.gameObject.SetActive(true);
+            sala1.SetActive(false);
+            sala2.SetActive(true);
         }
         else if (playerSalaPosition2.gameObject.activeSelf)
         {
@@ -41,6 +48,8 @@ public class PositionsManager : MonoBehaviour
             playerSalaPosition3.gameObject.SetActive(true);
             playerCasaPosition2.gameObject.SetActive(false);
             playerCasaPosition3.gameObject.SetActive(true);
+            sala2.SetActive(false);
+            sala3.SetActive(true);
         }
         else if (playerSalaPosition3.gameObject.activeSelf)
         {
@@ -48,6 +57,8 @@ public class PositionsManager : MonoBehaviour
             playerSalaPosition4.gameObject.SetActive(true);
             playerCasaPosition3.gameObject.SetActive(false);
             playerCasaPosition4.gameObject.SetActive(true);
+            sala3.SetActive(false);
+            sala4.SetActive(true);
         }
         else if (playerSalaPosition4.gameObject.activeSelf)
         {
@@ -55,6 +66,8 @@ public class PositionsManager : MonoBehaviour
             playerSalaPosition5.gameObject.SetActive(true);
             playerCasaPosition4.gameObject.SetActive(false);
             playerCasaPosition5.gameObject.SetActive(true);
+            sala4.SetActive(false);
+            sala5.SetActive(true);
         }
     }
 }
