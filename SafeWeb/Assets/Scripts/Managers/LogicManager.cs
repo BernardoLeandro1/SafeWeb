@@ -14,6 +14,9 @@ public class LogicManager : MonoBehaviour
 
     public Transform casaPlayer;
 
+    public Transform aulaPlayer;
+    public Transform quartoPlayer;
+
 
     public Transform salaPlayer;
     private CinemachineCamera activeCam;
@@ -110,16 +113,26 @@ public class LogicManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(charactersManager.solved);
+                    Debug.Log(missionManager.solved);
                     //interactObj.GetComponent<Animator>().SetTrigger("Open");
-                    if (interactObj.name.Contains("escola") && charactersManager.solved >= 6)
+                    if (interactObj.name.Contains("escola") && missionManager.solved == 4)
                     {
                         player.transform.position = casaPlayer.position;
                         nodeManager.NextNode();
                     }
-                    else if (interactObj.name.Contains("casa") && charactersManager.solved == 0)
+                    else if (interactObj.name.Contains("casa") && missionManager.solved == 0)
+                    {
+                        player.transform.position = aulaPlayer.position;
+                        nodeManager.NextNode();
+                    }
+                    else if (interactObj.name.Contains("bedroom") && missionManager.solved == 0)
                     {
                         player.transform.position = salaPlayer.position;
+                        nodeManager.NextNode();
+                    }
+                    else if (interactObj.name.Contains("bedroom") && missionManager.solved == 5)
+                    {
+                        player.transform.position = quartoPlayer.position;
                         nodeManager.NextNode();
                     }
                     

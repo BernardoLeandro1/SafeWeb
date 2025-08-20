@@ -28,7 +28,7 @@ public class CharactersManager : MonoBehaviour
 
     public bool unlockCharacters = false;
 
-    public int solved = 0;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -66,7 +66,7 @@ public class CharactersManager : MonoBehaviour
             maria.SetActive(false);
             maria.GetComponentInChildren<MissionIDs>().MissionSolved();
             cubemaria.SetActive(false);
-            solved += 2;
+            
         }
         if (maria.GetComponentInChildren<MissionIDs>().isSolved())
         {
@@ -75,29 +75,24 @@ public class CharactersManager : MonoBehaviour
             cubejoao.SetActive(false);
             maria.SetActive(false);
             cubemaria.SetActive(false);
-            solved += 2;
         }
         if (ana.GetComponentInChildren<MissionIDs>().isSolved())
         {
             ana.SetActive(false);
             cubeana.SetActive(false);
-            solved++;
         }
         if (antonio.GetComponentInChildren<MissionIDs>().isSolved())
         {
             antonio.SetActive(false);
             cubeantonio.SetActive(false);
-            solved++;
         }
-        if (solved >= 4)
+        if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved())
         {
-            solved++;
             pai.SetActive(true);
             mae.SetActive(true);
         }
         if (pai.GetComponentInChildren<MissionIDs>().isSolved())
         {
-            solved = 0;
             pai.SetActive(false);
             mae.SetActive(false);
         }

@@ -30,6 +30,8 @@ public class MissionManager : MonoBehaviour
 
     public bool isWaiting = false;
 
+    public int solved = 0;
+
     void Awake()
     {
         OpenMissionsFile();
@@ -131,10 +133,12 @@ public class MissionManager : MonoBehaviour
                 {
                     missions[0].available = false;
                     missions[1].available = false;
+                    solved += 2;
                 }
                 else
                 {
                     currentMission.available = false;
+                    solved += 1;
                 }
                 currentMission = null;
             }
@@ -143,6 +147,7 @@ public class MissionManager : MonoBehaviour
                 currentMission.available = false;
                 currentMission = null;
                 nodeManager.NextNode();
+                solved += 1;
             }
 
 
