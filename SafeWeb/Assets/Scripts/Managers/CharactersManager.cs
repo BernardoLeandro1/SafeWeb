@@ -28,7 +28,24 @@ public class CharactersManager : MonoBehaviour
 
     public bool unlockCharacters = false;
 
-    
+    public Transform joaoday2;
+    public Transform joaoday3;
+    public Transform joaoday4;
+    public Transform joaoday5;
+    public Transform anaday2;
+    public Transform anaday3;
+    public Transform anaday4;
+    public Transform anaday5;
+    public Transform mariaday2;
+    public Transform mariaday3;
+    public Transform mariaday4;
+    public Transform mariaday5;
+    public Transform antonioday2;
+    public Transform antonioday3;
+    public Transform antonioday4;
+    public Transform antonioday5;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -66,7 +83,7 @@ public class CharactersManager : MonoBehaviour
             maria.SetActive(false);
             maria.GetComponentInChildren<MissionIDs>().MissionSolved();
             cubemaria.SetActive(false);
-            
+
         }
         if (maria.GetComponentInChildren<MissionIDs>().isSolved())
         {
@@ -109,7 +126,7 @@ public class CharactersManager : MonoBehaviour
             cubeantonio.SetActive(false);
             cubeback.SetActive(false);
         }
-         else if (i == 1)
+        else if (i == 1)
         {
             cubeback.SetActive(true);
         }
@@ -139,7 +156,7 @@ public class CharactersManager : MonoBehaviour
                 cubeantonio.SetActive(true);
             }
         }
-        
+
     }
 
 
@@ -160,5 +177,69 @@ public class CharactersManager : MonoBehaviour
         {
             character.GetComponent<Animator>().SetTrigger("Wave");
         }
+    }
+
+    public void UpdateCharactersPositions(int day)
+    {
+        if (day == 2)
+        {
+            joao.transform.position = joaoday2.position;
+            ana.transform.position = anaday2.position;
+            maria.transform.position = mariaday2.position;
+            antonio.transform.position = antonioday2.position;
+            joao.transform.rotation = joaoday2.rotation;
+            ana.transform.rotation = anaday2.rotation;
+            maria.transform.rotation = mariaday2.rotation;
+            antonio.transform.rotation = antonioday2.rotation;
+            NewDay();
+        }
+        else if (day == 3)
+        {
+            joao.transform.position = joaoday3.position;
+            ana.transform.position = anaday3.position;
+            maria.transform.position = mariaday3.position;
+            antonio.transform.position = antonioday3.position;
+            joao.transform.rotation = joaoday3.rotation;
+            ana.transform.rotation = anaday3.rotation;
+            maria.transform.rotation = mariaday3.rotation;
+            antonio.transform.rotation = antonioday3.rotation;
+            NewDay();
+        }
+        else if (day == 4)
+        {
+            joao.transform.position = joaoday4.position;
+            ana.transform.position = anaday4.position;
+            maria.transform.position = mariaday4.position;
+            antonio.transform.position = antonioday4.position;
+            joao.transform.rotation = joaoday4.rotation;
+            ana.transform.rotation = anaday4.rotation;
+            maria.transform.rotation = mariaday4.rotation;
+            antonio.transform.rotation = antonioday4.rotation;
+            NewDay();
+        }
+        else if (day == 5)
+        {
+            joao.transform.position = joaoday5.position;
+            ana.transform.position = anaday5.position;
+            maria.transform.position = mariaday5.position;
+            antonio.transform.position = antonioday5.position;
+            joao.transform.rotation = joaoday5.rotation;
+            ana.transform.rotation = anaday5.rotation;
+            maria.transform.rotation = mariaday5.rotation;
+            antonio.transform.rotation = antonioday5.rotation;
+            NewDay();
+        }
+    }
+
+    public void NewDay()
+    {
+        joao.SetActive(true);
+        ana.SetActive(true);
+        maria.SetActive(true);
+        antonio.SetActive(true);
+        joao.GetComponentInChildren<MissionIDs>().ResetMissions();
+        ana.GetComponentInChildren<MissionIDs>().ResetMissions();
+        maria.GetComponentInChildren<MissionIDs>().ResetMissions();
+        antonio.GetComponentInChildren<MissionIDs>().ResetMissions();
     }
 }

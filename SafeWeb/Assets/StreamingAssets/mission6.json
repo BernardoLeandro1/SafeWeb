@@ -1,0 +1,91 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com o João.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Ele estava entusiasmado porque tinha comprado uma bola de futebol nova.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá João!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Olá! Já viste a minha bola nova? Os meus pais compraram-ma ontem.",
+    "name": "João",
+    "displaycamera": "foxCam",
+    "lastnode":3,
+    "checkcond": "conta"
+    },
+    {
+    "node": 5,
+    "showdialogue": "Queres vir experimentá-la connosco?",
+    "name": "João",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showchoicepanel":[
+      {"nextnode": 7, "showdialogue": "Vais jogar."},
+      {"nextnode": 9, "showdialogue": "Não vais jogar."}
+    ],
+    "nextnode": 0,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Decidiste juntar-te a eles. Então, correram para o recreio para a ir estrear. Veio a turma quase toda e jogaram uns contra os outros durante o intervalo todo.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 8,
+    "showdialogue": "O jogo foi interrompido pela campainha, uma vez que estava na hora de terminar o intervalo. No fim do jogo, ganhou o António, que marcou mais golos.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":7
+    },
+    {
+    "node": 9,
+    "showdialogue": "Recusaste a oferta do João. Apesar de não gostares de jogar futebol, ele queria que fosses na mesma, para experimentar a bola dele.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "Ficaste com os restantes que não jogam futebol o resto do intervalo, até a campaínha tocar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":9
+    },
+    {
+    "node": 11,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]

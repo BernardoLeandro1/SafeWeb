@@ -218,11 +218,71 @@
     },
     {
       "node": 27,
-      "showdialogue": "End Day.",
-      "name": "Foxie",
+      "showdialogue": "É terça-feira. Um novo dia. Começas o dia da mesma forma que os outros, a preparar-te à pressa e vais para a escola, cheio de sono.",
+      "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 28,
       "lastnode":26
+    },
+    {
+      "node": 28,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 29,
+      "lastnode":27,
+      "todo": "Sair do Quarto. (E)"
+    },
+    {
+      "node": 29,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 30,
+      "lastnode":28,
+      "todo": "Sair de Casa. (E)"
+    },
+    {
+      "node": 30,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 31,
+      "lastnode": 29,
+      "todo": "Vai para o teu lugar. (E)"
+    },
+    {
+      "node": 31,
+      "showdialogue": "A primeira aula é de matemática, disciplina que tu adoras. Nesta aula falam sobre sólidos geoméricos e volumes.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 32,
+      "lastnode":30
+    },
+    {
+      "node": 32,
+      "showdialogue": "É uma matéria que tu já dominas, porque a tua mãe é professora de matemática e explica-te o que vai ser dado antes das aulas.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 33,
+      "lastnode":31
+    },
+    {
+      "node": 33,
+      "showdialogue": "Toca a campainha e a aula termina. Vais ter com os teus amigos.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 34,
+      "lastnode":32
+    },
+    {
+      "node": 34,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "availablemissions" : [5,6,7,8],
+      "nextnode": 35,
+      "lastnode":33
     },
 
     {

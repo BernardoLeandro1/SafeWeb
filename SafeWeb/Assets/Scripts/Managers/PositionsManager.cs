@@ -17,11 +17,13 @@ public class PositionsManager : MonoBehaviour
     public Transform playerCasaPosition3;
     public Transform playerCasaPosition4;
     public Transform playerCasaPosition5;
+
+    public LogicManager logicManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        logicManager = GetComponent<LogicManager>();
     }
 
     // Update is called once per frame

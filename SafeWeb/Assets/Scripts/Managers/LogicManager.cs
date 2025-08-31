@@ -40,6 +40,8 @@ public class LogicManager : MonoBehaviour
 
     private string teleportFrom = "";
 
+    private int day = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -80,6 +82,11 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = quartoPlayer.position;
                 nodeManager.NextNode();
             }
+            // else if (missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
+            // {
+            //     player.transform.position = salaPlayer.position;
+            //     nodeManager.NextNode();
+            // }
             teleport = false;
         }
         
@@ -120,7 +127,7 @@ public class LogicManager : MonoBehaviour
                         }
 
                     }
-                    else if (interactObj.gameObject.name.Contains("Bed") )
+                    else if (interactObj.gameObject.name.Contains("Bed"))
                     {
                         if (canGoToBed)
                         {
@@ -134,9 +141,13 @@ public class LogicManager : MonoBehaviour
                             Cursor.visible = true;
                             //nodeManager.NextNode();
                             canGoToBed = false;
+                            day++;
+                            charactersManager.UpdateCharactersPositions(day);
+                            missionManager.solved = 0;
+                            charactersManager.HideCharacters();
                             uIManager.fadeInStart.GetComponent<Animator>().SetTrigger("End");
                         }
-                        
+
                     }
                     else if (hasDoneMission == true)
                     {
@@ -193,6 +204,14 @@ public class LogicManager : MonoBehaviour
                         teleport = true;
                         teleportFrom = "bedroom";
                     }
+                    // else if (interactObj.name.Contains("bedroom") && missionManager.solved == 6)
+                    // {
+                    //     // canGoToBed = true;
+                    //     // player.transform.position = quartoPlayer.position;
+                    //     // nodeManager.NextNode();
+                    //     teleport = true;
+                    //     teleportFrom = "bedroom";
+                    // }
                     
                 }
             }
@@ -203,7 +222,7 @@ public class LogicManager : MonoBehaviour
             if (stringObj != null)
             {
                 player.transform.position = freePlayer.position;
-                cam.GetComponent<CinemachinePanTilt>().PanAxis.Value = 180f;
+                cam.GetComponent<CinemachinePanTilt>().PanAxis.Value = 0f;
                 cam.GetComponent<CinemachinePanTilt>().TiltAxis.Value = 0f;
             }
             cam.GetComponent<CinemachineInputAxisController>().enabled = true;

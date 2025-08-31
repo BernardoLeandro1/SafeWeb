@@ -85,6 +85,31 @@ public class MissionManager : MonoBehaviour
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
+        else if (currentMission == missions[5])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission6.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[6])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission7.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[7])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission8.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[8])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission9.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+
     }
 
     // Update is called once per frame
