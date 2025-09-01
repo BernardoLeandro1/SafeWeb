@@ -1,14 +1,14 @@
 [
     {
     "node": 1,
-    "showdialogue": "Chegaste a casa e fosta falar com os teus pais.",
+    "showdialogue": "Foste falar com a Maria. Ela queria falar com a professora antes da próxima aula, para tirar uma dúvida.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 2
     },
     {
     "node": 2,
-    "showdialogue": "Olá, tudo bem?",
+    "showdialogue": "Olá, Maria. Onde vais?",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 3,
@@ -16,15 +16,15 @@
     },
     {
     "node": 3,
-    "showdialogue": "Sim e contigo?",
-    "name": "Mãe",
+    "showdialogue": "Olá, vou falar com a professora. Preciso que ela me explique uma parte da matéria que demos na última aula.",
+    "name": "Maria",
     "displaycamera": "foxCam",
     "nextnode": 4,
     "lastnode":2
     },
     {
     "node": 4,
-    "showdialogue": "Também. Pais, os meus amigos mostraram-me uma rede social nova.",
+    "showdialogue": "Também fiquei com algumas dúvidas.",
     "name": "Tu",
     "displaycamera": "foxCam",
     "lastnode":3,
@@ -32,23 +32,24 @@
     },
     {
     "node": 5,
-    "showdialogue": "Eles queriam que eu criasse conta com eles, mas eu decidi perguntar-vos primeiro. Posso?",
-    "name": "Tu",
+    "showdialogue": "Queres vir comigo?",
+    "name": "Maria",
     "displaycamera": "foxCam",
     "nextnode": 6,
     "lastnode":4
     },
     {
     "node": 6,
-    "showdialogue": "Tens de ter muito cuidado nas redes sociais. Mas, como tomaste essa decisão, eu e a tua mãe achamos que podes criar conta.",
-    "name": "Pai",
-    "displaycamera": "foxCam",
-    "nextnode": 7,
+    "showchoicepanel":[
+      {"nextnode": 7, "showdialogue": "Vais com ela."},
+      {"nextnode": 9, "showdialogue": "Não vais com ela."}
+    ],
+    "nextnode": 0,
     "lastnode":5
     },
     {
     "node": 7,
-    "showdialogue": "Pegas no teu telemóvel, descarregas a aplicação e crias conta.",
+    "showdialogue": "Decidiste ir com a Maria falar com a professora.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 8,
@@ -56,16 +57,15 @@
     },
     {
     "node": 8,
-    "showdialogue": "free mode",
+    "showdialogue": "A professora foi muito atenciosa e conseguiram compreender melhor a matéria. Estava na altura de regressar à sala, para uma nova aula.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 9,
-    "lastnode":7,
-    "todo": "Pega no teu telemóvel (P)."
+    "nextnode": 11,
+    "lastnode":7
     },
     {
     "node": 9,
-    "showdialogue": "Depois de criar conta, está na hora de aceitares ou recusares os pedidos de amizades.",
+    "showdialogue": "Decidiste esperar pela próxima aula para tirar a tua dúvida.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 10,
@@ -73,79 +73,19 @@
     },
     {
     "node": 10,
-    "showdialogue": "free mode",
+    "showdialogue": "Foste ter com outros colegas e ficaram a conversar até ser hora de voltar para a sala, para ter uma nova aula.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 11,
-    "lastnode":9,
-    "todo": "Aceita ou recusa os pedidos de amizade (P).1"
+    "lastnode":9
     },
     {
     "node": 11,
-    "showdialogue": "Após analisares todos os pedidos, voltas para o pé dos teus pais.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 16,
-    "lastnode":10
-    },
-    {
-    "node": 12,
-    "showdialogue": "Com a ajuda deles, eu criei conta. Já os adicionei e tudo.",
-    "name": "Tu",
-    "displaycamera": "foxCam",
-    "nextnode": 13,
-    "lastnode":4
-    },
-    {
-    "node": 13,
-    "showdialogue": "Não acredito que fizeste isso. Devias ter pedido permissão primeiro.",
-    "name": "Pai",
-    "displaycamera": "foxCam",
-    "nextnode": 14,
-    "lastnode":12
-    },
-    {
-    "node": 14,
-    "showdialogue": "Sim, tens de ter muito cuidado ao adicionar pessoas nas redes sociais. Tens de confirmar sempre com os teus amigos se aquela é a conta deles.",
-    "name": "Mãe",
-    "displaycamera": "foxCam",
-    "nextnode": 15,
-    "lastnode":13
-    },
-    {
-    "node": 15,
-    "showdialogue": "Ficaste uma pouco triste depois de ouvir aquele ralhete.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 17,
-    "lastnode":14
-    },
-    {
-    "node": 16,
-    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar , tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 18,
-    "lastnode":11
-    },
-    {
-    "node": 17,
-    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar , tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 18,
-    "lastnode":15
-    },
-
-
-    {
-    "node": 18,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",
-    "nextnode": 4,
-    "lastnode":2,
-    "todo": "Fim"
+    "nextnode": 0,
+    "lastnode":0
     }
 
 ]

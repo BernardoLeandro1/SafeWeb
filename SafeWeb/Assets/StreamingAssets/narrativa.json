@@ -284,14 +284,130 @@
       "nextnode": 35,
       "lastnode":33
     },
-
+    {
+      "node": 35,
+      "showdialogue": "Começa a segunda aula do dia. Desta feita, a aula é de português.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 36,
+      "lastnode":34
+    },
+    {
+      "node": 36,
+      "showdialogue": "Tu não gostas muito de português. Tens receio de ler em voz alta e enganares-te, fazendo toda a gente se rir.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 37,
+      "lastnode":35
+    },
+    {
+      "node": 37,
+      "showdialogue": "Na aula, leram a um excerto da obra <i>Ulisses</i>. Por sorte, a professora não chamou o teu nome e, assim, apenas acompanhaste a leitura dos teus colegas.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 38,
+      "lastnode":36
+    },
+    {
+      "node": 38,
+      "showdialogue": "O resto da aula foi passada a praticar a gramática, até tocar novamente a campainha para novo intervalo.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 39,
+      "lastnode":37
+    },
+    {
+      "node": 39,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 40,
+      "lastnode":38
+    },
+    {
+      "node": 40,
+      "showdialogue": "Começa a aula de Educação Visual. Esta é a tua pior disciplina.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 41,
+      "lastnode":39
+    },
+    {
+      "node": 41,
+      "showdialogue": "Não tens grande jeito para desenho e os trabalhos de casa são sempre feitos à última hora com ajuda dos teus pais.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 42,
+      "lastnode":40
+    },
+    {
+      "node": 42,
+      "showdialogue": "O objetivo desta aula era fazer um postal de Natal para cada um enviar à sua família.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 43,
+      "lastnode":41
+    },
+    {
+      "node": 43,
+      "showdialogue": "O teu postal não era dos melhores, mas, pelo menos, foi feito com amor e carinho. A tua família vai gostar.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 44,
+      "lastnode":42
+    },
+    {
+      "node": 44,
+      "showdialogue": "O tempo passa rápido e, quando te apercebes, é hora de almoço. Após o almoço, vais falar com os teus amigos.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 45,
+      "lastnode":43
+    },
+    {
+      "node": 45,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 46,
+      "lastnode":44
+    },
+    {
+      "node": 46,
+      "showdialogue": "É de tarde e, de barriga cheia, não tens muita vontade para ter aulas.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 47,
+      "lastnode":45
+    },
+    {
+      "node": 47,
+      "showdialogue": "Desta forma, apesar da aula ser de história, uma aula que, normalmente, achas interessante, esta foi bastante enfadonha para ti e demorou imenso tempo a passar.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 48,
+      "lastnode":46
+    },
+    {
+      "node": 48,
+      "showdialogue": "Estavas quase a adormecer quando a campainha tocou para o intervalo.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 49,
+      "lastnode":47
+    },
     {
       "node": 28,
       "showdialogue": "FIM",
       "name": "Narrador",
       "nextnode": -1
     }
-    
+
+  
+
+
+
+
 
 
 
