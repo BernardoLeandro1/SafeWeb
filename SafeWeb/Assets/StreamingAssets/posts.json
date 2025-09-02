@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Maria\nEu e o meu desenho mais recente!\n#desenho",
+        "photo": "maria.png",
+        "post": "mariadesenho.png",
+        "choices":[
+            {"text": "Correr", "score": 1, "reference": "maria"},
+            {"text": "Saltar", "score": 1, "reference": "maria"},
+            {"text": "Nadar", "score": 1, "reference": "maria"}
+        ],
+        "day": 1
+    },
+    {
+        "name": "Ana",
+        "photo": "ana.png",
+        "day": 1
+    },
+    {
+        "name": "Roberto",
+        "photo": "roberto.png",
+        "day": 1
+    },
+    {
+        "name": "João",
+        "photo": "joao.png",
+        "day": 1
+    },
+    {
+        "name": "António",
+        "photo": "antonio.png",
+        "day": 1
+    },
+    {
+        "name": "Clara",
+        "photo": "clara.png",
+        "day": 1
+    }
+]

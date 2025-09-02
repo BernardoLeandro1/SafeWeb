@@ -269,6 +269,11 @@ public class LogicManager : MonoBehaviour
 
     }
 
+    public int GetDay()
+    {
+        return day;
+    }
+
     public void ActivatePhone()
     {
         Cursor.lockState = CursorLockMode.None;

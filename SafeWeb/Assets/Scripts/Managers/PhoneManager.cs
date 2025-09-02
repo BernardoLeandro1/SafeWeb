@@ -35,6 +35,9 @@ public class PhoneManager : MonoBehaviour
 
     public GameObject erro;
 
+    //public RectTransform choiceParent;      // Assign the Content GameObject here
+    public GameObject choiceButtonPrefab;
+
 
     private string username = "";
 
@@ -47,6 +50,8 @@ public class PhoneManager : MonoBehaviour
     private MissionManager missionManager;
 
     List<Friend> friendNodes;
+
+    List<PostMade> postNodes;
     int currentDay;
 
     List<GameObject> friendsList;
@@ -72,9 +77,13 @@ public class PhoneManager : MonoBehaviour
         var json = reader.ReadToEnd();
         friendNodes = JsonConvert.DeserializeObject<List<Friend>>(json);
         friendsList = new List<GameObject>();
+        reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "posts.json"));
+        json = reader.ReadToEnd();
+        postNodes = JsonConvert.DeserializeObject<List<PostMade>>(json);
         postsList = new List<GameObject>();
         messagesList = new List<GameObject>();
         addedFriends = new List<string>();
+        ShowPosts();
     }
 
     // Update is called once per frame
@@ -105,14 +114,94 @@ public class PhoneManager : MonoBehaviour
     /// Adds a new post to the scrollable content.
     /// </summary>
     /// <param name="postData">Text or data for the post.</param>
-    public void AddPost(string postData)
+    public void AddPost(string postText, string profile, string post, List<PhoneChoices>choices)
     {
         // Instantiate the prefab as a child of contentPanel
         GameObject newPost = Instantiate(postPrefab, contentPanel);
         // Optionally, set the text or other UI data
         var textComp = newPost.GetComponentInChildren<TMP_Text>();
         if (textComp != null)
-            textComp.text = postData;
+            textComp.text = postText;
+
+        var profileImage = newPost.transform.Find("ProfilePic").GetComponent<Image>();
+        
+
+        string filePath = Path.Combine(Application.streamingAssetsPath, "/Images/" + profile);
+        Debug.Log(filePath);
+        //Sprite www = Resources.Load(Application.streamingAssetsPath+filePath) as Sprite;
+        //Debug.Log(www);
+        byte[] fileData = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + filePath);
+        Texture2D tex = new Texture2D(2, 2); // size doesn’t matter here, will be replaced
+        if (tex.LoadImage(fileData))
+        {
+            tex.filterMode = FilterMode.Point; // Optional: Pixel Art
+            tex.wrapMode = TextureWrapMode.Clamp;
+
+            Sprite www = Sprite.Create(
+                tex,
+                new Rect(0, 0, tex.width, tex.height),
+                new Vector2(0.5f, 0.5f), // Pivot
+                100.0f                    // Pixels Per Unit — match to your project
+            );
+            profileImage.sprite = www;
+            //newRequest.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Could not load image data.");
+        }
+        if (post != null)
+        {
+            var postImage = newPost.transform.Find("PostImage").GetComponent<Image>();
+
+            string filePath2 = Path.Combine(Application.streamingAssetsPath, "/Images/" + post);
+            Debug.Log(filePath);
+            //Sprite www = Resources.Load(Application.streamingAssetsPath+filePath) as Sprite;
+            //Debug.Log(www);
+            byte[] fileData2 = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + filePath2);
+            Texture2D tex2 = new Texture2D(2, 2); // size doesn’t matter here, will be replaced
+            if (tex2.LoadImage(fileData2))
+            {
+                tex2.filterMode = FilterMode.Point; // Optional: Pixel Art
+                tex2.wrapMode = TextureWrapMode.Clamp;
+
+                Sprite www = Sprite.Create(
+                    tex2,
+                    new Rect(0, 0, tex2.width, tex2.height),
+                    new Vector2(0.5f, 0.5f), // Pivot
+                    100.0f                    // Pixels Per Unit — match to your project
+                );
+                postImage.sprite = www;
+                //newRequest.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("Could not load image data.");
+            }
+        }
+
+        var choiceParent = newPost.transform.Find("Choices").transform;
+        if (choices != null)
+        {
+            Debug.Log("YOOOOOOOOOOOOOOOOOOOOOOOO");
+            foreach (var choice in choices)
+            {
+                GameObject btnObj = Instantiate(choiceButtonPrefab, choiceParent);
+                Button btn = btnObj.GetComponent<Button>();
+                TMP_Text btnText = btn.GetComponentInChildren<TMP_Text>();
+
+                btnText.text = choice.Text;
+
+                btn.onClick.AddListener(() =>
+                {
+                    Debug.Log("clicked: " + choice.Text);
+
+                    postsList.Remove(newPost);
+                    Destroy(newPost);
+                });
+            }
+        }
+        
 
         postsList.Add(newPost);
     }
@@ -220,6 +309,19 @@ public class PhoneManager : MonoBehaviour
 
     }
 
+    public void ShowPosts()
+    {
+        foreach (PostMade post in postNodes)
+        {
+            Debug.Log(post.Day);
+            if (post.Day == logicManager.GetDay())
+            {
+                AddPost(post.Name, post.Photo, post.Post, post.Choices);
+            }
+        }
+        DisplayPosts();
+    }
+
     public void Registar()
     {
         if (pass.text.Length < 8)
@@ -304,8 +406,46 @@ public class Friend
         this.Photo = photo;
         this.Day = day;
     }
-    
 
-    
 
+
+
+}
+
+
+public class PostMade
+{
+    public string Name { get; private set; }
+
+    public string Photo { get; private set; }
+
+    public string Post { get; private set; }
+
+    public int Day { get; set; }
+
+    public List<PhoneChoices> Choices { get; set; }
+
+    public PostMade(string name, string photo, string post, int day)
+    {
+        this.Name = name;
+        this.Photo = photo;
+        this.Post = post;
+        this.Day = day;
+    }
+}
+
+public class PhoneChoices
+{
+    public string Text { get; private set; }
+
+    public int Score { get; private set; }
+
+    public string Reference { get; private set; }
+
+    public PhoneChoices(string text, int score, string reference)
+    {
+        this.Text = text;
+        this.Score = score;
+        this.Reference = reference;
+    }
 }

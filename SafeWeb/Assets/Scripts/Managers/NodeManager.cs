@@ -243,10 +243,13 @@ public class DialogueChoices
     public int NextNode { get; private set; }
     public string ShowDialogue { get; private set; }
 
-    public DialogueChoices(int nextNode, string showDialogue)
+    public int Score { get; private set; }
+
+    public DialogueChoices(int nextNode, string showDialogue, int score = 0)
     {
         this.NextNode = nextNode;
         this.ShowDialogue = showDialogue;
+        this.Score = score;
     }
 }
 
