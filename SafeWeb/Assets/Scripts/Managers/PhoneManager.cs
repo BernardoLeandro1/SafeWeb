@@ -27,6 +27,8 @@ public class PhoneManager : MonoBehaviour
 
     public GameObject friendRequestPrefab;
 
+    public GameObject messagePrefab;           // Assign your Message prefab here
+
     public TMP_InputField user;
 
     public TMP_InputField pass;
@@ -52,6 +54,8 @@ public class PhoneManager : MonoBehaviour
     List<Friend> friendNodes;
 
     List<PostMade> postNodes;
+
+    List<MessageReceived> messageNodes;
     int currentDay;
 
     List<GameObject> friendsList;
@@ -80,10 +84,13 @@ public class PhoneManager : MonoBehaviour
         reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "posts.json"));
         json = reader.ReadToEnd();
         postNodes = JsonConvert.DeserializeObject<List<PostMade>>(json);
+        reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "messages.json"));
+        json = reader.ReadToEnd();
+        messageNodes = JsonConvert.DeserializeObject<List<MessageReceived>>(json);
         postsList = new List<GameObject>();
         messagesList = new List<GameObject>();
         addedFriends = new List<string>();
-        ShowPosts();
+        ShowMessages();
     }
 
     // Update is called once per frame
@@ -206,6 +213,68 @@ public class PhoneManager : MonoBehaviour
         postsList.Add(newPost);
     }
 
+    public void AddMessage(string postText, string profile, List<PhoneChoices>choices)
+    {
+        // Instantiate the prefab as a child of contentPanel
+        GameObject newPost = Instantiate(messagePrefab, contentPanel);
+        // Optionally, set the text or other UI data
+        var textComp = newPost.GetComponentInChildren<TMP_Text>();
+        if (textComp != null)
+            textComp.text = postText;
+
+        var profileImage = newPost.transform.Find("ProfilePic").GetComponent<Image>();
+        
+
+        string filePath = Path.Combine(Application.streamingAssetsPath, "/Images/" + profile);
+        Debug.Log(filePath);
+        //Sprite www = Resources.Load(Application.streamingAssetsPath+filePath) as Sprite;
+        //Debug.Log(www);
+        byte[] fileData = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + filePath);
+        Texture2D tex = new Texture2D(2, 2); // size doesn’t matter here, will be replaced
+        if (tex.LoadImage(fileData))
+        {
+            tex.filterMode = FilterMode.Point; // Optional: Pixel Art
+            tex.wrapMode = TextureWrapMode.Clamp;
+
+            Sprite www = Sprite.Create(
+                tex,
+                new Rect(0, 0, tex.width, tex.height),
+                new Vector2(0.5f, 0.5f), // Pivot
+                100.0f                    // Pixels Per Unit — match to your project
+            );
+            profileImage.sprite = www;
+            //newRequest.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Could not load image data.");
+        }
+
+        var choiceParent = newPost.transform.Find("Choices").transform;
+        if (choices != null)
+        {
+            foreach (var choice in choices)
+            {
+                GameObject btnObj = Instantiate(choiceButtonPrefab, choiceParent);
+                Button btn = btnObj.GetComponent<Button>();
+                TMP_Text btnText = btn.GetComponentInChildren<TMP_Text>();
+
+                btnText.text = choice.Text;
+
+                btn.onClick.AddListener(() =>
+                {
+                    Debug.Log("clicked: " + choice.Text);
+
+                    messagesList.Remove(newPost);
+                    Destroy(newPost);
+                });
+            }
+        }
+        
+        newPost.SetActive(false);
+        messagesList.Add(newPost);
+    }
+
     public void SetDay(int day)
     {
         currentDay = day;
@@ -320,6 +389,18 @@ public class PhoneManager : MonoBehaviour
             }
         }
         DisplayPosts();
+    }
+
+    public void ShowMessages()
+    {
+        foreach (MessageReceived message in messageNodes)
+        {
+            Debug.Log(message.Day);
+            if (message.Day == logicManager.GetDay())
+            {
+                AddMessage(message.Name, message.Photo,  message.Choices);
+            }
+        }
     }
 
     public void Registar()
@@ -448,4 +529,22 @@ public class PhoneChoices
         this.Score = score;
         this.Reference = reference;
     }
+}
+
+public class MessageReceived
+{
+    public string Name { get; private set; }
+
+    public string Photo { get; private set; }
+
+    public int Day { get; set; }
+
+    public List<PhoneChoices> Choices { get; set; }
+    public MessageReceived(string name, string photo, int day)
+    {
+        this.Name = name;
+        this.Photo = photo;
+        this.Day = day;
+    }
+
 }

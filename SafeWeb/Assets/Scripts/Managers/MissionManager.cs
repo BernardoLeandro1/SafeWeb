@@ -125,6 +125,10 @@ public class MissionManager : MonoBehaviour
 
     public void SelectMission(int missionId)
     {
+        if (missionId == 8)
+        {
+            phoneManager.ShowPosts();
+        }
         currentMission = missions[missionId];
         OpenCurrentMissionsFile();
         MissionOnGoing();
