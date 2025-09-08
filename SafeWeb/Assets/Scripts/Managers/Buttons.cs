@@ -26,4 +26,9 @@ public class Buttons : MonoBehaviour
     {
         phoneManager.Recusar(transform.parent.gameObject);
     }
+
+    public void Sair()
+    {
+        Application.Quit();
+    }
 }

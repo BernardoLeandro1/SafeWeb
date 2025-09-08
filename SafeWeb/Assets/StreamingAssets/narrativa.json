@@ -60,7 +60,7 @@
     },
     {
     "node": 8,
-    "showdialogue": "Na frente da sala, Há algumas prateleiras com livros de vários géneros, um quadro branco onde os professores escrevem a matéria, exercícios e trabalhos de casa e a secretária destes.",
+    "showdialogue": "Na frente da sala, há algumas prateleiras com livros de vários géneros, um quadro branco onde os professores escrevem a matéria, exercícios e trabalhos de casa e a secretária destes.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 9,

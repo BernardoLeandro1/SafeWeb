@@ -7,6 +7,7 @@ using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System;
 
 public class PhoneManager : MonoBehaviour
 {
@@ -90,7 +91,6 @@ public class PhoneManager : MonoBehaviour
         postsList = new List<GameObject>();
         messagesList = new List<GameObject>();
         addedFriends = new List<string>();
-        ShowMessages();
     }
 
     // Update is called once per frame
@@ -121,7 +121,7 @@ public class PhoneManager : MonoBehaviour
     /// Adds a new post to the scrollable content.
     /// </summary>
     /// <param name="postData">Text or data for the post.</param>
-    public void AddPost(string postText, string profile, string post, List<PhoneChoices>choices)
+    public void AddPost(string postText, string profile, string post, List<PhoneChoices> choices)
     {
         // Instantiate the prefab as a child of contentPanel
         GameObject newPost = Instantiate(postPrefab, contentPanel);
@@ -131,7 +131,7 @@ public class PhoneManager : MonoBehaviour
             textComp.text = postText;
 
         var profileImage = newPost.transform.Find("ProfilePic").GetComponent<Image>();
-        
+
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "/Images/" + profile);
         Debug.Log(filePath);
@@ -205,15 +205,29 @@ public class PhoneManager : MonoBehaviour
 
                     postsList.Remove(newPost);
                     Destroy(newPost);
+                    if (postsList.Count == 0)
+                    {
+                        missionManager.isWaiting = false;
+                        if (logicManager.GetDay() == 1)
+                        {
+                            uIManager.HidePhone();
+                            logicManager.DeactivatePhone();
+                            if (missionManager.GetCurrentMission().Id == 8)
+                            {
+                                uIManager.DisplayToDoList("Volta a falar com a Ana. (E)");
+                            }
+                        }
+
+                    }
                 });
             }
         }
-        
+
 
         postsList.Add(newPost);
     }
 
-    public void AddMessage(string postText, string profile, List<PhoneChoices>choices)
+    public void AddMessage(string postText, string profile, List<PhoneChoices> choices)
     {
         // Instantiate the prefab as a child of contentPanel
         GameObject newPost = Instantiate(messagePrefab, contentPanel);
@@ -223,7 +237,7 @@ public class PhoneManager : MonoBehaviour
             textComp.text = postText;
 
         var profileImage = newPost.transform.Find("ProfilePic").GetComponent<Image>();
-        
+
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "/Images/" + profile);
         Debug.Log(filePath);
@@ -267,22 +281,34 @@ public class PhoneManager : MonoBehaviour
 
                     messagesList.Remove(newPost);
                     Destroy(newPost);
+                    if (messagesList.Count == 0)
+                    {
+                        missionManager.isWaiting = false;
+                        if (logicManager.GetDay() == 1)
+                        {
+                            uIManager.HidePhone();
+                            logicManager.DeactivatePhone();
+                            if (missionManager.GetCurrentMission().Id == 8)
+                            {
+                                uIManager.DisplayToDoList("Volta a falar com a Ana. (E)");
+                            }
+                        }
+
+                    }
                 });
             }
         }
-        
+
         newPost.SetActive(false);
         messagesList.Add(newPost);
     }
 
-    public void SetDay(int day)
+    public void ShowRequests()
     {
-        currentDay = day;
-        Debug.Log(day);
         foreach (Friend friend in friendNodes)
         {
             Debug.Log(friend.Day);
-            if (friend.Day == day)
+            if (friend.Day == logicManager.GetDay())
             {
                 ShowFriendRequests(friend.Photo, friend.Name);
             }
@@ -398,7 +424,7 @@ public class PhoneManager : MonoBehaviour
             Debug.Log(message.Day);
             if (message.Day == logicManager.GetDay())
             {
-                AddMessage(message.Name, message.Photo,  message.Choices);
+                AddMessage(message.Name, message.Photo, message.Choices);
             }
         }
     }
@@ -433,7 +459,7 @@ public class PhoneManager : MonoBehaviour
         if (friendsList.Count == 0)
         {
             missionManager.isWaiting = false;
-            if (currentDay == 1)
+            if (logicManager.GetDay() == 1)
             {
                 uIManager.HidePhone();
                 logicManager.DeactivatePhone();
@@ -442,7 +468,7 @@ public class PhoneManager : MonoBehaviour
                 //missionManager.NextNodeMissions();
             }
         }
-        
+
     }
 
     public void Recusar(GameObject gameObject)
@@ -452,7 +478,7 @@ public class PhoneManager : MonoBehaviour
         if (friendsList.Count == 0)
         {
             missionManager.isWaiting = false;
-            if (currentDay == 1)
+            if (logicManager.GetDay() == 1)
             {
                 uIManager.HidePhone();
                 logicManager.DeactivatePhone();
@@ -460,10 +486,25 @@ public class PhoneManager : MonoBehaviour
                 //missionManager.UpdateNodes();
                 //missionManager.NextNodeMissions();
             }
-            
+
         }
     }
-    
+
+    public List<string> GetFriends()
+    {
+        foreach (var friend in addedFriends)
+        {
+            Debug.Log("friend: "+friend);
+        }
+        return addedFriends;
+    }
+    public void Friends()
+    {
+        foreach (var friend in addedFriends)
+        {
+            Debug.Log("friend: "+friend);
+        }
+    }
 
 
 

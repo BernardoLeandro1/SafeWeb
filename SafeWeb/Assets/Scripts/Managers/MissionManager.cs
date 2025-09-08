@@ -123,12 +123,14 @@ public class MissionManager : MonoBehaviour
         return missions;
     }
 
+    
+    public Mission GetCurrentMission()
+    {
+        return currentMission;
+    }
+
     public void SelectMission(int missionId)
     {
-        if (missionId == 8)
-        {
-            phoneManager.ShowPosts();
-        }
         currentMission = missions[missionId];
         OpenCurrentMissionsFile();
         MissionOnGoing();
@@ -189,7 +191,22 @@ public class MissionManager : MonoBehaviour
                 uIManager.DisplayToDoList(dialogueNodes[node].ToDo.Split(".")[0]);
                 if (dialogueNodes[node].ToDo.Contains("Aceita ou recusa"))
                 {
-                    phoneManager.SetDay(int.Parse(dialogueNodes[node].ToDo.Split(".")[1]));
+                    phoneManager.ShowRequests();
+                }
+            }
+            if (dialogueNodes[node].Trigger != null)
+            {
+                if (dialogueNodes[node].Trigger.Contains("posts"))
+                {
+                    phoneManager.ShowPosts();
+                }
+                else if (dialogueNodes[node].Trigger.Contains("messages"))
+                {
+                    phoneManager.ShowMessages();
+                }
+                else if (dialogueNodes[node].Trigger.Contains("requests"))
+                {
+                    phoneManager.ShowRequests();
                 }
             }
             lastNode = dialogueNodes[node].LastNode - 1;
@@ -227,6 +244,21 @@ public class MissionManager : MonoBehaviour
                     {
                         node = 11;
                         lastNode = 3;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("clara"))
+                {
+                    Debug.Log("AHHHHHHHHHHHHHHHHHHHH CARALHOOOOOOOOOOOOOOO");
+                    phoneManager.Friends();
+                    if (phoneManager.GetFriends().Contains("Clara"))
+                    {
+                        node = 9;
+                        lastNode = 8;
+                    }
+                    else
+                    {
+                        node = 10;
+                        lastNode = 8;
                     }
                 }
             }

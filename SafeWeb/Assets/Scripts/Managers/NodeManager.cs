@@ -231,6 +231,8 @@ public class DialogueNode
 
     public List<int> AvailableMissions { get; set; }
 
+    public string Trigger { get; set; }
+
 
     
     

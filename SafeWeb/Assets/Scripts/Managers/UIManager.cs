@@ -70,37 +70,37 @@ public class UIManager : MonoBehaviour
         // check for limits due to dialogue box bug and inserts a \n instead of a space to fix it
         dialogueChecker = dialogue;
         var chars = dialogue.ToCharArray();
-        int charBreak = 72;
-        int i = 0;
-        foreach (char c in chars)
-        {
-            if (c == char.Parse("\n"))
-            {
-                if (i > charBreak)
-                {
-                    charBreak += i % charBreak;
-                    i = 0;
-                }
-                else
-                {
-                    charBreak += i;
-                    i = 0;
-                }
-            }
-            i++;
-        }
-        while (charBreak < chars.Length)
-        {
-            if (chars[charBreak] == char.Parse(" "))
-            {
-                chars[charBreak] = char.Parse("\n");
-                charBreak += 72;
-            }
-            else
-            {
-                charBreak--;
-            }
-        }
+        // int charBreak = 72;
+        // int i = 0;
+        // foreach (char c in chars)
+        // {
+        //     if (c == char.Parse("\n"))
+        //     {
+        //         if (i > charBreak)
+        //         {
+        //             charBreak += i % charBreak;
+        //             i = 0;
+        //         }
+        //         else
+        //         {
+        //             charBreak += i;
+        //             i = 0;
+        //         }
+        //     }
+        //     i++;
+        // }
+        // while (charBreak < chars.Length)
+        // {
+        //     if (chars[charBreak] == char.Parse(" "))
+        //     {
+        //         chars[charBreak] = char.Parse("\n");
+        //         charBreak += 72;
+        //     }
+        //     else
+        //     {
+        //         charBreak--;
+        //     }
+        // }
         // add characters to the screen
         foreach (char c in chars)
         {

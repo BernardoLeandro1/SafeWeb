@@ -63,7 +63,7 @@ public class ChoicesPanelManager : MonoBehaviour
                 newTitle.font = asset;
                 newTitle.fontSize = 12;
                 newTitle.color = new Color(255,255,255,1);
-
+                
                 choiceButton = new ChoiceButton {button=newButton, title=newTitle, layout=newLayout};
                 buttons.Add(choiceButton);
             }
