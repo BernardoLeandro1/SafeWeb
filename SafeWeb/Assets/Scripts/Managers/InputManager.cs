@@ -28,13 +28,13 @@ public class InputManager : MonoBehaviour
                 logicManager.Interaction();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (logicManager.GetMode() == "lock")
-            {
-                logicManager.ChangeMode(stringObj: "chair");
-            }
-        }
+        // else if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     if (logicManager.GetMode() == "lock")
+        //     {
+        //         logicManager.ChangeMode(stringObj: "chair");
+        //     }
+        // }
         else if (Input.GetKeyDown(KeyCode.P))
         {
             if (logicManager.GetMode() == "free")

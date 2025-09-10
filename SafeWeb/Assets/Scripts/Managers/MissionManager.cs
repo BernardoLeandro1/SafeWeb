@@ -28,6 +28,8 @@ public class MissionManager : MonoBehaviour
 
     int conta = 0;
 
+    public int link = 0;
+
     public bool isWaiting = false;
 
     public int solved = 0;
@@ -248,8 +250,6 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("clara"))
                 {
-                    Debug.Log("AHHHHHHHHHHHHHHHHHHHH CARALHOOOOOOOOOOOOOOO");
-                    phoneManager.Friends();
                     if (phoneManager.GetFriends().Contains("Clara"))
                     {
                         node = 9;
@@ -257,8 +257,21 @@ public class MissionManager : MonoBehaviour
                     }
                     else
                     {
-                        node = 10;
+                        node = 15;
                         lastNode = 8;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("link"))
+                {
+                    if (link==1)
+                    {
+                        node = 12;
+                        lastNode = 11;
+                    }
+                    else
+                    {
+                        node = 13;
+                        lastNode = 11;
                     }
                 }
             }

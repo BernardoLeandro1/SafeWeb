@@ -201,10 +201,11 @@ public class PhoneManager : MonoBehaviour
 
                 btn.onClick.AddListener(() =>
                 {
-                    Debug.Log("clicked: " + choice.Text);
+                    Debug.Log("clicked: [" + choice.Text + "]");
 
                     postsList.Remove(newPost);
                     Destroy(newPost);
+                    
                     if (postsList.Count == 0)
                     {
                         missionManager.isWaiting = false;
@@ -278,6 +279,16 @@ public class PhoneManager : MonoBehaviour
                 btn.onClick.AddListener(() =>
                 {
                     Debug.Log("clicked: " + choice.Text);
+                    if (choice.Text.Contains("Não clicas no link"))
+                    {
+                        Debug.Log("clicked2: " + choice.Text);
+                        missionManager.link = 0;
+                    }
+                    else if (choice.Text.Contains("Clicas no link"))
+                    {
+                        Debug.Log("clicked2: " + choice.Text);
+                        missionManager.link = 1;
+                    }
 
                     messagesList.Remove(newPost);
                     Destroy(newPost);

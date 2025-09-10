@@ -78,34 +78,99 @@
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 11,
-    "lastnode":9,
-    "trigger":"messages"
+    "lastnode":9
     },
     {
     "node": 11,
+    "showdialogue": "free mode.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 12,
+    "lastnode":10,
+    "todo": "Pega no teu telemóvel. (P)",
+    "trigger":"messages"
+    },
+    {
+    "node": 12,
+    "showdialogue": "E então?",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "lastnode":11,
+    "checkcond":"link"
+    },
+    {
+    "node": 13,
+    "showdialogue": "Era uma mensagem de uma rapariga que se chama Clara, a pedir para eu clicar num link para eu a ajudar numa competição. Eu cliquei no link e de repente o telemóvel desligou-se... Que estranho!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":12
+    },
+    {
+    "node": 14,
+    "showdialogue": "Era uma mensagem de uma rapariga que se chama Clara, a pedir para eu clicar num link para eu a ajudar numa competição. Eu não cliquei no link, porque não a conheço muito bem...",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":12
+    },
+    {
+    "node": 15,
+    "showdialogue": "Mas pronto, vou fazer o meu primeiro post!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 16,
+    "lastnode": 12
+    },
+    
+    {
+    "node": 16,
     "showchoicepanel":[
-      {"nextnode": 12, "showdialogue": "Partilhas um desenho da Maria."},
-      {"nextnode": 13, "showdialogue": "Partilhas uma foto tua ao pé de tua casa."},
-      {"nextnode": 14, "showdialogue": "Partilhas o teu cão a correr atrás duma bola."}
+      {"nextnode": 17, "showdialogue": "Partilhas um desenho da Maria."},
+      {"nextnode": 18, "showdialogue": "Partilhas uma foto tua ao pé de tua casa."},
+      {"nextnode": 19, "showdialogue": "Partilhas o teu cão a correr atrás duma bola."}
     ],
     "nextnode": 0,
     "lastnode":9
     },
     {
-    "node": 10,
-    "showdialogue": "Foste ter com outros colegas e ficaram a conversar até ser hora de voltar para a sala, para ter uma nova aula.",
+    "node": 17,
+    "showdialogue": "A Maria não gostou que postasses uma foto de um desenho dela sem pedires permissão.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 11,
-    "lastnode":9
+    "nextnode": 20,
+    "lastnode":16
     },
     {
-    "node": 11,
+    "node": 18,
+    "showdialogue": "Alguém, que não conheces, comentou o post a dizer que conhecia aquela casa. Da próxima vez é melhor não mostrares a tua casa...",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 20,
+    "lastnode":16
+    },
+    {
+    "node": 19,
+    "showdialogue": "Recebeste muitos likes e comentários a falar do teu cão. Parece que a Ana tinha razão.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 20,
+    "lastnode":16
+    },
+    {
+    "node": 20,
+    "showdialogue": "Entretanto, toca a campainha e está na altura de regressar ao teu lugar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 21,
+    "lastnode":16
+    },
+    {
+    "node": 21,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 0,
     "lastnode":0
     }
-
 ]

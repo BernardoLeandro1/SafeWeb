@@ -1,21 +1,10 @@
 [
     {
-        "name": "Maria\nEu e o meu desenho mais recente!\n#desenho",
-        "photo": "maria.png",
+        "name": "Clara\nPodes clicar neste link e votar em mim para eu ganhar um concurso interescolas?",
+        "photo": "clara.png",
         "choices":[
-            {"text": "Comentas: 'És muito boa artista!'", "score": 3, "reference": "maria"},
-            {"text": "Comentas: 'Os teus desenhos são horríveis'", "score": -3, "reference": "maria"},
-            {"text": "Deixas Gosto.", "score": 1, "reference": "maria"}
-        ],
-        "day": 1
-    },
-    {
-        "name": "António\n Força Rebels!!",
-        "photo": "antonio.png",
-         "choices":[
-            {"text": "Concordas com um comentário negativo sobre a equipa.'", "score": -3, "reference": "antonio"},
-            {"text": "Respondes a um comentário negativo, defendendo o António.", "score": 1, "reference": "antonio"},
-            {"text": "Denúncias um comentário negativo.", "score": 3, "reference": "antonio"}
+            {"text": "Clicas no link", "score": -3, "reference": "maria"},
+            {"text": "Não clicas no link", "score": 3, "reference": "maria"}
         ],
         "day": 1
     }
