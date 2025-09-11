@@ -397,11 +397,81 @@
       "lastnode":47
     },
     {
+      "node": 49,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 50,
+      "lastnode":48
+    },
+    {
+      "node": 50,
+      "showdialogue": "Foste o primeiro a chegar ao teu lugar, enquanto a professora chamava o resto dos teus colegas. Começou assim, a última aula.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 51,
+      "lastnode":49
+    },
+    {
+      "node": 51,
+      "showdialogue": "Esta aula passou a correr e chegaste ao toque de saída sem dar por ela, apesar de não teres prestado muita atenção.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 52,
+      "lastnode":50
+    },
+    {
+      "node": 52,
+      "showdialogue": "Saíste da sala de aula e despediste-te dos teus amigos, a correr para ir apanhar o autocarro, para ir para casa.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 53,
+      "lastnode":51
+    },
+    {
+      "node": 53,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 54,
+      "lastnode":52,
+      "todo":"Volta para casa. (E)"
+    },
+    {
+      "node": 54,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 55,
+      "lastnode":53,
+      "todo":"Vai falar com os teus pais. (E)",
+      "availablemissions":[9]
+    },
+    {
+      "node": 55,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 56,
+      "lastnode":54,
+      "todo":"Vai para o teu quarto. (E)"
+    },
+    {
+      "node": 56,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 57,
+      "lastnode": 55,
+      "todo":"Vai para a cama. (E)"
+    },
+    {
       "node": 28,
       "showdialogue": "FIM",
       "name": "Narrador",
       "nextnode": -1
     }
+
 
   
 
