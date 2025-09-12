@@ -190,7 +190,6 @@ public class PhoneManager : MonoBehaviour
         var choiceParent = newPost.transform.Find("Choices").transform;
         if (choices != null)
         {
-            Debug.Log("YOOOOOOOOOOOOOOOOOOOOOOOO");
             foreach (var choice in choices)
             {
                 GameObject btnObj = Instantiate(choiceButtonPrefab, choiceParent);
@@ -201,7 +200,6 @@ public class PhoneManager : MonoBehaviour
 
                 btn.onClick.AddListener(() =>
                 {
-                    Debug.Log("clicked: [" + choice.Text + "]");
 
                     postsList.Remove(newPost);
                     Destroy(newPost);

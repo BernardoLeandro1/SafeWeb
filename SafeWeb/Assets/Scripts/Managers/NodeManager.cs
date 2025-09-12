@@ -151,6 +151,7 @@ public class NodeManager : MonoBehaviour
     public void HasChoosen(int index){
         if (missionManager.IsMissionActive())
         {
+            missionManager.UpdatePaths(dialogueNodes[node].ShowChoicePanel[index].Score);
             missionManager.UpdateNodes(index - 1, dialogueNodes[node].LastNode - 1);
             uIManager.ToggleChoiceCanvas(false);
             missionManager.NextNodeMissions();

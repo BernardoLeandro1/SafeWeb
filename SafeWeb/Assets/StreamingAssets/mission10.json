@@ -8,7 +8,7 @@
     },
     {
     "node": 2,
-    "showdialogue": "Olá, tudo bem Pais?",
+    "showdialogue": "Olá, tudo bem pais?",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 3,
@@ -27,119 +27,151 @@
     "showdialogue": "Também. Hoje vi uns posts dos meus amigos e fiz o meu primeiro post.",
     "name": "Tu",
     "displaycamera": "foxCam",
-    "lastnode":3,
-    "checkcond": "conta"
+    "nextnode": 5,
+    "lastnode":3
     },
     {
     "node": 5,
-    "showdialogue": "Eles queriam que eu criasse conta com eles, mas eu decidi perguntar-vos primeiro. Posso?",
-    "name": "Tu",
+    "showdialogue": "O que postaste?",
+    "name": "Pai",
     "displaycamera": "foxCam",
-    "nextnode": 6,
-    "lastnode":4
+    "lastnode":4,
+    "checkcond": "post"
     },
     {
     "node": 6,
-    "showdialogue": "Tens de ter muito cuidado nas redes sociais. Mas, como tomaste essa decisão, eu e a tua mãe achamos que podes criar conta.",
-    "name": "Pai",
+    "showdialogue": "Meti uma foto minha ao pé de nossa casa.",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 7,
     "lastnode":5
     },
     {
     "node": 7,
-    "showdialogue": "Pegas no teu telemóvel, descarregas a aplicação e crias conta.",
-    "name": "Narrador",
+    "showdialogue": "Não devias ter feito isso!! Assim as pessoas sabem onde vives... Tens de ter mais cuidado.",
+    "name": "Pai",
     "displaycamera": "foxCam",
-    "nextnode": 8,
+    "nextnode": 12,
     "lastnode":6
     },
     {
     "node": 8,
-    "showdialogue": "free mode",
-    "name": "Narrador",
+    "showdialogue": "Meti um desenho da Maria. Mas ela ficou um pouco triste comigo porque eu não lhe pedi autorização.",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 9,
-    "lastnode":7,
-    "todo": "Pega no teu telemóvel (P)."
+    "lastnode":5
     },
     {
     "node": 9,
-    "showdialogue": "Depois de criar conta, está na hora de aceitares ou recusares os pedidos de amizades.",
-    "name": "Narrador",
+    "showdialogue": "É importante perguntares antes de publicares algo que não é teu.",
+    "name": "Pai",
     "displaycamera": "foxCam",
-    "nextnode": 10,
+    "nextnode": 12,
     "lastnode":8
     },
     {
     "node": 10,
-    "showdialogue": "free mode",
-    "name": "Narrador",
+    "showdialogue": "Meti um vídeo do Lulu a correr atrás duma bola e recebi muitos gostos e comentários.",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 11,
-    "lastnode":9,
-    "todo": "Aceita ou recusa os pedidos de amizade (P).1"
+    "lastnode":5
     },
     {
     "node": 11,
-    "showdialogue": "Após analisares todos os pedidos, voltas para o pé dos teus pais.",
-    "name": "Narrador",
+    "showdialogue": "Boa! O Lulu adora jogar á bola connosco",
+    "name": "Pai",
     "displaycamera": "foxCam",
-    "nextnode": 16,
+    "nextnode": 12,
     "lastnode":10
     },
     {
     "node": 12,
-    "showdialogue": "Com a ajuda deles, eu criei conta. Já os adicionei e tudo.",
-    "name": "Tu",
+    "showdialogue": "A seguir a esta conversa vais fazer os tpc's e jantar. Depois de tomar banho e lavar os dentes, os teus pais chamam-te para uma noite de quiz.",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 13,
-    "lastnode":4
+    "lastnode":5
     },
     {
     "node": 13,
-    "showdialogue": "Não acredito que fizeste isso. Devias ter pedido permissão primeiro.",
-    "name": "Pai",
+    "showdialogue": "Tu adoras fazer noites de quiz com os teus pais, porque aprendes muito sobre o mundo, ganhas bastante cultura geral e passas um bom tempo com os teus pais.",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 14,
     "lastnode":12
     },
     {
     "node": 14,
-    "showdialogue": "Sim, tens de ter muito cuidado ao adicionar pessoas nas redes sociais. Tens de confirmar sempre com os teus amigos se aquela é a conta deles.",
-    "name": "Mãe",
+    "showdialogue": "Como sempre, tu ficas numa equipa com o teu pai e jogam contra a tua mãe. O jogo é renhido e chegaste à derradeira pergunta.",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 15,
     "lastnode":13
     },
     {
     "node": 15,
-    "showdialogue": "Ficaste uma pouco triste depois de ouvir aquele ralhete.",
-    "name": "Narrador",
+    "showdialogue": "Em que dia foi implementada a República Portuguesa?",
+    "name": "Mãe",
     "displaycamera": "foxCam",
-    "nextnode": 17,
+    "nextnode": 16,
     "lastnode":14
     },
     {
     "node": 16,
-    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar , tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 18,
-    "lastnode":11
+    "showchoicepanel":[
+      {"nextnode": 17, "showdialogue": "1 de dezembro de 1640"},
+      {"nextnode": 18, "showdialogue": "25 de abril de 1974."},
+      {"nextnode": 19, "showdialogue": "5 de outubro de 1910"},
+      {"nextnode": 20, "showdialogue": "1 de novembro de 1755"}
+    ],
+    "nextnode": 0,
+    "lastnode":15
     },
     {
     "node": 17,
-    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar , tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
-    "name": "Narrador",
+    "showdialogue": "Erraste. Esta é a data em que Portugal recuperou a independência de Espanha. Perdeste o jogo e a tua mãe é a vencedora.",
+    "name": "Mãe",
     "displaycamera": "foxCam",
-    "nextnode": 18,
-    "lastnode":15
+    "nextnode": 21,
+    "lastnode":16
     },
-
-
     {
     "node": 18,
+    "showdialogue": "Erraste. Esta é a data da revolução dos Cravos, onde Portugal saiu duma ditadura e passou a viver numa Democracia. Perdeste o jogo e a tua mãe é a vencedora.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 21,
+    "lastnode":16
+    },
+
+    {
+    "node": 19,
+    "showdialogue": "Acertaste. Nesta a data Portugal saiu dum reinado e passou a ser uma República. Ganhaste o jogo e tu e o teu pai são os vencedores.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 21,
+    "lastnode":16
+    },
+    {
+    "node": 20,
+    "showdialogue": "Erraste. Esta é a data do tenebroso terramoto que abalou Lisboa. Perdeste o jogo e a tua mãe é a vencedora.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 21,
+    "lastnode":16
+    },
+    {
+    "node": 21,
+    "showdialogue": "Depois de toda a animação do jogo, vais para a cama e adormeces facilmente.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 22,
+    "lastnode":16
+    },
+    {
+    "node": 22,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",

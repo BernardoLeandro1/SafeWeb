@@ -126,9 +126,9 @@
     {
     "node": 16,
     "showchoicepanel":[
-      {"nextnode": 17, "showdialogue": "Partilhas um desenho da Maria."},
-      {"nextnode": 18, "showdialogue": "Partilhas uma foto tua ao pé de tua casa."},
-      {"nextnode": 19, "showdialogue": "Partilhas o teu cão a correr atrás duma bola."}
+      {"nextnode": 17, "showdialogue": "Partilhas um desenho da Maria.", "score":-1},
+      {"nextnode": 18, "showdialogue": "Partilhas uma foto tua ao pé de tua casa.", "score":-3},
+      {"nextnode": 19, "showdialogue": "Partilhas o teu cão a correr atrás duma bola.","score": 3}
     ],
     "nextnode": 0,
     "lastnode":9

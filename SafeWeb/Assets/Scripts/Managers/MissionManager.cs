@@ -30,6 +30,8 @@ public class MissionManager : MonoBehaviour
 
     public int link = 0;
 
+    int post;
+
     public bool isWaiting = false;
 
     public int solved = 0;
@@ -158,7 +160,7 @@ public class MissionManager : MonoBehaviour
             isWaiting = false;
             logicManager.MissionComplete();
             charactersManager.ChangeCubes(1);
-            if (currentMission.Id != 4)
+            if (currentMission.Id != 4 && currentMission.Id != 9)
             {
                 uIManager.DisplayToDoList("Volta ao teu lugar. (E)");
                 logicManager.ChangeMode();
@@ -263,7 +265,7 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("link"))
                 {
-                    if (link==1)
+                    if (link == 1)
                     {
                         node = 12;
                         lastNode = 11;
@@ -272,6 +274,24 @@ public class MissionManager : MonoBehaviour
                     {
                         node = 13;
                         lastNode = 11;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("post"))
+                {
+                    if (post == -3)
+                    {
+                        node = 5;
+                        lastNode = 4;
+                    }
+                    else if (post == -1)
+                    {
+                        node = 13;
+                        lastNode = 4;
+                    }
+                    else
+                    {
+                        node = 12;
+                        lastNode = 4;
                     }
                 }
             }
@@ -283,6 +303,15 @@ public class MissionManager : MonoBehaviour
         }
     }
 
+    
+
+    public void UpdatePaths(int score)
+    {
+        if (currentMission.Id == 8)
+        {
+            post = score;
+        }
+    }
 
     public void UpdateNodes(int node1, int lastNode1)
     {
@@ -327,6 +356,32 @@ public class MissionManager : MonoBehaviour
                     {
                         node = 11;
                         lastNode = 3;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("clara"))
+                {
+                    if (phoneManager.GetFriends().Contains("Clara"))
+                    {
+                        node = 9;
+                        lastNode = 8;
+                    }
+                    else
+                    {
+                        node = 15;
+                        lastNode = 8;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("link"))
+                {
+                    if (link==1)
+                    {
+                        node = 12;
+                        lastNode = 11;
+                    }
+                    else
+                    {
+                        node = 13;
+                        lastNode = 11;
                     }
                 }
             }
