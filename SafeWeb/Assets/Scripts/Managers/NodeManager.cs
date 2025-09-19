@@ -20,6 +20,8 @@ public class NodeManager : MonoBehaviour
     bool firstTime = false;
     public bool goShopping = false;
 
+    public bool phoneUnlocked = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -149,6 +151,10 @@ public class NodeManager : MonoBehaviour
                     else if (dialogueNodes[node].Trigger.Contains("shopping"))
                     {
                         goShopping = true;
+                    }
+                    else if (dialogueNodes[node].Trigger.Contains("phone"))
+                    {
+                        phoneUnlocked = true;
                     }
                 }
                 uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);

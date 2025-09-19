@@ -37,18 +37,17 @@ public class InputManager : MonoBehaviour
         // }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            if (logicManager.GetMode() == "free")
+            if (uIManager.phone.activeSelf == true)
+            {
+                uIManager.HidePhone();
+                logicManager.DeactivatePhone();
+            }
+            else if (Cursor.lockState == CursorLockMode.Locked && nodeManager.phoneUnlocked == true)
             {
                 uIManager.DisplayPhone();
                 logicManager.ActivatePhone();
             }
-            else
-            {
-                uIManager.HidePhone();
-                logicManager.DeactivatePhone();
-                
-                missionManager.NextNodeMissions();
-            }
+           
         }
     }
 

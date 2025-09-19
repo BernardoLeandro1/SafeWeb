@@ -318,5 +318,6 @@ public class LogicManager : MonoBehaviour
         cam.GetComponent<CinemachinePanTilt>().enabled = true;
         mode = "free";
         player.GetComponent<Rigidbody>().isKinematic = false;
+        uIManager.DisplayToDoList("");
     }
 }

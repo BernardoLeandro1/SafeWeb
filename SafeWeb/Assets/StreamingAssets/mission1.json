@@ -79,7 +79,8 @@
     "displaycamera": "foxCam",
     "nextnode": 11,
     "lastnode":9,
-    "todo": "Pega no teu telemóvel (P)."
+    "todo": "Pega no teu telemóvel (P).",
+    "trigger":"phone"
     },
     {
     "node": 11,

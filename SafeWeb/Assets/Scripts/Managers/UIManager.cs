@@ -133,8 +133,15 @@ public class UIManager : MonoBehaviour
 
     public void DisplayToDoList(string toDo)
     {
-        toDoList.SetActive(true);
-        toDoListText.text = toDo;
+        if (toDo == "")
+        {
+            toDoList.SetActive(true);
+        }
+        else
+        {
+            toDoList.SetActive(true);
+            toDoListText.text = toDo;
+        }
     }
 
     public void HideToDoList()

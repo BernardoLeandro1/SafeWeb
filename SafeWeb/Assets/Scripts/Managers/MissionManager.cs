@@ -273,6 +273,10 @@ public class MissionManager : MonoBehaviour
                 {
                     phoneManager.ShowRequests();
                 }
+                else if (dialogueNodes[node].Trigger.Contains("phone"))
+                {
+                    nodeManager.phoneUnlocked = true;
+                }
                 
             }
             lastNode = dialogueNodes[node].LastNode - 1;

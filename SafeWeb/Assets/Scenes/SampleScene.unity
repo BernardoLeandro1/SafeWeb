@@ -27074,6 +27074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goShopping: 0
+  phoneUnlocked: 0
 --- !u!114 &866412788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58692,7 +58693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc019e79470885f449e88ff6edbeba6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionIDs: 03000000080000000c000000
+  missionIDs: 03000000080000000d000000
 --- !u!64 &1793215959
 MeshCollider:
   m_ObjectHideFlags: 0
