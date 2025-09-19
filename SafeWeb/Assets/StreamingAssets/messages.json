@@ -3,9 +3,9 @@
         "name": "Clara\nPodes clicar neste link e votar em mim para eu ganhar um concurso interescolas?",
         "photo": "clara.png",
         "choices":[
-            {"text": "Clicas no link", "score": -3, "reference": "maria"},
-            {"text": "Não clicas no link", "score": 3, "reference": "maria"}
+            {"text": "Clicas no link", "score": -3, "reference": "pai"},
+            {"text": "Não clicas no link", "score": 3, "reference": "pai"}
         ],
-        "day": 1
+        "day": 2
     }
 ]

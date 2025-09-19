@@ -1,0 +1,66 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com o João.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Ele estava a ver o placar vazio do café.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá João!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Olá! Acho que vou ao café.",
+    "name": "João",
+    "displaycamera": "foxCam",
+    "nextnode":5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Queria tirar uma foto com todos. Queres entrar?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Sim.",
+    "name": "João",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Ele, sem parecer muito importado, aceitou. Parecia que já lhe pediam para tirar fotos à anos e que ele era uma grande celebridade.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 8,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]

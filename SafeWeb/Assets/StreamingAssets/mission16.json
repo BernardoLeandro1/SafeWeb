@@ -1,0 +1,151 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com os teus pais",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 1,
+    "checkcond":"wifi"
+    },
+    {
+    "node": 2,
+    "showdialogue": "Chegaste a casa dececionado com as tuas ações e a repensar as mesmas e os teus pais perceberam isso .",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "O que aconteceu?",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Depos do cinema, tirámos uma foto e eu postei a foto para toda a gente ver. Depois recebemos uns comentários a gozar connsoco e os meus amigos ficaram chateados.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+
+    },
+    {
+    "node": 5,
+    "showdialogue": "Tens de ter mais cuidado com isso. Não deves partilhar fotos tuas e dos teus colegas de forma a que qualquer pessoa veja.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Pois, tens de publicar de forma a apenas os teus amigos verem o que publicas, para que isso não aconteça.",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": " Depois de conversares com os teus pais, fizeste os tpc's, sem vontade nenhuma. Jantaste, sem grande apetite, e foste tomar banho. Decidiste não ver televisão e ir dormir mais cedo.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode": 6
+    },
+    {
+    "node": 8,
+    "showdialogue": "Chegaste a casa muito animado e os teus pais repararam nisso.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode": 1
+    },
+    
+    {
+    "node": 9,
+    "showdialogue": "Então, como foi o cinema?",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "O filme foi muito engraçado! Rimo-nos muito.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":9
+    },
+    {
+    "node": 11,
+    "showdialogue": "Boa! E o que fizeram mais?",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 12,
+    "lastnode":10
+    },
+    {
+    "node": 12,
+    "showdialogue": "Tirámos uma foto e eu publiquei-a. Tivemos muitos gostos e comentários positivos dos nossos amigos.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":11
+    },
+    {
+    "node": 13,
+    "showdialogue": "Por falar nisso, tenho de lhes enviar a foto, para eles também ficarem com ela.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 14,
+    "lastnode":12
+    },
+    {
+    "node": 14,
+    "showdialogue": "Ainda bem que se divertiram todos.",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":13
+    },
+    {
+    "node": 15,
+    "showdialogue": "Depois da conversa com os teus pais, fizeste os tpc's, muito focado e animado, o que foi provocado pela tarde que tiveste com os teus amigos. ",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 16,
+    "lastnode":14
+    },
+    {
+    "node": 16,
+    "showdialogue": "Ao jantar contaste tudo sobre o filme aos teus pais. Depois, tomaste banho e lavaste os dentes, viste um bocadinho de televisão e foste para a cama. ",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 17,
+    "lastnode":14
+    },
+    {
+    "node": 17,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]
+
+
+
+
+
+
+
+
+
+

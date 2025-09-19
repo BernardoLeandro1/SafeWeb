@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using UnityEditor.Experimental.GraphView;
 
 public class LogicManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class LogicManager : MonoBehaviour
 
 
     public Transform casaPlayer;
+
+    public Transform shoppingPlayer;
 
     public Transform aulaPlayer;
     public Transform quartoPlayer;
@@ -61,7 +64,18 @@ public class LogicManager : MonoBehaviour
     {
         if (teleport)
         {
-            if (missionManager.solved == 4 && teleportFrom.Contains("escola"))
+            if (day == 3 && nodeManager.goShopping == true && teleportFrom.Contains("escola"))
+            {
+                player.transform.position = shoppingPlayer.position;
+                nodeManager.NextNode();
+                hasDoneMission = true;
+            }
+            else if (day == 3 && missionManager.solved == 4 && teleportFrom.Contains("shopping"))
+            {
+                player.transform.position = casaPlayer.position;
+                nodeManager.NextNode();
+            }
+            else if (missionManager.solved == 4 && teleportFrom.Contains("escola"))
             {
                 player.transform.position = casaPlayer.position;
                 nodeManager.NextNode();
@@ -173,9 +187,18 @@ public class LogicManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(missionManager.solved);
+                    if (interactObj.name.Contains("escola") && day == 3 && nodeManager.goShopping == true)
+                    {
+                        teleport = true;
+                        teleportFrom = "escola";
+                    }
+                    else if (interactObj.name.Contains("shopping") && day == 3 && missionManager.solved == 4)
+                    {
+                        teleport = true;
+                        teleportFrom = "shopping";
+                    }
                     //interactObj.GetComponent<Animator>().SetTrigger("Open");
-                    if (interactObj.name.Contains("escola") && missionManager.solved == 4)
+                    else if (interactObj.name.Contains("escola") && missionManager.solved == 4)
                     {
                         // player.transform.position = casaPlayer.position;
                         // nodeManager.NextNode();
@@ -248,6 +271,12 @@ public class LogicManager : MonoBehaviour
         currentMissionObject.gameObject.GetComponent<MissionIDs>().MissionSolved();
         //currentMissionObject.transform.parent.gameObject.SetActive(false);
         hasDoneMission = true;
+        if (day == 3)
+        {
+            //nodeManager.NextNode();
+            Debug.Log("SEGUE SEGUE NO DIA 3");
+            hasDoneMission = false;
+        }
     }
 
     public void Interaction()

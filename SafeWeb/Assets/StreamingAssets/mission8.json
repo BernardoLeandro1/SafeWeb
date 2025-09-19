@@ -27,8 +27,8 @@
     "showdialogue": "Também fiquei com algumas dúvidas.",
     "name": "Tu",
     "displaycamera": "foxCam",
-    "lastnode":3,
-    "checkcond": "conta"
+    "nextnode":5,
+    "lastnode":3
     },
     {
     "node": 5,
@@ -41,8 +41,8 @@
     {
     "node": 6,
     "showchoicepanel":[
-      {"nextnode": 7, "showdialogue": "Vais com ela."},
-      {"nextnode": 9, "showdialogue": "Não vais com ela."}
+      {"nextnode": 7, "showdialogue": "Vais com ela.", "score": 2, "reference": "maria"},
+      {"nextnode": 9, "showdialogue": "Não vais com ela.", "score": -2, "reference": "maria"}
     ],
     "nextnode": 0,
     "lastnode":5

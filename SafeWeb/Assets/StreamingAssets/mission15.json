@@ -1,0 +1,144 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Depois de reunires todos os teus amigos, tiram a fotografia.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Falaste com todos e todos concordaram em publicares a fotografia.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Para isso, precisas de ter ligação à internet. O que vais fazer?",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showchoicepanel":[
+      {"nextnode": 5, "showdialogue": "Ligas-te ao Wi-Fi público", "score": -5, "reference": "todos_wifi"},
+      {"nextnode": 8, "showdialogue": "Ligas os teus dados móveis.", "score": 5, "reference": "todos_wifi"}
+    ],
+    "nextnode": 0,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Decides ligar-te ao Wi-Fi público.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode":5,
+    "lastnode":4,
+    "checkcond": "password"
+    },
+    {
+    "node": 6,
+    "showdialogue": " Sem perceberes porquê, a tua aplicação é eliminada. Após perderes uns minutos a tentar perceber o que aconteceu, voltas a baixar a aplicação.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Abres a aplicação e vais realizar uma nova publicação. O que fazes?",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":5
+    },
+    {
+    "node": 8,
+    "showdialogue": "Decides ligar-te aos dados móveis.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode": 4
+    },
+    {
+    "node": 9,
+    "showdialogue": "Abres a aplicação e vais realizar uma nova publicação. O que fazes?",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode": 8
+    },
+    {
+    "node": 10,
+    "showchoicepanel":[
+      {"nextnode": 11, "showdialogue": "Partilhas a foto para quem quiser ver", "score": -5, "reference": "todos"},
+      {"nextnode": 14, "showdialogue": "Partilhas a foto apenas para os teus amigos verem.", "score": 5, "reference": "todos"}
+    ],
+    "nextnode": 0,
+    "lastnode":9
+    },
+    {
+    "node": 11,
+    "showdialogue": "Publicaste a foto com os teus amigos.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 12,
+    "lastnode":10
+    },
+    {
+    "node": 12,
+    "showdialogue": "Receberam alguns likes, mas, também, alguns comentários negativos sobre o vosso aspeto e as vossas roupas.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":11
+    },
+    {
+    "node": 13,
+    "showdialogue": "Os teus amigos ficaram chateados contigo, por teres partilhado a foto para toda a gente ver. Os teus amigos quiseram ir embora mais cedo e a tarde ficou arruínada.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 17,
+    "lastnode":12
+    },
+    {
+    "node": 14,
+    "showdialogue": "Publicaste a foto com os teus amigos.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":10
+    },
+    {
+    "node": 15,
+    "showdialogue": "Receberam alguns likes e comentários positivos.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 16,
+    "lastnode":14
+    },
+    {
+    "node": 16,
+    "showdialogue": "Continuaram o resto da tarde no centro comercial. Foram lanchar ao café que fazia crepes e waffles e, depois, cada um foi para sua casa.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 17,
+    "lastnode":15
+    },
+    {
+    "node": 17,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]
+
+
+

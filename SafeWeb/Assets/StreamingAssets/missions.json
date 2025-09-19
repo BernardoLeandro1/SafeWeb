@@ -43,5 +43,40 @@
     "id": 8,    
     "name": "mission9",
     "description": "Falar com a Ana. (E)"
+    },
+    {
+    "id": 9,    
+    "name": "mission10",
+    "description": "Falar com os pais. (E)"
+    },
+    {
+    "id": 10,
+    "name": "mission11",
+    "description": "Falar com o João. (E)"
+    },
+    {
+    "id": 11,
+    "name": "mission12",
+    "description": "Falar com o António. (E)"
+    },
+    {
+    "id": 12,
+    "name": "mission13",
+    "description": "Falar com a Maria. (E)"
+    },
+    {
+    "id": 13,    
+    "name": "mission14",
+    "description": "Falar com a Ana. (E)"
+    },
+    {
+    "id": 14,    
+    "name": "mission15",
+    "description": "Vai ter com os teus amigos. (E)"
+    },
+    {
+    "id": 15,    
+    "name": "mission16",
+    "description": "Falar com os pais. (E)"
     }
 ]

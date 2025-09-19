@@ -27,6 +27,7 @@
     "showdialogue": "Também. Pais, os meus amigos mostraram-me uma rede social nova.",
     "name": "Tu",
     "displaycamera": "foxCam",
+    "nextnode":4,
     "lastnode":3,
     "checkcond": "conta"
     },

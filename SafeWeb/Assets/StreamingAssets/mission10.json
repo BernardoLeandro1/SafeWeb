@@ -35,6 +35,7 @@
     "showdialogue": "O que postaste?",
     "name": "Pai",
     "displaycamera": "foxCam",
+    "nextnode":5,
     "lastnode":4,
     "checkcond": "post"
     },
@@ -121,10 +122,10 @@
     {
     "node": 16,
     "showchoicepanel":[
-      {"nextnode": 17, "showdialogue": "1 de dezembro de 1640"},
-      {"nextnode": 18, "showdialogue": "25 de abril de 1974."},
-      {"nextnode": 19, "showdialogue": "5 de outubro de 1910"},
-      {"nextnode": 20, "showdialogue": "1 de novembro de 1755"}
+      {"nextnode": 17, "showdialogue": "1 de dezembro de 1640", "score": -1, "reference": "pai"},
+      {"nextnode": 18, "showdialogue": "25 de abril de 1974.", "score": -1, "reference": "pai"},
+      {"nextnode": 19, "showdialogue": "5 de outubro de 1910", "score": 1, "reference": "pai"},
+      {"nextnode": 20, "showdialogue": "1 de novembro de 1755", "score": -1, "reference": "pai"}
     ],
     "nextnode": 0,
     "lastnode":15
@@ -132,7 +133,7 @@
     {
     "node": 17,
     "showdialogue": "Erraste. Esta é a data em que Portugal recuperou a independência de Espanha. Perdeste o jogo e a tua mãe é a vencedora.",
-    "name": "Mãe",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 21,
     "lastnode":16
@@ -140,7 +141,7 @@
     {
     "node": 18,
     "showdialogue": "Erraste. Esta é a data da revolução dos Cravos, onde Portugal saiu duma ditadura e passou a viver numa Democracia. Perdeste o jogo e a tua mãe é a vencedora.",
-    "name": "Mãe",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 21,
     "lastnode":16
@@ -149,7 +150,7 @@
     {
     "node": 19,
     "showdialogue": "Acertaste. Nesta a data Portugal saiu dum reinado e passou a ser uma República. Ganhaste o jogo e tu e o teu pai são os vencedores.",
-    "name": "Mãe",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 21,
     "lastnode":16
@@ -157,7 +158,7 @@
     {
     "node": 20,
     "showdialogue": "Erraste. Esta é a data do tenebroso terramoto que abalou Lisboa. Perdeste o jogo e a tua mãe é a vencedora.",
-    "name": "Mãe",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 21,
     "lastnode":16
@@ -165,7 +166,7 @@
     {
     "node": 21,
     "showdialogue": "Depois de toda a animação do jogo, vais para a cama e adormeces facilmente.",
-    "name": "Mãe",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 22,
     "lastnode":16

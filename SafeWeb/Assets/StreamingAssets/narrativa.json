@@ -272,6 +272,7 @@
       "showdialogue": "Toca a campainha e a aula termina. Vais ter com os teus amigos.",
       "name": "Narrador",
       "displaycamera": "foxCam",
+      "trigger": "characters",
       "nextnode": 34,
       "lastnode":32
     },
@@ -466,12 +467,204 @@
       "todo":"Vai para a cama. (E)"
     },
     {
+      "node": 57,
+      "showdialogue": "É agora quarta feira. Hoje tens tarde livre e combinaste com os teus amigos ir ao cinema à tarde. Estás ansioso para que esse momento chegue. Mas, primeiro, tens de te preparar e ir para as aulas.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 58,
+      "lastnode":56
+    },
+    {
+      "node": 58,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 59,
+      "lastnode":57,
+      "todo": "Sair do Quarto. (E)"
+    },
+    {
+      "node": 29,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 60,
+      "lastnode":58,
+      "todo": "Sair de Casa. (E)"
+    },
+    {
+      "node": 60,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 61,
+      "lastnode": 59,
+      "todo": "Vai para o teu lugar. (E)"
+    },
+    {
+      "node": 61,
+      "showdialogue": "A primeira aula de hoje é de Educação Tecnológica. Durante estiveram a trabalhar nos projetos que cada um escolheu, com aprovação do professor.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 62,
+      "lastnode":60
+    },
+    {
+      "node": 62,
+      "showdialogue": "Como querias avançar com o teu projeto, pediste ao professor para ficar a trabalhar durante o intervalo.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 63,
+      "lastnode":61
+    },
+    {
+      "node": 63,
+      "showdialogue": "Assim, começa a aula seguinte, que é de matemática. Continuam a matéria da aula passada, mas, desta vez, a aula passa mais devagar, uma vez que só consegues pensar na tarde no centro comercial com os teus amigos.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 64,
+      "lastnode":62
+    },
+    {
+      "node": 64,
+      "showdialogue": "As aulas terminam e é agora hora de ir para o centro comercial.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 65,
+      "lastnode":63,
+      "trigger": "shopping"
+    },
+    {
+      "node": 65,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 66,
+      "lastnode":64,
+      "todo": "Vai para o Centro Comercial. (E)"
+    },
+    {
+      "node": 66,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 67,
+      "lastnode":65,
+      "todo": "Vai para o Cinema. (E)"
+    },
+    {
+      "node": 67,
+      "showdialogue": "Foram ver um filme de comédia, chamado 'Só Risos'. Durante o filme, toda a sala soltou muitas gargalhadas. O filme era muito engraçado.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 68,
+      "lastnode":66,
+      "trigger": "characters"
+    },
+    {
+      "node": 68,
+      "showdialogue": "No fim do filme, tu e os teus amigos andaram um pouco pelo centro comercial. Cada um foi ver algo que queria ver, até que te lembraste de tirar uma foto com todos para postar.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 69,
+      "lastnode":67
+    },
+    {
+      "node": 69,
+      "showdialogue": "Assim, foste falar com cada um deles para eles entrarem na foto.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 70,
+      "lastnode":68
+    },
+    {
+      "node": 70,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "availablemissions" : [10,11,12,13],
+      "nextnode": 71,
+      "lastnode":69
+    },
+    {
+      "node": 71,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 72,
+      "lastnode":70,
+      "todo":"missions"
+    },
+    {
+      "node": 72,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 73,
+      "lastnode":71,
+      "todo":"missions"
+    },
+    {
+      "node": 73,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 74,
+      "lastnode":72,
+      "todo":"missions"
+    },
+    {
+      "node": 74,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 75,
+      "lastnode":73,
+      "availablemissions" : [14]
+    },
+    {
+      "node": 75,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 76,
+      "lastnode":74,
+      "todo":"Volta para casa. (E)"
+    },
+    {
+      "node": 76,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 77,
+      "lastnode":75,
+      "todo":"Vai falar com os teus pais. (E)",
+      "availablemissions":[15]
+    },
+    {
+      "node": 77,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 78,
+      "lastnode":76,
+      "todo":"Vai para o teu quarto. (E)"
+    },
+    {
+      "node": 78,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 79,
+      "lastnode":77,
+      "todo":"Vai para a cama. (E)"
+    },
+    {
       "node": 28,
       "showdialogue": "FIM",
       "name": "Narrador",
       "nextnode": -1
     }
-
 
   
 
@@ -482,13 +675,11 @@
 
 
 
-É agora quarta feira. Hoje tens tarde livre e combinaste com os teus amigos ir ao centro comercial à tarde. Estás ansioso para que esse momento chegue. Mas, primeiro, tens de te preparar e ir para as aulas.
 
 
 
-A primeira aula de hoje é de Educação Física. Durante a aula jogam basquetebol e voleibol. Tu gostas bastante de jogar jogos em equipa com os teus colegas.
-A aula seguinte é de matemática e continuam a matéria da aula passada. Desta vez, a aula passa mais devagar, uma vez que só consegues pensar na tarde no centro comercial com os teus amigos.
-As aulas terminam e é agora hora de ir para o centro comercial.
+
+
 
     
 ]

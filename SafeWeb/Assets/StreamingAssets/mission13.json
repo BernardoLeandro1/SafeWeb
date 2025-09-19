@@ -1,0 +1,74 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com a Maria.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Ela estava a olhar para o placar do filme que tinham acabado de ver.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá Maria!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Olá! Estou a ver o nome dos atores que entraram no filme.",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode":5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Fixe! Olha, eu queria tirar uma foto com todos. Queres entrar?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Sim, pode ser! No fim do dia, quando formos para casa, não te esqueças de a mandar para todos. Assim, todos temos uma cópia para vermos quando formos mais velhos.",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Boa ideia Maria!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 8,
+    "showdialogue": "A Maria foi muito recetiva à ideia.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode": 7
+    },
+    {
+    "node": 9,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]

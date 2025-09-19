@@ -61,7 +61,7 @@
     "displaycamera": "foxCam",
     "nextnode": 9,
     "lastnode":7,
-    "todo": "Pega no teu telemóvel. (P)",
+    "todo": "Pega no teu telemóvel (P).",
     "trigger":"posts"
     },
     {
@@ -87,7 +87,7 @@
     "displaycamera": "foxCam",
     "nextnode": 12,
     "lastnode":10,
-    "todo": "Pega no teu telemóvel. (P)",
+    "todo": "Pega no teu telemóvel (P).",
     "trigger":"messages"
     },
     {
@@ -126,9 +126,9 @@
     {
     "node": 16,
     "showchoicepanel":[
-      {"nextnode": 17, "showdialogue": "Partilhas um desenho da Maria.", "score":-1},
-      {"nextnode": 18, "showdialogue": "Partilhas uma foto tua ao pé de tua casa.", "score":-3},
-      {"nextnode": 19, "showdialogue": "Partilhas o teu cão a correr atrás duma bola.","score": 3}
+      {"nextnode": 17, "showdialogue": "Partilhas um desenho da Maria.", "score":-1, "reference": "maria_pai"},
+      {"nextnode": 18, "showdialogue": "Partilhas uma foto tua ao pé de tua casa.", "score":-3, "reference": "pai"},
+      {"nextnode": 19, "showdialogue": "Partilhas o teu cão a correr atrás duma bola.","score": 3, "reference": "pai"}
     ],
     "nextnode": 0,
     "lastnode":9

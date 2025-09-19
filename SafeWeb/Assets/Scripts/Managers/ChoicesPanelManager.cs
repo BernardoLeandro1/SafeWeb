@@ -27,6 +27,8 @@ public class ChoicesPanelManager : MonoBehaviour
 
     private NodeManager nodeManager;
 
+    private ScoreManager scoreManager;
+
     void Awake() {
         instance = this;
         //Font font = Resources.Load<Font>("Montserrat-Regular");
@@ -36,6 +38,7 @@ public class ChoicesPanelManager : MonoBehaviour
     void Start()
     {
         nodeManager = GetComponent<NodeManager>();
+        scoreManager = GetComponent<ScoreManager>();
     }
 
     /// <summary>
@@ -103,12 +106,17 @@ public class ChoicesPanelManager : MonoBehaviour
     /// </summary>
     public void AcceptAnswer(int index)
     {
-        if(index < 0 || index > decision.choices.Length - 1)
+        if (index < 0 || index > decision.choices.Length - 1)
         {
         }
         else
         {
             nodeManager.HasChoosen(decision.choices[index].NextNode);
+            if (decision.choices[index].Score != 0)
+            {
+                nodeManager.UpdateScores(decision.choices[index].Score);
+                scoreManager.AddScore(decision.choices[index].Reference, decision.choices[index].Score);
+            }
         }
         
     }

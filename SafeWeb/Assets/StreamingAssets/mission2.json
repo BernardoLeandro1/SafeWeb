@@ -57,8 +57,8 @@
     {
     "node": 8,
     "showchoicepanel":[
-      {"nextnode": 9, "showdialogue": "Crias conta."},
-      {"nextnode": 18, "showdialogue": "Não crias conta."}
+      {"nextnode": 9, "showdialogue": "Crias conta.", "score": -5, "reference": "pai"},
+      {"nextnode": 18, "showdialogue": "Não crias conta.", "score": 5, "reference": "pai"}
     ],
     "nextnode": 0,
     "lastnode":7

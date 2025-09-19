@@ -15,6 +15,8 @@ public class CharactersManager : MonoBehaviour
     public GameObject mae;
     public GameObject pai;
 
+    public GameObject day3Chars;
+
 
     public GameObject cubejoao;
     public GameObject cubemaria;
@@ -45,11 +47,15 @@ public class CharactersManager : MonoBehaviour
     public Transform antonioday4;
     public Transform antonioday5;
 
+    LogicManager logicManager;
+
+    private int joint = 0;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        logicManager = GetComponent<LogicManager>();
     }
 
     // Update is called once per frame
@@ -76,20 +82,28 @@ public class CharactersManager : MonoBehaviour
     {
 
         ChangeCubes(3);
-        if (joao.GetComponentInChildren<MissionIDs>().isSolved())
+        if (joao.GetComponentInChildren<MissionIDs>().isSolved() )
         {
             joao.SetActive(false);
             cubejoao.SetActive(false);
-            maria.SetActive(false);
-            maria.GetComponentInChildren<MissionIDs>().MissionSolved();
-            cubemaria.SetActive(false);
+            if (logicManager.GetDay() == 1 && joint == 0)
+            {
+                maria.SetActive(false);
+                maria.GetComponentInChildren<MissionIDs>().MissionSolved();
+                cubemaria.SetActive(false);
+                joint = 1;
+            }
 
         }
         if (maria.GetComponentInChildren<MissionIDs>().isSolved())
         {
-            joao.SetActive(false);
-            joao.GetComponentInChildren<MissionIDs>().MissionSolved();
-            cubejoao.SetActive(false);
+            if (logicManager.GetDay() == 1 && joint==0)
+            {
+                joao.SetActive(false);
+                joao.GetComponentInChildren<MissionIDs>().MissionSolved();
+                cubejoao.SetActive(false);
+                joint = 1;
+            }
             maria.SetActive(false);
             cubemaria.SetActive(false);
         }
@@ -102,6 +116,10 @@ public class CharactersManager : MonoBehaviour
         {
             antonio.SetActive(false);
             cubeantonio.SetActive(false);
+        }
+        if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved() && logicManager.GetDay()==3)
+        {
+            day3Chars.SetActive(true);
         }
         if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved())
         {
@@ -233,13 +251,22 @@ public class CharactersManager : MonoBehaviour
 
     public void NewDay()
     {
-        joao.SetActive(true);
-        ana.SetActive(true);
-        maria.SetActive(true);
-        antonio.SetActive(true);
+        pai.SetActive(false);
+        mae.SetActive(false);
         joao.GetComponentInChildren<MissionIDs>().ResetMissions();
         ana.GetComponentInChildren<MissionIDs>().ResetMissions();
         maria.GetComponentInChildren<MissionIDs>().ResetMissions();
         antonio.GetComponentInChildren<MissionIDs>().ResetMissions();
+        pai.GetComponentInChildren<MissionIDs>().ResetMissions();
+    }
+
+    public void ShowCharacters()
+    {
+        joao.SetActive(true);
+        ana.SetActive(true);
+        maria.SetActive(true);
+        antonio.SetActive(true);
+        pai.SetActive(true);
+        mae.SetActive(true);
     }
 }

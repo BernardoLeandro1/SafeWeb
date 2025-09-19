@@ -8,6 +8,8 @@ using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System;
+using UnityEngine.SocialPlatforms.Impl;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class PhoneManager : MonoBehaviour
 {
@@ -52,6 +54,8 @@ public class PhoneManager : MonoBehaviour
 
     private MissionManager missionManager;
 
+    ScoreManager scoreManager;
+
     List<Friend> friendNodes;
 
     List<PostMade> postNodes;
@@ -78,6 +82,7 @@ public class PhoneManager : MonoBehaviour
         uIManager = GetComponent<UIManager>();
         logicManager = GetComponent<LogicManager>();
         missionManager = GetComponent<MissionManager>();
+        scoreManager = GetComponent<ScoreManager>();
         StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "friends.json"));
         var json = reader.ReadToEnd();
         friendNodes = JsonConvert.DeserializeObject<List<Friend>>(json);
@@ -117,6 +122,11 @@ public class PhoneManager : MonoBehaviour
         DisplayMessages();
     }
 
+    public string GetPassword() {
+        return password;
+    }
+        
+
     /// <summary>
     /// Adds a new post to the scrollable content.
     /// </summary>
@@ -134,9 +144,7 @@ public class PhoneManager : MonoBehaviour
 
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "/Images/" + profile);
-        Debug.Log(filePath);
-        //Sprite www = Resources.Load(Application.streamingAssetsPath+filePath) as Sprite;
-        //Debug.Log(www);
+
         byte[] fileData = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + filePath);
         Texture2D tex = new Texture2D(2, 2); // size doesn’t matter here, will be replaced
         if (tex.LoadImage(fileData))
@@ -162,9 +170,7 @@ public class PhoneManager : MonoBehaviour
             var postImage = newPost.transform.Find("PostImage").GetComponent<Image>();
 
             string filePath2 = Path.Combine(Application.streamingAssetsPath, "/Images/" + post);
-            Debug.Log(filePath);
-            //Sprite www = Resources.Load(Application.streamingAssetsPath+filePath) as Sprite;
-            //Debug.Log(www);
+
             byte[] fileData2 = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + filePath2);
             Texture2D tex2 = new Texture2D(2, 2); // size doesn’t matter here, will be replaced
             if (tex2.LoadImage(fileData2))
@@ -203,11 +209,13 @@ public class PhoneManager : MonoBehaviour
 
                     postsList.Remove(newPost);
                     Destroy(newPost);
-                    
+
+                    scoreManager.AddScore(choice.Reference, choice.Score);
+
                     if (postsList.Count == 0)
                     {
                         missionManager.isWaiting = false;
-                        if (logicManager.GetDay() == 1)
+                        if (logicManager.GetDay() == 2)
                         {
                             uIManager.HidePhone();
                             logicManager.DeactivatePhone();
@@ -239,9 +247,7 @@ public class PhoneManager : MonoBehaviour
 
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "/Images/" + profile);
-        Debug.Log(filePath);
-        //Sprite www = Resources.Load(Application.streamingAssetsPath+filePath) as Sprite;
-        //Debug.Log(www);
+
         byte[] fileData = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + filePath);
         Texture2D tex = new Texture2D(2, 2); // size doesn’t matter here, will be replaced
         if (tex.LoadImage(fileData))
@@ -276,24 +282,21 @@ public class PhoneManager : MonoBehaviour
 
                 btn.onClick.AddListener(() =>
                 {
-                    Debug.Log("clicked: " + choice.Text);
                     if (choice.Text.Contains("Não clicas no link"))
                     {
-                        Debug.Log("clicked2: " + choice.Text);
-                        missionManager.link = 0;
+                        scoreManager.AddScore("link", 0);
                     }
                     else if (choice.Text.Contains("Clicas no link"))
                     {
-                        Debug.Log("clicked2: " + choice.Text);
-                        missionManager.link = 1;
+                        scoreManager.AddScore("link", 1);
                     }
-
+                    scoreManager.AddScore(choice.Reference, choice.Score);
                     messagesList.Remove(newPost);
                     Destroy(newPost);
                     if (messagesList.Count == 0)
                     {
                         missionManager.isWaiting = false;
-                        if (logicManager.GetDay() == 1)
+                        if (logicManager.GetDay() == 2)
                         {
                             uIManager.HidePhone();
                             logicManager.DeactivatePhone();
@@ -316,7 +319,6 @@ public class PhoneManager : MonoBehaviour
     {
         foreach (Friend friend in friendNodes)
         {
-            Debug.Log(friend.Day);
             if (friend.Day == logicManager.GetDay())
             {
                 ShowFriendRequests(friend.Photo, friend.Name);
@@ -372,22 +374,18 @@ public class PhoneManager : MonoBehaviour
 
     public void ShowFriendRequests(string photoPath, string name)
     {
-        Debug.Log("Friends will be added2");
         // Instantiate the prefab as a child of contentPanel
         GameObject newRequest = Instantiate(friendRequestPrefab, contentPanel);
         // Optionally, set the text or other UI data
         var textComp = newRequest.GetComponentInChildren<TMP_Text>();
         if (textComp != null)
         {
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaa");
             textComp.text = name;
         }
         var profPic = newRequest.GetComponentInChildren<Image>();
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "/Images/" + photoPath);
-        Debug.Log(filePath);
-        //Sprite www = Resources.Load(Application.streamingAssetsPath+filePath) as Sprite;
-        //Debug.Log(www);
+
         byte[] fileData = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + filePath);
         Texture2D tex = new Texture2D(2, 2); // size doesn’t matter here, will be replaced
         if (tex.LoadImage(fileData))
@@ -417,7 +415,6 @@ public class PhoneManager : MonoBehaviour
     {
         foreach (PostMade post in postNodes)
         {
-            Debug.Log(post.Day);
             if (post.Day == logicManager.GetDay())
             {
                 AddPost(post.Name, post.Photo, post.Post, post.Choices);
@@ -430,7 +427,6 @@ public class PhoneManager : MonoBehaviour
     {
         foreach (MessageReceived message in messageNodes)
         {
-            Debug.Log(message.Day);
             if (message.Day == logicManager.GetDay())
             {
                 AddMessage(message.Name, message.Photo, message.Choices);
@@ -448,7 +444,6 @@ public class PhoneManager : MonoBehaviour
         {
             username = user.text;
             password = pass.text;
-            Debug.Log(username + " " + password);
             user.gameObject.SetActive(false);
             pass.gameObject.SetActive(false);
             registButton.SetActive(false);
@@ -501,22 +496,8 @@ public class PhoneManager : MonoBehaviour
 
     public List<string> GetFriends()
     {
-        foreach (var friend in addedFriends)
-        {
-            Debug.Log("friend: "+friend);
-        }
         return addedFriends;
     }
-    public void Friends()
-    {
-        foreach (var friend in addedFriends)
-        {
-            Debug.Log("friend: "+friend);
-        }
-    }
-
-
-
 
 }
 

@@ -27,8 +27,8 @@
     "showdialogue": "Também. Ontem os meus pais compraram-me 10 pacotes de cartas.",
     "name": "António",
     "displaycamera": "foxCam",
-    "lastnode":3,
-    "checkcond": "conta"
+    "nextnode":5,
+    "lastnode":3
     },
     {
     "node": 5,
@@ -41,8 +41,8 @@
     {
     "node": 6,
     "showchoicepanel":[
-      {"nextnode": 7, "showdialogue": "Vês as cartas."},
-      {"nextnode": 9, "showdialogue": "Não vês as cartas."}
+      {"nextnode": 7, "showdialogue": "Vês as cartas.", "score": 2, "reference": "antonio"},
+      {"nextnode": 9, "showdialogue": "Não vês as cartas.", "score": -2, "reference": "antonio"}
     ],
     "nextnode": 0,
     "lastnode":5

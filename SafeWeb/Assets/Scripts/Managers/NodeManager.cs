@@ -9,6 +9,8 @@ public class NodeManager : MonoBehaviour
     LogicManager logicManager;
 
     MissionManager missionManager;
+
+    CharactersManager charactersManager;
     List<DialogueNode> dialogueNodes;
 
     
@@ -16,6 +18,8 @@ public class NodeManager : MonoBehaviour
     int lastNode = 0;
     //int conta = 0;
     bool firstTime = false;
+    public bool goShopping = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -28,6 +32,7 @@ public class NodeManager : MonoBehaviour
         uIManager = GetComponent<UIManager>();
         logicManager = GetComponent<LogicManager>();
         missionManager = GetComponent<MissionManager>();
+        charactersManager = GetComponent<CharactersManager>();
         //NextNode();
     }
 
@@ -91,7 +96,23 @@ public class NodeManager : MonoBehaviour
                 }
                 if (dialogueNodes[node].ToDo != null)
                 {
-                    uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
+                    if (dialogueNodes[node].ToDo.Contains("missions"))
+                    {
+                        string toDoList = "";
+                        foreach (var mission in missionManager.GetMissions())
+                        {
+                            if (mission.available == true)
+                            {
+                                toDoList += mission.Description + "\n";
+                            }
+                            //Debug.Log(missions[number].Description);
+                        }
+                        uIManager.DisplayToDoList(toDoList);
+                    }
+                    else
+                    {
+                        uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
+                    }
                 }
                 if (dialogueNodes[node].ShowDialogue.Contains("free mode v2"))
                 {
@@ -99,7 +120,10 @@ public class NodeManager : MonoBehaviour
                 }
                 else
                 {
-                    logicManager.ChangeMode(stringObj: "chair");
+                    if (logicManager.GetDay() != 3)
+                    {
+                        logicManager.ChangeMode(stringObj: "chair");
+                    }
                 }
                 lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
@@ -116,6 +140,17 @@ public class NodeManager : MonoBehaviour
             }
             else
             {
+                if (dialogueNodes[node].Trigger != null)
+                {
+                    if (dialogueNodes[node].Trigger.Contains("characters"))
+                    {
+                        charactersManager.ShowCharacters();
+                    }
+                    else if (dialogueNodes[node].Trigger.Contains("shopping"))
+                    {
+                        goShopping = true;
+                    }
+                }
                 uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
                 lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
@@ -150,8 +185,7 @@ public class NodeManager : MonoBehaviour
 
     public void HasChoosen(int index){
         if (missionManager.IsMissionActive())
-        {
-            missionManager.UpdatePaths(dialogueNodes[node].ShowChoicePanel[index].Score);
+        {   
             missionManager.UpdateNodes(index - 1, dialogueNodes[node].LastNode - 1);
             uIManager.ToggleChoiceCanvas(false);
             missionManager.NextNodeMissions();
@@ -166,17 +200,27 @@ public class NodeManager : MonoBehaviour
         }
     }
 
-    public void LastNode(){
+    public void UpdateScores(int score)
+    {
+        missionManager.UpdatePaths(score);
+    }
+
+    public void LastNode()
+    {
         //GET info from nodes and put it on screen
-        if(!firstTime){
-            if(missionManager.IsMissionActive()){
+        if (!firstTime)
+        {
+            if (missionManager.IsMissionActive())
+            {
                 missionManager.LastNodeMissions();
             }
-            else if(dialogueNodes[lastNode].ShowChoicePanel!=null){
-                uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode-1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode-1].ShowDialogue);
+            else if (dialogueNodes[lastNode].ShowChoicePanel != null)
+            {
+                uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode - 1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode - 1].ShowDialogue);
                 uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
             }
-            else if(dialogueNodes[lastNode].ShowDialogue.Contains("free mode")){
+            else if (dialogueNodes[lastNode].ShowDialogue.Contains("free mode"))
+            {
                 if (dialogueNodes[lastNode].AvailableMissions != null)
                 {
                     string toDoList = "";
@@ -202,13 +246,14 @@ public class NodeManager : MonoBehaviour
                     uIManager.DisplayToDoList(toDoList);
                 }
                 logicManager.ChangeMode();
-                lastNode = dialogueNodes[lastNode].LastNode-1;
+                lastNode = dialogueNodes[lastNode].LastNode - 1;
                 node = dialogueNodes[lastNode].NextNode - 1;
             }
-            else if(lastNode >= 0){
+            else if (lastNode >= 0)
+            {
                 uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
                 node = dialogueNodes[lastNode].NextNode - 1;
-                lastNode = dialogueNodes[lastNode].LastNode-1;
+                lastNode = dialogueNodes[lastNode].LastNode - 1;
             }
         }
     }
@@ -246,13 +291,17 @@ public class DialogueChoices
     public int NextNode { get; private set; }
     public string ShowDialogue { get; private set; }
 
-    public int Score { get; private set; }
+    public int Score { get; private set; } = 0;
 
-    public DialogueChoices(int nextNode, string showDialogue, int score = 0)
+    public string Reference { get; private set; } = "";
+
+
+    public DialogueChoices(int nextNode, string showDialogue, int score = 0, string reference = "")
     {
         this.NextNode = nextNode;
         this.ShowDialogue = showDialogue;
         this.Score = score;
+        this.Reference = reference;
     }
 }
 

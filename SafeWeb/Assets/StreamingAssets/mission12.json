@@ -1,0 +1,82 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com o António.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Ele estava a olhar pelas grandes janelas do Centro Comercial.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá António!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Olá! Bonita paisagem, não achas?.",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode":5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Sim. Olha, queria tirar uma foto com todos. Queres entrar?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Hmm, não sei.",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Anda lá, é só uma foto.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 8,
+    "showdialogue": "Hmmm, está bem. Pode ser uma boa forma de recordar este dia!",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode":7
+    },
+    {
+    "node": 9,
+    "showdialogue": "Apesar de estar um bocado hesitante ao início, o António aceitou entrar na foto.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+] 

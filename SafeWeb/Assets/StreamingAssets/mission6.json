@@ -27,8 +27,8 @@
     "showdialogue": "Olá! Já viste a minha bola nova? Os meus pais compraram-ma ontem.",
     "name": "João",
     "displaycamera": "foxCam",
-    "lastnode":3,
-    "checkcond": "conta"
+    "nextnode":5,
+    "lastnode":3
     },
     {
     "node": 5,
@@ -41,8 +41,8 @@
     {
     "node": 6,
     "showchoicepanel":[
-      {"nextnode": 7, "showdialogue": "Vais jogar."},
-      {"nextnode": 9, "showdialogue": "Não vais jogar."}
+      {"nextnode": 7, "showdialogue": "Vais jogar.", "score": 2, "reference": "joao"},
+      {"nextnode": 9, "showdialogue": "Não vais jogar.", "score": -2, "reference": "joao"}
     ],
     "nextnode": 0,
     "lastnode":5

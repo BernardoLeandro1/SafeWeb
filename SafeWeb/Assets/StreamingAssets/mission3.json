@@ -33,8 +33,8 @@
     {
     "node": 5,
     "showchoicepanel":[
-      {"nextnode": 6, "showdialogue": "Sim."},
-      {"nextnode": 7, "showdialogue": "Não."}
+      {"nextnode": 6, "showdialogue": "Sim.", "score": 2, "reference": "antonio"},
+      {"nextnode": 7, "showdialogue": "Não.", "score": -2, "reference": "antonio"}
     ],
     "nextnode": 0,
     "lastnode":4

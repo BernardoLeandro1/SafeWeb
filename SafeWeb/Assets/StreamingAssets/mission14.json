@@ -1,0 +1,83 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com a Ana.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Ela estava no Salão de Jogos.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá Ana!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Olá! Isto tem muitos jogos, temos de vir cá mais vezes.",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode":5,
+    "lastnode":3
+    },
+    {
+    "node": 5,
+    "showdialogue": "Ya, mas aviso-te que jogo muito bem ping-pong.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "De certeza que ia ser um bom jogo entre nós.",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Também acho. Olha, quero tirar uma foto com todos. Queres entrar?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 7,
+    "showdialogue": "Sim, claro! Deviamos todos meter nas nossas contas para termos muitos gostos.",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 8,
+    "showdialogue": "De forma entusiástica, a Ana aceitou. E começou a planear a melhor forma de toda a gente publicar a foto.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode":7
+    },
+    {
+    "node": 9,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]
+
