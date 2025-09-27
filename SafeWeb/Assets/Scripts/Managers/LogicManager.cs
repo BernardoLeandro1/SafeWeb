@@ -43,7 +43,7 @@ public class LogicManager : MonoBehaviour
 
     private string teleportFrom = "";
 
-    private int day = 1;
+    private int day = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -69,10 +69,17 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = shoppingPlayer.position;
                 nodeManager.NextNode();
                 hasDoneMission = true;
+                charactersManager.UpdateCharactersPositions(3);
             }
-            else if (day == 3 && missionManager.solved == 4 && teleportFrom.Contains("shopping"))
+            else if (day == 3 && missionManager.solved == 5 && teleportFrom.Contains("shopping"))
             {
                 player.transform.position = casaPlayer.position;
+                nodeManager.NextNode();
+            }
+            else if (day == 3 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
+            {
+                canGoToBed = true;
+                player.transform.position = quartoPlayer.position;
                 nodeManager.NextNode();
             }
             else if (missionManager.solved == 4 && teleportFrom.Contains("escola"))
@@ -111,13 +118,61 @@ public class LogicManager : MonoBehaviour
     {
         if (GetMode() == "free")
         {
-            if (interactObj.gameObject.transform.childCount > 0)
+            if (interactObj != null)
             {
-                if (interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>() != null)
+                if (interactObj.gameObject.transform.childCount > 0)
                 {
-                    if (interactObj.gameObject.GetComponent<MissionIDs>() != null)
+                    if (interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>() != null)
                     {
-                        if ((currentMissionObject == null || interactObj == currentMissionObject) && hasDoneMission == false)
+                        if (interactObj.gameObject.GetComponent<MissionIDs>() != null)
+                        {
+                            if ((currentMissionObject == null || interactObj == currentMissionObject) && hasDoneMission == false)
+                            {
+                                mode = "lock";
+                                activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
+                                activeCam.gameObject.SetActive(true);
+                                cam.gameObject.SetActive(false);
+                                uIManager.ChangeUI();
+                                uIManager.HideToDoList();
+                                Cursor.lockState = CursorLockMode.None;
+                                Cursor.visible = true;
+                                missionManager.SelectMission(interactObj.gameObject.GetComponent<MissionIDs>().GetMissionID());
+                                if (currentMissionObject == null && !interactObj.name.Contains("door"))
+                                {
+                                    charactersManager.Wave(interactObj.transform.parent.gameObject);
+                                }
+
+                                charactersManager.ChangeCubes(0);
+                                currentMissionObject = interactObj;
+                                missionManager.NextNodeMissions();
+                                player.GetComponent<Rigidbody>().isKinematic = true;
+
+                            }
+
+                        }
+                        else if (interactObj.gameObject.name.Contains("Bed"))
+                        {
+                            if (canGoToBed)
+                            {
+                                mode = "lock";
+                                activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
+                                activeCam.gameObject.SetActive(true);
+                                cam.gameObject.SetActive(false);
+                                //uIManager.ChangeUI();
+                                uIManager.HideToDoList();
+                                Cursor.lockState = CursorLockMode.None;
+                                Cursor.visible = true;
+                                //nodeManager.NextNode();
+                                canGoToBed = false;
+                                day++;
+                                charactersManager.UpdateCharactersPositions(day);
+                                missionManager.solved = 0;
+                                charactersManager.HideCharacters();
+                                uIManager.fadeInStart.GetComponent<Animator>().SetTrigger("End");
+                            }
+
+                        }
+                        else if (hasDoneMission == true)
                         {
                             mode = "lock";
                             activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
@@ -127,117 +182,82 @@ public class LogicManager : MonoBehaviour
                             uIManager.HideToDoList();
                             Cursor.lockState = CursorLockMode.None;
                             Cursor.visible = true;
-                            missionManager.SelectMission(interactObj.gameObject.GetComponent<MissionIDs>().GetMissionID());
-                            if (currentMissionObject == null && !interactObj.name.Contains("door"))
-                            {
-                                charactersManager.Wave(interactObj.transform.parent.gameObject);
-                            }
-
-                            charactersManager.ChangeCubes(0);
-                            currentMissionObject = interactObj;
-                            missionManager.NextNodeMissions();
+                            nodeManager.NextNode();
+                            hasDoneMission = false;
                             player.GetComponent<Rigidbody>().isKinematic = true;
-
-                        }
-
-                    }
-                    else if (interactObj.gameObject.name.Contains("Bed"))
-                    {
-                        if (canGoToBed)
-                        {
-                            mode = "lock";
-                            activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
-                            activeCam.gameObject.SetActive(true);
-                            cam.gameObject.SetActive(false);
-                            //uIManager.ChangeUI();
-                            uIManager.HideToDoList();
-                            Cursor.lockState = CursorLockMode.None;
-                            Cursor.visible = true;
-                            //nodeManager.NextNode();
-                            canGoToBed = false;
-                            day++;
-                            charactersManager.UpdateCharactersPositions(day);
-                            missionManager.solved = 0;
+                            charactersManager.unlockCharacters = true;
+                            charactersManager.UpdateCharacters();
                             charactersManager.HideCharacters();
-                            uIManager.fadeInStart.GetComponent<Animator>().SetTrigger("End");
+                            charactersManager.ChangeCubes(2);
+                            freePlayer.position = player.transform.position;
+                            currentMissionObject = null;
                         }
 
                     }
-                    else if (hasDoneMission == true)
+                    else
                     {
-                        mode = "lock";
-                        activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();
-                        activeCam.gameObject.SetActive(true);
-                        cam.gameObject.SetActive(false);
-                        uIManager.ChangeUI();
-                        uIManager.HideToDoList();
-                        Cursor.lockState = CursorLockMode.None;
-                        Cursor.visible = true;
-                        nodeManager.NextNode();
-                        hasDoneMission = false;
-                        player.GetComponent<Rigidbody>().isKinematic = true;
-                        charactersManager.unlockCharacters = true;
-                        charactersManager.UpdateCharacters();
-                        charactersManager.HideCharacters();
-                        charactersManager.ChangeCubes(2);
-                        freePlayer.position = player.transform.position;
-                        currentMissionObject = null;
-                    }
+                        if (interactObj.name.Contains("escola") && day == 3 && nodeManager.goShopping == true)
+                        {
+                            teleport = true;
+                            teleportFrom = "escola";
+                        }
+                        else if (interactObj.name.Contains("shopping") && day == 3 && missionManager.solved == 5)
+                        {
+                            teleport = true;
+                            teleportFrom = "shopping";
+                        }
+                        else if (interactObj.name.Contains("bedroom") && day == 3 && missionManager.solved == 6)
+                        {
+                            teleport = true;
+                            teleportFrom = "bedroom";
+                        }
+                        //interactObj.GetComponent<Animator>().SetTrigger("Open");
+                        else if (interactObj.name.Contains("escola") && missionManager.solved == 4)
+                        {
+                            // player.transform.position = casaPlayer.position;
+                            // nodeManager.NextNode();
+                            teleport = true;
+                            teleportFrom = "escola";
+                        }
+                        else if (interactObj.name.Contains("casa") && missionManager.solved == 0)
+                        {
+                            // player.transform.position = aulaPlayer.position;
+                            // nodeManager.NextNode();
+                            teleport = true;
+                            teleportFrom = "casa";
+                        }
+                        else if (interactObj.name.Contains("bedroom") && missionManager.solved == 0)
+                        {
+                            // player.transform.position = salaPlayer.position;
+                            // nodeManager.NextNode();
+                            teleport = true;
+                            teleportFrom = "bedroom";
+                        }
+                        else if (interactObj.name.Contains("bedroom") && missionManager.solved == 5)
+                        {
+                            // canGoToBed = true;
+                            // player.transform.position = quartoPlayer.position;
+                            // nodeManager.NextNode();
+                            teleport = true;
+                            teleportFrom = "bedroom";
+                        }
+                        // else if (interactObj.name.Contains("bedroom") && missionManager.solved == 6)
+                        // {
+                        //     // canGoToBed = true;
+                        //     // player.transform.position = quartoPlayer.position;
+                        //     // nodeManager.NextNode();
+                        //     teleport = true;
+                        //     teleportFrom = "bedroom";
+                        // }
 
-                }
-                else
-                {
-                    if (interactObj.name.Contains("escola") && day == 3 && nodeManager.goShopping == true)
-                    {
-                        teleport = true;
-                        teleportFrom = "escola";
                     }
-                    else if (interactObj.name.Contains("shopping") && day == 3 && missionManager.solved == 4)
-                    {
-                        teleport = true;
-                        teleportFrom = "shopping";
-                    }
-                    //interactObj.GetComponent<Animator>().SetTrigger("Open");
-                    else if (interactObj.name.Contains("escola") && missionManager.solved == 4)
-                    {
-                        // player.transform.position = casaPlayer.position;
-                        // nodeManager.NextNode();
-                        teleport = true;
-                        teleportFrom = "escola";
-                    }
-                    else if (interactObj.name.Contains("casa") && missionManager.solved == 0)
-                    {
-                        // player.transform.position = aulaPlayer.position;
-                        // nodeManager.NextNode();
-                        teleport = true;
-                        teleportFrom = "casa";
-                    }
-                    else if (interactObj.name.Contains("bedroom") && missionManager.solved == 0)
-                    {
-                        // player.transform.position = salaPlayer.position;
-                        // nodeManager.NextNode();
-                        teleport = true;
-                        teleportFrom = "bedroom";
-                    }
-                    else if (interactObj.name.Contains("bedroom") && missionManager.solved == 5)
-                    {
-                        // canGoToBed = true;
-                        // player.transform.position = quartoPlayer.position;
-                        // nodeManager.NextNode();
-                        teleport = true;
-                        teleportFrom = "bedroom";
-                    }
-                    // else if (interactObj.name.Contains("bedroom") && missionManager.solved == 6)
-                    // {
-                    //     // canGoToBed = true;
-                    //     // player.transform.position = quartoPlayer.position;
-                    //     // nodeManager.NextNode();
-                    //     teleport = true;
-                    //     teleportFrom = "bedroom";
-                    // }
-                    
                 }
             }
+            else
+            {
+                
+            }
+            
         }
         else
         {
@@ -276,6 +296,7 @@ public class LogicManager : MonoBehaviour
             //nodeManager.NextNode();
             Debug.Log("SEGUE SEGUE NO DIA 3");
             hasDoneMission = false;
+            currentMissionObject = null;
         }
     }
 

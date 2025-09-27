@@ -1,0 +1,111 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Chegaste à escola e foste ter com os teus amigos. Reuniram-se todos antes de irem para o autocarro.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 1,
+    "checkcond":"wifi"
+    },
+    {
+    "node": 2,
+    "showdialogue": "Começaram a falar sobre o que poderiam ver e sobre que fotos iam publicar nas vossas redes sociais.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Eu vou tirar fotos a todas as árvores para fazer várias publicações.",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Eu vou tirar fotos às flores amarelas... São as preferidas da minha mãe.",
+    "name": "João",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+
+    },
+    {
+    "node": 5,
+    "showdialogue": "Eu vou apontar os nomes de todas as espécies que virmos hoje.",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Boas ideias malta, eu vou estar atenta às aves para as fotografar no meio da natureza.",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": " Com tantas ideias, acho que vou fazer um bocadinho de cada coisa.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode": 6
+    },
+    {
+    "node": 8,
+    "showdialogue": "Entretanto, no meio de tanta conversa, viste que recebeste uns pedidos de amizade. Assim, vais ao teu telemóvel.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode": 7
+    },
+    
+    {
+    "node": 9,
+    "showdialogue": "free mode",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "Após veres os pedidos, os professores começaram a chamar todos os alunos para irem para o autocarro.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":9
+    },
+    {
+    "node": 11,
+    "showdialogue": "Assim, sais da sala e vais para o autocarro.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 12,
+    "lastnode":10
+    },
+    {
+    "node": 12,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]
+
+
+
+
+
+
+
+
+
+

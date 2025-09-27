@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
     private UIManager uIManager;
 
     private MissionManager missionManager;
+
+    private PhoneManager phoneManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +18,7 @@ public class InputManager : MonoBehaviour
         nodeManager = GetComponent<NodeManager>();
         uIManager = GetComponent<UIManager>();
         missionManager = GetComponent<MissionManager>();
+        phoneManager = GetComponent<PhoneManager>();
     }
 
     // Update is called once per frame
@@ -37,7 +40,7 @@ public class InputManager : MonoBehaviour
         // }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            if (uIManager.phone.activeSelf == true)
+            if (uIManager.phone.activeSelf == true && phoneManager.registButton.activeSelf == false)
             {
                 uIManager.HidePhone();
                 logicManager.DeactivatePhone();

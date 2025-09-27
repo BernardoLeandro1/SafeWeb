@@ -154,6 +154,36 @@ public class MissionManager : MonoBehaviour
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
+        else if (currentMission == missions[16])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission17.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[17])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission18.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[18])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission19.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[19])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission20.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[20])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission21.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
 
     }
 
@@ -233,7 +263,7 @@ public class MissionManager : MonoBehaviour
                 currentMission = null;
                 if (logicManager.GetDay() == 3)
                 {
-                    charactersManager.ChangeCubes(3);
+                    charactersManager.UpdateCharacters();
                     nodeManager.NextNode();
                 }
             }

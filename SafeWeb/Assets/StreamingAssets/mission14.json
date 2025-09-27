@@ -55,23 +55,23 @@
     "lastnode":6
     },
     {
-    "node": 7,
+    "node": 8,
     "showdialogue": "Sim, claro! Deviamos todos meter nas nossas contas para termos muitos gostos.",
     "name": "Ana",
-    "displaycamera": "foxCam",
-    "nextnode": 8,
-    "lastnode":6
-    },
-    {
-    "node": 8,
-    "showdialogue": "De forma entusiástica, a Ana aceitou. E começou a planear a melhor forma de toda a gente publicar a foto.",
-    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 9,
     "lastnode":7
     },
     {
     "node": 9,
+    "showdialogue": "De forma entusiástica, a Ana aceitou. E começou a planear a melhor forma de toda a gente publicar a foto.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",

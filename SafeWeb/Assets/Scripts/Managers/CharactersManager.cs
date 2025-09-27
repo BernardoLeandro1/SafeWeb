@@ -16,7 +16,8 @@ public class CharactersManager : MonoBehaviour
     public GameObject pai;
 
     public GameObject day3Chars;
-
+    public GameObject day4Chars;
+    public GameObject day4CharsJardim;
 
     public GameObject cubejoao;
     public GameObject cubemaria;
@@ -117,9 +118,20 @@ public class CharactersManager : MonoBehaviour
             antonio.SetActive(false);
             cubeantonio.SetActive(false);
         }
-        if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved() && logicManager.GetDay()==3)
+        if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved() && logicManager.GetDay() == 3)
         {
             day3Chars.SetActive(true);
+        }
+        else {
+            day3Chars.SetActive(false);
+        }
+        if (logicManager.GetDay() == 4 && !(joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved()))
+        {
+            day4Chars.SetActive(true);
+        }
+        else
+        {
+            day4Chars.SetActive(false);
         }
         if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved())
         {
@@ -146,7 +158,10 @@ public class CharactersManager : MonoBehaviour
         }
         else if (i == 1)
         {
-            cubeback.SetActive(true);
+            if (logicManager.GetDay() != 4)
+            {
+                cubeback.SetActive(true);
+            }
         }
         else if (i == 2)
         {

@@ -14,7 +14,7 @@ public class NodeManager : MonoBehaviour
     List<DialogueNode> dialogueNodes;
 
     
-    int node = 0;
+    int node = 57;
     int lastNode = 0;
     //int conta = 0;
     bool firstTime = false;
@@ -115,6 +115,13 @@ public class NodeManager : MonoBehaviour
                     {
                         uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
                     }
+                }if (dialogueNodes[node].Trigger != null)
+                {
+                    if (dialogueNodes[node].Trigger.Contains("hideCharsJardim"))
+                    {
+                        charactersManager.day4CharsJardim.SetActive(false);
+                        charactersManager.ShowCharacters();
+                    }
                 }
                 if (dialogueNodes[node].ShowDialogue.Contains("free mode v2"))
                 {
@@ -122,10 +129,8 @@ public class NodeManager : MonoBehaviour
                 }
                 else
                 {
-                    if (logicManager.GetDay() != 3)
-                    {
-                        logicManager.ChangeMode(stringObj: "chair");
-                    }
+                    logicManager.ChangeMode(stringObj: "chair");
+                    
                 }
                 lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
