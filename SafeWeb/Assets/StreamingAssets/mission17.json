@@ -4,8 +4,7 @@
     "showdialogue": "Chegaste à escola e foste ter com os teus amigos. Reuniram-se todos antes de irem para o autocarro.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 1,
-    "checkcond":"wifi"
+    "nextnode": 2
     },
     {
     "node": 2,
@@ -71,7 +70,9 @@
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 10,
-    "lastnode":8
+    "lastnode":8,
+    "todo": "Pega no teu telemóvel (P).",
+    "trigger":"phone"
     },
     {
     "node": 10,

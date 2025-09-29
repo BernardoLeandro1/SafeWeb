@@ -37715,6 +37715,7 @@ MonoBehaviour:
   freePlayer: {fileID: 1792253265}
   casaPlayer: {fileID: 336948580}
   shoppingPlayer: {fileID: 1704959841}
+  jardimPlayer: {fileID: 507023734}
   aulaPlayer: {fileID: 590746896}
   quartoPlayer: {fileID: 1456803565}
   salaPlayer: {fileID: 1552742564}
@@ -37860,7 +37861,7 @@ MonoBehaviour:
   pai: {fileID: 296801959}
   day3Chars: {fileID: 856195963}
   day4Chars: {fileID: 151979708}
-  day4CharsJardim: {fileID: 0}
+  day4CharsJardim: {fileID: 2132674017}
   cubejoao: {fileID: 56409245}
   cubemaria: {fileID: 1379331882}
   cubeantonio: {fileID: 600230580}
@@ -59156,7 +59157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc019e79470885f449e88ff6edbeba6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionIDs: 04000000090000000f000000
+  missionIDs: 04000000090000000f00000015000000
 --- !u!65 &1378331384
 BoxCollider:
   m_ObjectHideFlags: 0

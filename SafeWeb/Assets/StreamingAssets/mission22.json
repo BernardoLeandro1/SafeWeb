@@ -1,0 +1,108 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com os teus pais. Eles estavam à tua espera, para ouvir como tinha corrido a visita de estudo.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Olá pais!",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Olá, como correu a visita de estudo?",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Foi brutal! Vi imensas coisas que não conhecia e tirei muitas fotos. Querem ver?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+
+    },
+    {
+    "node": 5,
+    "showdialogue": "Sim, claro! Mostra lá essas fotos todas.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode": 4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Mostraste as fotos que tiraste aos teus pais e contaste o que aprendeste na visita de estudo.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Depois ajudei o António e a Ana a fazerem publicações novas. E postei uma foto que tirei com a Maria.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode": 6
+    },
+    {
+    "node": 8,
+    "showdialogue": "Espero que tenhas seguido as dicas que te demos sobre o uso das redes sociais e que tenhas tido cuidado com o que publicaste.",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":7,
+    "checkcond": "dicas"
+    },
+    {
+    "node": 9,
+    "showdialogue": "Não segui todas as vossas dicas. Acabei por cometer alguns erros.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "Tens de ter mais cuidado da próxima vez. As redes sociais podem ser perigosas se não souberes usá-las corretamente.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":9
+    },
+    {
+    "node": 11,
+    "showdialogue": "Pelo menos foste honesto connosco e percebeste que erros cometeste. Isso é importante.",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 12,
+    "lastnode":10
+    },
+    {
+    "node": 12,
+    "showdialogue": "Depois duma conversa menos positiva com os teus pais, prosseguiste a tua rotina diária.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":11
+    },
+    {
+    "node": 13,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]

@@ -184,6 +184,12 @@ public class MissionManager : MonoBehaviour
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
+        else if (currentMission == missions[21])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission22.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
 
     }
 
@@ -425,7 +431,7 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("wifi"))
                 {
-                    if (scoreManager.GetScore("wifi") < 0 && scoreManager.GetScore("password") < 3 )
+                    if (scoreManager.GetScore("wifi") < 0 && scoreManager.GetScore("password") < 3)
                     {
                         node = 1;
                         lastNode = 0;
@@ -434,6 +440,30 @@ public class MissionManager : MonoBehaviour
                     {
                         node = 7;
                         lastNode = 0;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("dicas"))
+                {
+                    if (dialogueNodes[node].CheckCond.Contains("dicas-5"))
+                    {
+                        scoreManager.AddScore("dicas", -5);
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("dicas+1"))
+                    {
+                        scoreManager.AddScore("dicas", 1);
+                    }
+                    else
+                    {
+                        if(scoreManager.GetScore("dicas") < 0)
+                        {
+                            node = 10;
+                            lastNode = 9;
+                        }
+                        else
+                        {
+                            node = 18;
+                            lastNode = 9;
+                        }
                     }
                 }
             }

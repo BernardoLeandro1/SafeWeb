@@ -17,6 +17,8 @@ public class LogicManager : MonoBehaviour
 
     public Transform shoppingPlayer;
 
+    public Transform jardimPlayer;
+
     public Transform aulaPlayer;
     public Transform quartoPlayer;
 
@@ -72,6 +74,16 @@ public class LogicManager : MonoBehaviour
                 charactersManager.UpdateCharactersPositions(3);
             }
             else if (day == 3 && missionManager.solved == 5 && teleportFrom.Contains("shopping"))
+            {
+                player.transform.position = casaPlayer.position;
+                nodeManager.NextNode();
+            }
+            else if (day == 4 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
+            {
+                player.transform.position = jardimPlayer.position;
+                nodeManager.NextNode();
+            }
+            else if (day == 3 && missionManager.solved == 5 && teleportFrom.Contains("jardim"))
             {
                 player.transform.position = casaPlayer.position;
                 nodeManager.NextNode();
@@ -169,6 +181,10 @@ public class LogicManager : MonoBehaviour
                                 missionManager.solved = 0;
                                 charactersManager.HideCharacters();
                                 uIManager.fadeInStart.GetComponent<Animator>().SetTrigger("End");
+                                if (day == 4)
+                                {
+                                    charactersManager.UpdateCharacters();
+                                }
                             }
 
                         }
@@ -207,6 +223,21 @@ public class LogicManager : MonoBehaviour
                             teleportFrom = "shopping";
                         }
                         else if (interactObj.name.Contains("bedroom") && day == 3 && missionManager.solved == 6)
+                        {
+                            teleport = true;
+                            teleportFrom = "bedroom";
+                        }
+                        else if (interactObj.name.Contains("escola") && day == 4 && missionManager.solved == 1)
+                        {
+                            teleport = true;
+                            teleportFrom = "escola";
+                        }
+                        else if (interactObj.name.Contains("jardim") && day == 4 && missionManager.solved == 5)
+                        {
+                            teleport = true;
+                            teleportFrom = "jardim";
+                        }
+                        else if (interactObj.name.Contains("bedroom") && day == 4 && missionManager.solved == 6)
                         {
                             teleport = true;
                             teleportFrom = "bedroom";

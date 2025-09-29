@@ -1,32 +1,31 @@
 [
     {
     "node": 1,
-    "showdialogue": "Chegaste à escola e foste ter com os teus amigos. Reuniram-se todos antes de irem para o autocarro.",
+    "showdialogue": "Foste falar com o João. Ele estava a observar umas flores amarelas.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 1,
-    "checkcond":"wifi"
+    "nextnode": 2
     },
     {
     "node": 2,
-    "showdialogue": "Começaram a falar sobre o que poderiam ver e sobre que fotos iam publicar nas vossas redes sociais.",
-    "name": "Narrador",
+    "showdialogue": "Então, João, já mandaste uma foto à tua mãe?",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 3,
     "lastnode":1
     },
     {
     "node": 3,
-    "showdialogue": "Eu vou tirar fotos a todas as árvores para fazer várias publicações.",
-    "name": "Ana",
+    "showdialogue": "Já, ela gostou muito! Achou-as muito bonitas.",
+    "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 4,
     "lastnode":2
     },
     {
     "node": 4,
-    "showdialogue": "Eu vou tirar fotos às flores amarelas... São as preferidas da minha mãe.",
-    "name": "João",
+    "showdialogue": "Boa! E vais tirar mais fotos?",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 5,
     "lastnode":3
@@ -34,63 +33,136 @@
     },
     {
     "node": 5,
-    "showdialogue": "Eu vou apontar os nomes de todas as espécies que virmos hoje.",
-    "name": "António",
+    "showdialogue": "A estas não, vou procurar outras. E tu, o que vais fotografar?",
+    "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 6,
     "lastnode":4
     },
     {
     "node": 6,
-    "showdialogue": "Boas ideias malta, eu vou estar atenta às aves para as fotografar no meio da natureza.",
-    "name": "Maria",
+    "showdialogue": "Ainda não sei. ",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 7,
     "lastnode":5
     },
     {
     "node": 7,
-    "showdialogue": " Com tantas ideias, acho que vou fazer um bocadinho de cada coisa.",
-    "name": "Tu",
+    "showdialogue": "Okay! Queres me dar uma ajuda a escolher uma descrição para publicar a foto que mandei à minha mãe?",
+    "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 8,
     "lastnode": 6
     },
     {
     "node": 8,
-    "showdialogue": "Entretanto, no meio de tanta conversa, viste que recebeste uns pedidos de amizade. Assim, vais ao teu telemóvel.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 9,
-    "lastnode": 7
+    "showchoicepanel":[
+      {"nextnode": 9, "showdialogue": "Sim.", "score": 2, "reference": "joao"},
+      {"nextnode": 19, "showdialogue": "Não.", "score": -2, "reference": "joao"}
+    ],
+    "nextnode": 0,
+    "lastnode":7
     },
-    
     {
     "node": 9,
-    "showdialogue": "free mode",
-    "name": "Narrador",
+    "showdialogue": "Sim, ajudo!",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 10,
     "lastnode":8
     },
     {
     "node": 10,
-    "showdialogue": "Após veres os pedidos, os professores começaram a chamar todos os alunos para irem para o autocarro.",
-    "name": "Narrador",
+    "showdialogue": "Obrigado. Pensei em pôr qualquer coisa como 'Flores amarelas no Parque da Cidade' ou 'As flores preferidas da minha mãe'. O que achas?",
+    "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 11,
     "lastnode":9
     },
     {
     "node": 11,
-    "showdialogue": "Assim, sais da sala e vais para o autocarro.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 12,
-    "lastnode":10
+    "showchoicepanel":[
+      {"nextnode": 12, "showdialogue": "Flores amarelas no Parque da Cidade.", "score": -3, "reference": "joao"},
+      {"nextnode": 16, "showdialogue": "As flores preferidas da minha mãe.", "score": 3, "reference": "joao"}
+    ],
+    "nextnode": 0,
+    "lastnode":9
     },
     {
     "node": 12,
+    "showdialogue": "Acho que devias dizer 'Flores amarelas no Parque da Cidade'. É mais descritivo.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":11
+    },
+    {
+    "node": 13,
+    "showdialogue": "O João seguiu o teu conselho e pôs 'Flores amarelas no Parque da Cidade'.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 14,
+    "lastnode":12
+    },
+    {
+    "node": 14,
+    "showdialogue": "Poucos minutos depois, a mãe dele liga-lhe e dá-lhe um ralhete por ter dito que as flores eram do Parque da Cidade, já que algum estranho podia saber onde ele está agora.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":13
+    },
+    {
+    "node": 15,
+    "showdialogue": "Pediste desculpa ao João por teres dado um conselho que não foi muito bom. Ele ficou chateado contigo e tu decidiste ir embora.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 21 ,
+    "lastnode":14
+    },
+    {
+    "node": 16,
+    "showdialogue": "Acho que devias dizer 'As flores preferidas da minha mãe'. Ninguém precisa de saber onde estamos.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 17,
+    "lastnode":11
+    },
+    {
+    "node": 17,
+    "showdialogue": "O João seguiu o teu conselho e pôs 'As flores preferidas da minha mãe'.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 18,
+    "lastnode":16
+    },
+    {
+    "node": 18,
+    "showdialogue": "Poucos minutos depois, a mãe dele liga-lhe e a dizer que viu a publicação dele e que ele fez bem em não dizer onde estava. Deixaste-o a falar com a sua mãe.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 21,
+    "lastnode":17
+    },
+    {
+    "node": 19,
+    "showdialogue": "Acho melhor pedires ajuda a outra pessoa. ",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 20,
+    "lastnode":8
+    },
+    {
+    "node": 20,
+    "showdialogue": "Deixaste o João sozinho a pensar em que descrição usar.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 21,
+    "lastnode":19
+    },
+    {
+    "node": 21,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",
