@@ -37,7 +37,7 @@ public class LogicManager : MonoBehaviour
 
     private GameObject currentMissionObject;
 
-    private bool hasDoneMission = true;
+    private bool hasDoneMission = false;
 
     private bool canGoToBed = false;
 
@@ -45,7 +45,7 @@ public class LogicManager : MonoBehaviour
 
     private string teleportFrom = "";
 
-    private int day = 3;
+    private int day = 4;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -81,14 +81,15 @@ public class LogicManager : MonoBehaviour
             else if (day == 4 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
             {
                 player.transform.position = jardimPlayer.position;
+                hasDoneMission = true;
                 nodeManager.NextNode();
             }
-            else if (day == 3 && missionManager.solved == 5 && teleportFrom.Contains("jardim"))
+            else if (day == 4 && missionManager.solved == 5 && teleportFrom.Contains("jardim"))
             {
                 player.transform.position = casaPlayer.position;
                 nodeManager.NextNode();
             }
-            else if (day == 3 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
+            else if (day == 4 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
             {
                 canGoToBed = true;
                 player.transform.position = quartoPlayer.position;
@@ -108,6 +109,7 @@ public class LogicManager : MonoBehaviour
             {
                 player.transform.position = salaPlayer.position;
                 nodeManager.NextNode();
+                charactersManager.UpdateCharacters();
             }
             else if (missionManager.solved == 5 && teleportFrom.Contains("bedroom"))
             {
@@ -208,6 +210,10 @@ public class LogicManager : MonoBehaviour
                             freePlayer.position = player.transform.position;
                             currentMissionObject = null;
                         }
+                        else
+                        {
+                            Debug.Log("Dead end");
+                        }
 
                     }
                     else
@@ -272,6 +278,10 @@ public class LogicManager : MonoBehaviour
                             teleport = true;
                             teleportFrom = "bedroom";
                         }
+                        else
+                        {
+                            Debug.Log("Dead end 2");
+                        }
                         // else if (interactObj.name.Contains("bedroom") && missionManager.solved == 6)
                         // {
                         //     // canGoToBed = true;
@@ -286,9 +296,9 @@ public class LogicManager : MonoBehaviour
             }
             else
             {
-                
+
             }
-            
+
         }
         else
         {
@@ -324,10 +334,17 @@ public class LogicManager : MonoBehaviour
         hasDoneMission = true;
         if (day == 3)
         {
-            //nodeManager.NextNode();
-            Debug.Log("SEGUE SEGUE NO DIA 3");
             hasDoneMission = false;
             currentMissionObject = null;
+        }
+        else if (day == 4)
+        {
+            if (missionManager.GetMissions()[16].available == false)
+            {
+                hasDoneMission = false;
+                currentMissionObject = null;
+            }
+            
         }
     }
 

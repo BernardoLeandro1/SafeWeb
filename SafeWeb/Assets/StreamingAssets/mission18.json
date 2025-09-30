@@ -127,19 +127,19 @@
     "showdialogue": "Ela agradece-te pelo conselho que lhe deste e tu decides deixa-la a ver os commentários todos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 17,
-    "lastnode":15
-    },
-    {
-    "node": 16,
-    "showdialogue": "Naquele momento não te apeteceu ajudar a Ana, então deixaste-a sozinha.",
-    "name": "Narrador",
-    "displaycamera": "foxCam",
-    "nextnode": 17,
+    "nextnode": 18,
     "lastnode":15
     },
     {
     "node": 17,
+    "showdialogue": "Naquele momento não te apeteceu ajudar a Ana, então deixaste-a sozinha.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 18,
+    "lastnode":6
+    },
+    {
+    "node": 18,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",

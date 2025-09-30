@@ -710,27 +710,28 @@
       "displaycamera": "foxCam",
       "nextnode": 85,
       "lastnode":83,
-      "todo": "Vai ter com a turma. (E)"
+      "todo": "Vai para o autocarro. (E)"
     },
     {
       "node": 85,
-      "showdialogue": "Chegados ao Jardim Botânico, encontram-se com uma trabalhadora do jardim, a Inês, que ajuda na manutenção do mesmo.",
-      "name": "Narrador",
+      "showdialogue": "continua free",
+      "name": "Foxie",
       "displaycamera": "foxCam",
       "nextnode": 86,
-      "lastnode":84
+      "lastnode":84,
+      "todo": "Vai ter com a turma. (E)"
     },
     {
       "node": 86,
-      "showdialogue": "Neste jardim existem muitas espécies de plantas diferentes. Existe um exemplar fantástico de carvalho alvarinho, <i>Quercus robur</i>, uma espécie autóctone portuguesa. Vão adorar",
-      "name": "Inês",
+      "showdialogue": "Chegados ao Jardim Botânico, encontram-se com uma trabalhadora do jardim, a Inês, que ajuda na manutenção do mesmo.",
+      "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 87,
       "lastnode":85
     },
     {
       "node": 87,
-      "showdialogue": "Vão ver também alguns Piscos-de-Peito-Ruivo, <i>Erithacus rubecula</i>, uma ave pequena muito bonita. estejam de olhos abertos para a verem.",
+      "showdialogue": "Neste jardim existem muitas espécies de plantas diferentes. Existe um exemplar fantástico de carvalho alvarinho, <i>Quercus robur</i>, uma espécie autóctone portuguesa. Vão adorar",
       "name": "Inês",
       "displaycamera": "foxCam",
       "nextnode": 88,
@@ -738,15 +739,15 @@
     },
     {
       "node": 88,
-      "showdialogue": "Começaram então a visita, ficando divididos em grupos mais pequenos.",
-      "name": "Narrador",
+      "showdialogue": "Vão ver também alguns Piscos-de-Peito-Ruivo, <i>Erithacus rubecula</i>, uma ave pequena muito bonita. estejam de olhos abertos para a verem.",
+      "name": "Inês",
       "displaycamera": "foxCam",
       "nextnode": 89,
       "lastnode":87
     },
     {
       "node": 89,
-      "showdialogue": "Tu e os teus amigos foram juntos para uma zona onde cada um ficou a ver o que queria, mas ainda estavam perto uns dos outros.",
+      "showdialogue": "Começaram então a visita, ficando divididos em grupos mais pequenos.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 90,
@@ -754,13 +755,92 @@
     },
     {
       "node": 90,
+      "showdialogue": "Tu e os teus amigos foram juntos para uma zona onde cada um ficou a ver o que queria, mas ainda estavam perto uns dos outros.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 91,
+      "lastnode":89
+    },
+    {
+      "node": 91,
       "showdialogue": "free mode",
       "name": "Foxie",
       "displaycamera": "foxCam",
-      "nextnode": 91,
-      "lastnode":89,
+      "nextnode": 92,
+      "lastnode":90,
       "trigger":"hideCharsJardim",
       "availablemissions":[17,18,19,20]
+    },
+    {
+      "node": 92,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 93,
+      "lastnode":91
+    },
+    {
+      "node": 93,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 94,
+      "lastnode":92
+    },
+    {
+      "node": 94,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 95,
+      "lastnode":93
+    },
+    {
+      "node": 95,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 96,
+      "lastnode":94,
+      "todo":"Volta para casa. (E)"
+    },
+    {
+      "node": 96,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 97,
+      "lastnode":95,
+      "todo":"Vai falar com os teus pais. (E)",
+      "availablemissions":[21]
+    },
+    {
+      "node": 97,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 98,
+      "lastnode":96,
+      "todo":"Vai para o teu quarto. (E)"
+    },
+    {
+      "node": 98,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 99,
+      "lastnode":97,
+      "todo":"Vai ao telemóvel. (P)",
+      "trigger":"phone"
+    },
+    {
+      "node": 99,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 100,
+      "lastnode":98,
+      "todo":"Vai para a cama. (E)"
     },
     {
       "node": 28,

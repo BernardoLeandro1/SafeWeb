@@ -57,6 +57,8 @@ public class CharactersManager : MonoBehaviour
     void Start()
     {
         logicManager = GetComponent<LogicManager>();
+        
+        //UpdateCharacters();
     }
 
     // Update is called once per frame
@@ -127,6 +129,7 @@ public class CharactersManager : MonoBehaviour
         }
         if (logicManager.GetDay() == 4 && !(joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved()))
         {
+            UpdateCharactersPositions(logicManager.GetDay());
             day4Chars.SetActive(true);
         }
         else

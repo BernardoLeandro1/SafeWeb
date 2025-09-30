@@ -249,7 +249,7 @@ public class MissionManager : MonoBehaviour
             charactersManager.ChangeCubes(1);
             if (currentMission.Id != 4 && currentMission.Id != 9)
             {
-                if (logicManager.GetDay() != 3)
+                if (logicManager.GetDay() != 3 && logicManager.GetDay() != 4)
                 {
                     uIManager.DisplayToDoList("Volta ao teu lugar. (E)");
                 }
@@ -267,11 +267,12 @@ public class MissionManager : MonoBehaviour
                     solved += 1;
                 }
                 currentMission = null;
-                if (logicManager.GetDay() == 3)
+                if (logicManager.GetDay() == 3 || logicManager.GetDay() == 4)
                 {
                     charactersManager.UpdateCharacters();
                     nodeManager.NextNode();
                 }
+                
             }
             else
             {
@@ -456,13 +457,13 @@ public class MissionManager : MonoBehaviour
                     {
                         if(scoreManager.GetScore("dicas") < 0)
                         {
-                            node = 10;
-                            lastNode = 9;
+                            node = 8;
+                            lastNode = 7;
                         }
                         else
                         {
-                            node = 18;
-                            lastNode = 9;
+                            node = 12;
+                            lastNode = 7;
                         }
                     }
                 }

@@ -14,7 +14,7 @@ public class NodeManager : MonoBehaviour
     List<DialogueNode> dialogueNodes;
 
     
-    int node = 57;
+    int node = 78;
     int lastNode = 0;
     //int conta = 0;
     bool firstTime = false;
@@ -115,7 +115,8 @@ public class NodeManager : MonoBehaviour
                     {
                         uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
                     }
-                }if (dialogueNodes[node].Trigger != null)
+                }
+                if (dialogueNodes[node].Trigger != null)
                 {
                     if (dialogueNodes[node].Trigger.Contains("hideCharsJardim"))
                     {
@@ -142,6 +143,7 @@ public class NodeManager : MonoBehaviour
                 {
                     uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
                 }
+                
                 lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
             }
@@ -161,6 +163,7 @@ public class NodeManager : MonoBehaviour
                     {
                         phoneUnlocked = true;
                     }
+                    
                 }
                 uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
                 lastNode = dialogueNodes[node].LastNode - 1;
