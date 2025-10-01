@@ -39,7 +39,7 @@ public class LogicManager : MonoBehaviour
 
     private bool hasDoneMission = false;
 
-    private bool canGoToBed = false;
+    public bool canGoToBed = false;
 
     private bool teleport = false;
 
@@ -91,7 +91,6 @@ public class LogicManager : MonoBehaviour
             }
             else if (day == 4 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
             {
-                canGoToBed = true;
                 player.transform.position = quartoPlayer.position;
                 nodeManager.NextNode();
             }

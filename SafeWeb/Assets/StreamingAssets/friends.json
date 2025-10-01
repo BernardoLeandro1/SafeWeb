@@ -28,5 +28,35 @@
         "name": "Clara",
         "photo": "clara.png",
         "day": 1
+    },
+    {
+        "name": "Rita",
+        "photo": "rita.png",
+        "day": 4
+    },
+    {
+        "name": "Gabriel",
+        "photo": "gabriel.png",
+        "day": 4
+    },
+    {
+        "name": "Claúdio",
+        "photo": "claudio.png",
+        "day": 4
+    },
+    {
+        "name": "Marta",
+        "photo": "marta.png",
+        "day": 4
+    },
+    {
+        "name": "Jaime",
+        "photo": "jaime.png",
+        "day": 5
+    },
+    {
+        "name": "Carolina",
+        "photo": "carolina.png",
+        "day": 5
     }
 ]

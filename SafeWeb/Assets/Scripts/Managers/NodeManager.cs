@@ -24,6 +24,8 @@ public class NodeManager : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    PhoneManager phoneManager;
+
     void Awake()
     {
         OpenNodeFile();
@@ -35,6 +37,7 @@ public class NodeManager : MonoBehaviour
         logicManager = GetComponent<LogicManager>();
         missionManager = GetComponent<MissionManager>();
         charactersManager = GetComponent<CharactersManager>();
+        phoneManager = GetComponent<PhoneManager>();
         //NextNode();
     }
 
@@ -122,6 +125,18 @@ public class NodeManager : MonoBehaviour
                     {
                         charactersManager.day4CharsJardim.SetActive(false);
                         charactersManager.ShowCharacters();
+                    }
+                    else if (dialogueNodes[node].Trigger.Contains("canGoToBed"))
+                    {
+                        logicManager.canGoToBed = true;
+                    }
+                    if (dialogueNodes[node].Trigger.Contains("posts"))
+                    {
+                        phoneManager.ShowPosts();
+                    }
+                    if (dialogueNodes[node].Trigger.Contains("messages"))
+                    {
+                        phoneManager.ShowMessages();
                     }
                 }
                 if (dialogueNodes[node].ShowDialogue.Contains("free mode v2"))

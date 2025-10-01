@@ -72,7 +72,7 @@
     "nextnode": 10,
     "lastnode":8,
     "todo": "Pega no teu telemóvel (P).",
-    "trigger":"phone"
+    "trigger":"messages"
     },
     {
     "node": 10,

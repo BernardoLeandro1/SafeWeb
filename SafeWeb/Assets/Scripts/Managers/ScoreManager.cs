@@ -19,6 +19,12 @@ public class ScoreManager : MonoBehaviour
         scoreSystem.Add("post", 0);
         scoreSystem.Add("password", 0);
         scoreSystem.Add("wifi", 0);
+        scoreSystem.Add("dicas1", 0);
+        scoreSystem.Add("dicas2", 0);
+        scoreSystem.Add("dicas3", 0);
+        scoreSystem.Add("dicas4", 0);
+        scoreSystem.Add("dicas5", 0);
+        scoreSystem.Add("dicas6", 0);
     }
 
     // Update is called once per frame

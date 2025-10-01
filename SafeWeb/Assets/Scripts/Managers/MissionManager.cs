@@ -445,17 +445,33 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("dicas"))
                 {
-                    if (dialogueNodes[node].CheckCond.Contains("dicas-5"))
+                    if (dialogueNodes[node].CheckCond.Contains("dicas1"))
                     {
-                        scoreManager.AddScore("dicas", -5);
+                        scoreManager.AddScore("dicas1", 1);
                     }
-                    else if (dialogueNodes[node].CheckCond.Contains("dicas+1"))
+                    else if (dialogueNodes[node].CheckCond.Contains("dicas2"))
                     {
-                        scoreManager.AddScore("dicas", 1);
+                        scoreManager.AddScore("dicas2", 1);
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("dicas3"))
+                    {
+                        scoreManager.AddScore("dicas3", 1);
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("dicas4"))
+                    {
+                        scoreManager.AddScore("dicas4", 1);
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("dicas5"))
+                    {
+                        scoreManager.AddScore("dicas5", 1);
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("dicas6"))
+                    {
+                        scoreManager.AddScore("dicas6", 1);
                     }
                     else
                     {
-                        if(scoreManager.GetScore("dicas") < 0)
+                        if (scoreManager.GetScore("dicas1") != 0 || scoreManager.GetScore("dicas3") != 0 || scoreManager.GetScore("dicas5") != 0)
                         {
                             node = 8;
                             lastNode = 7;

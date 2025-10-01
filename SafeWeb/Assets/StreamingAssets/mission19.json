@@ -74,7 +74,7 @@
     },
     {
     "node": 10,
-    "showdialogue": "Obrigado. Pensei em pôr qualquer coisa como 'Flores amarelas no Parque da Cidade' ou 'As flores preferidas da minha mãe'. O que achas?",
+    "showdialogue": "Obrigado. Pensei em pôr qualquer coisa como 'Flores amarelas no Jardim da Cidade' ou 'As flores preferidas da minha mãe'. O que achas?",
     "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 11,
@@ -83,7 +83,7 @@
     {
     "node": 11,
     "showchoicepanel":[
-      {"nextnode": 12, "showdialogue": "Flores amarelas no Parque da Cidade.", "score": -3, "reference": "joao"},
+      {"nextnode": 12, "showdialogue": "Flores amarelas no Jardim da Cidade.", "score": -3, "reference": "joao"},
       {"nextnode": 16, "showdialogue": "As flores preferidas da minha mãe.", "score": 3, "reference": "joao"}
     ],
     "nextnode": 0,
@@ -91,15 +91,16 @@
     },
     {
     "node": 12,
-    "showdialogue": "Acho que devias dizer 'Flores amarelas no Parque da Cidade'. É mais descritivo.",
+    "showdialogue": "Acho que devias dizer 'Flores amarelas no Jardim da Cidade'. É mais descritivo.",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 13,
-    "lastnode":11
+    "lastnode":11,
+    "checkcond": "dicas3"
     },
     {
     "node": 13,
-    "showdialogue": "O João seguiu o teu conselho e pôs 'Flores amarelas no Parque da Cidade'.",
+    "showdialogue": "O João seguiu o teu conselho e pôs 'Flores amarelas no Jardim da Cidade'.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 14,
@@ -107,7 +108,7 @@
     },
     {
     "node": 14,
-    "showdialogue": "Poucos minutos depois, a mãe dele liga-lhe e dá-lhe um ralhete por ter dito que as flores eram do Parque da Cidade, já que algum estranho podia saber onde ele está agora.",
+    "showdialogue": "Poucos minutos depois, a mãe dele liga-lhe e dá-lhe um ralhete por ter dito que as flores eram do Jardim da Cidade, já que algum estranho podia saber onde ele está agora.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 15,
@@ -127,7 +128,8 @@
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 17,
-    "lastnode":11
+    "lastnode":11,
+    "checkcond": "dicas4"
     },
     {
     "node": 17,

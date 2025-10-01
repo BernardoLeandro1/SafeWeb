@@ -7,5 +7,54 @@
             {"text": "Não clicas no link", "score": 3, "reference": "pai"}
         ],
         "day": 2
+    },
+    {
+        "name": "Maria\nPodes clicar neste link e votar em mim para eu ganhar um concurso interescolas?",
+        "photo": "clara.png",
+        "choices":[
+            {"text": "Clicas no link", "score": -3, "reference": "pai"},
+            {"text": "Não clicas no link", "score": 3, "reference": "pai"}
+        ],
+        "day": 2
+    },
+    {
+        "name": "Maria\n A Ana ficou muito magoada com o que disseste. Deverias pedir desculpa.",
+        "photo": "maria.png",
+        "choices":[
+            {"text": "Pedes desculpa à Ana.", "score": 2, "reference": "ana_maria"},
+            {"text": "Respondes: 'A Ana foi demasiado sensível.'", "score": -2, "reference": "ana_maria"}
+        ],
+        "day": 4,
+        "condition": "dicas1"
+    },
+    {
+        "name": "Ana\n Obrigado pela dica! A foto das árvores é mesmo muito bonita.",
+        "photo": "ana.png",
+         "choices":[
+            {"text": "Respondes: 'Se não fosse eu, não percebias nada disto.'", "score": -3, "reference": "ana"},
+            {"text": "Respondes: 'De nada Ana, sempre às ordens!'", "score": 3, "reference": "ana"}
+        ],
+        "day": 4,
+        "condition": "dicas2"
+    },
+    {
+        "name": "João\n A minha mãe ficou muito chateada por eu ter dito que era no Jardim da Cidade. Achas que fizeste bem em dar-me esse conselho?",
+        "photo": "joao.png",
+         "choices":[
+            {"text": "Respondes: 'Desculpa, não pensei que fosse tão mau.'", "score": 2, "reference": "joao"},
+            {"text": "Respondes: 'Também podias pensar por ti mesmo.'", "score": -2, "reference": "joao"}
+        ],
+        "day": 4,
+        "condition": "dicas3"
+    },
+    {
+        "name": "João\n A minha mãe agradeceu-te por me teres ajudado a escolher a descrição. Ela gostou muito.",
+        "photo": "joao.png",
+         "choices":[
+            {"text": "Respondes: 'Não era muito difícil de escolher.'", "score": -3, "reference": "joao"},
+            {"text": "Respondes: 'De nada, posso ajudar sempre que precisares.'", "score": 3, "reference": "joao"}
+        ],
+        "day": 4,
+        "condition": "dicas4"
     }
 ]

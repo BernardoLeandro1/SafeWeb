@@ -417,7 +417,18 @@ public class PhoneManager : MonoBehaviour
         {
             if (post.Day == logicManager.GetDay())
             {
-                AddPost(post.Name, post.Photo, post.Post, post.Choices);
+                if (post.Condition != null)
+                {
+                    if (scoreManager.GetScore(post.Condition) > 0)
+                    {
+                        AddPost(post.Name, post.Photo, post.Post, post.Choices);
+                    }
+                }
+                else
+                {
+                    AddPost(post.Name, post.Photo, post.Post, post.Choices);
+                }
+                
             }
         }
         DisplayPosts();
@@ -429,7 +440,17 @@ public class PhoneManager : MonoBehaviour
         {
             if (message.Day == logicManager.GetDay())
             {
-                AddMessage(message.Name, message.Photo, message.Choices);
+                if (message.Condition != null)
+                {
+                    if (scoreManager.GetScore(message.Condition) > 0)
+                    {
+                        AddMessage(message.Name, message.Photo, message.Choices);
+                    }
+                }
+                else
+                {
+                    AddMessage(message.Name, message.Photo, message.Choices);
+                }
             }
         }
     }
@@ -537,12 +558,15 @@ public class PostMade
 
     public List<PhoneChoices> Choices { get; set; }
 
-    public PostMade(string name, string photo, string post, int day)
+    public string Condition { get; set; }
+
+    public PostMade(string name, string photo, string post, int day, string condition = null)
     {
         this.Name = name;
         this.Photo = photo;
         this.Post = post;
         this.Day = day;
+        this.Condition = condition;
     }
 }
 
@@ -553,6 +577,9 @@ public class PhoneChoices
     public int Score { get; private set; }
 
     public string Reference { get; private set; }
+
+
+
 
     public PhoneChoices(string text, int score, string reference)
     {
@@ -569,13 +596,15 @@ public class MessageReceived
     public string Photo { get; private set; }
 
     public int Day { get; set; }
+    public string Condition { get; set; }
 
     public List<PhoneChoices> Choices { get; set; }
-    public MessageReceived(string name, string photo, int day)
+    public MessageReceived(string name, string photo, int day, string condition = null)
     {
         this.Name = name;
         this.Photo = photo;
         this.Day = day;
+        this.Condition = condition;
     }
 
 }

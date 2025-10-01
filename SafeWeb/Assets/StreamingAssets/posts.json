@@ -15,10 +15,55 @@
         "photo": "antonio.png",
         "post": "antonioequipa.png",
          "choices":[
-            {"text": "Concordas com um comentário negativo sobre a equipa.'", "score": -3, "reference": "antonio"},
+            {"text": "Concordas com um comentário negativo sobre a equipa.", "score": -3, "reference": "antonio"},
             {"text": "Respondes a um comentário negativo, defendendo o António.", "score": 1, "reference": "antonio"},
             {"text": "Denúncias um comentário negativo.", "score": 3, "reference": "antonio"}
         ],
         "day": 2
+    },
+    {
+        "name": "Ana\n Eu e a Maria no Jardim!",
+        "photo": "ana.png",
+        "post": "anaemaria.png",
+         "choices":[
+            {"text": "Reportas os comentários de um utilizador estranho.", "score": 1, "reference": "ana_maria"},
+            {"text": "Gozas com o utilizador que fez maus comentários.", "score": -2, "reference": "ana_maria"}
+        ],
+        "day": 4,
+        "condition": "dicas1"
+    },
+    {
+        "name": "Ana\n Àrvores incríveis!",
+        "photo": "ana.png",
+        "post": "anaarvores.png",
+         "choices":[
+            {"text": "Gozas com o post que a Ana fez.", "score": -3, "reference": "ana"},
+            {"text": "Elogias a fotografia que a Ana tirou", "score": 3, "reference": "ana"}
+        ],
+        "day": 4,
+        "condition": "dicas2"
+    },
+    {
+        "name": "João\n Flores amarelas no Jardim da Cidade.!!",
+        "photo": "joao.png",
+        "post": "joaoflores.png",
+         "choices":[
+            {"text": "Gozas com as flores amarelas que o João postou.", "score": -3, "reference": "joao"},
+            {"text": "Respondes a um comentário negativo, defendendo o João.", "score": -1, "reference": "joao"},
+            {"text": "Denúncias um comentário estranho sobre o Jardim.", "score": 3, "reference": "joao"}
+        ],
+        "day": 4,
+        "condition": "dicas3"
+    },
+    {
+        "name": "João\n As flores preferidas da minha mãe.!!",
+        "photo": "joao.png",
+        "post": "joaoflores.png",
+         "choices":[
+            {"text": "Partilhas a foto no grupo da turma e gozas com o João.", "score": -3, "reference": "joao"},
+            {"text": "Comentas: 'A tua mãe tem bom gosto!'.", "score": 3, "reference": "joao"}
+        ],
+        "day": 4,
+        "condition": "dicas4"
     }
 ]

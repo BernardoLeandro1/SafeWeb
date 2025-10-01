@@ -831,7 +831,7 @@
       "nextnode": 99,
       "lastnode":97,
       "todo":"Vai ao telemóvel. (P)",
-      "trigger":"phone"
+      "trigger":"messages_posts"
     },
     {
       "node": 99,
@@ -840,7 +840,8 @@
       "displaycamera": "foxCam",
       "nextnode": 100,
       "lastnode":98,
-      "todo":"Vai para a cama. (E)"
+      "todo":"Vai para a cama. (E)",
+      "trigger":"canGoToBed"
     },
     {
       "node": 28,

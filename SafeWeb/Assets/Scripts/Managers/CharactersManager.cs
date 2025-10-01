@@ -48,6 +48,9 @@ public class CharactersManager : MonoBehaviour
     public Transform antonioday4;
     public Transform antonioday5;
 
+    public GameObject jaime4;
+    public GameObject jaime5;
+
     LogicManager logicManager;
 
     private int joint = 0;
@@ -57,7 +60,7 @@ public class CharactersManager : MonoBehaviour
     void Start()
     {
         logicManager = GetComponent<LogicManager>();
-        
+        //UpdateCharactersPositions(logicManager.GetDay());
         //UpdateCharacters();
     }
 
@@ -119,6 +122,8 @@ public class CharactersManager : MonoBehaviour
         {
             antonio.SetActive(false);
             cubeantonio.SetActive(false);
+            jaime4.SetActive(false);
+            
         }
         if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved() && logicManager.GetDay() == 3)
         {
@@ -286,5 +291,9 @@ public class CharactersManager : MonoBehaviour
         antonio.SetActive(true);
         pai.SetActive(true);
         mae.SetActive(true);
+        if(logicManager.GetDay() == 4)
+        {
+            jaime4.SetActive(true);
+        }
     }
 }
