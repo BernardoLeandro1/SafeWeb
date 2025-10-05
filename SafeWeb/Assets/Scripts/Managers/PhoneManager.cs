@@ -290,6 +290,14 @@ public class PhoneManager : MonoBehaviour
                     {
                         scoreManager.AddScore("link", 1);
                     }
+                    else if (choice.Text.Contains("Bloqueias"))
+                    {
+                        scoreManager.AddScore("jaimelink", 0);
+                    }
+                    else if (choice.Text.Contains("Curioso"))
+                    {
+                        scoreManager.AddScore("jaimelink", 1);
+                    }
                     scoreManager.AddScore(choice.Reference, choice.Score);
                     messagesList.Remove(newPost);
                     Destroy(newPost);
@@ -303,6 +311,15 @@ public class PhoneManager : MonoBehaviour
                             if (missionManager.GetCurrentMission().Id == 8)
                             {
                                 uIManager.DisplayToDoList("Volta a falar com a Ana. (E)");
+                            }
+                        }
+                        else if (logicManager.GetDay() == 5)
+                        {
+                            uIManager.HidePhone();
+                            logicManager.DeactivatePhone();
+                            if (missionManager.GetCurrentMission().Id == 25)
+                            {
+                                uIManager.DisplayToDoList("Volta a falar com eles. (E)");
                             }
                         }
 

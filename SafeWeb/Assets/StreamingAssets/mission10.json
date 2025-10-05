@@ -81,7 +81,7 @@
     },
     {
     "node": 11,
-    "showdialogue": "Boa! O Lulu adora jogar á bola connosco",
+    "showdialogue": "Boa! O Lulu adora jogar à bola connosco",
     "name": "Pai",
     "displaycamera": "foxCam",
     "nextnode": 12,
@@ -149,7 +149,7 @@
 
     {
     "node": 19,
-    "showdialogue": "Acertaste. Nesta a data Portugal saiu dum reinado e passou a ser uma República. Ganhaste o jogo e tu e o teu pai são os vencedores.",
+    "showdialogue": "Acertaste. Nesta data Portugal saiu dum reinado e passou a ser uma República. Ganhaste o jogo e tu e o teu pai são os vencedores.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 21,

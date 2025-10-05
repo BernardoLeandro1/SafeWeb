@@ -57,7 +57,7 @@
     },
     {
     "node": 8,
-    "showdialogue": "Tiraste uma foto com a Maria e os pássaros no fundo. Depois de perguntares se podes publicar a foto ela dizer que sim, tens de escolher com quem partilhas a foto.",
+    "showdialogue": "Tiraste uma foto com a Maria e os pássaros no fundo. Depois de perguntares se podes publicar a foto e ela dizer que sim, tens de escolher com quem partilhas a foto.",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 9,

@@ -1,7 +1,7 @@
 [
     {
     "node": 1,
-    "showdialogue": "Chegaste a casa e fosta falar com os teus pais.",
+    "showdialogue": "Chegaste a casa e foste falar com os teus pais.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 2
@@ -67,7 +67,7 @@
     },
     {
     "node": 9,
-    "showdialogue": "Depois de criar conta, está na hora de aceitares ou recusares os pedidos de amizades.",
+    "showdialogue": "Depois de criar conta, está na hora de aceitares ou recusares os pedidos de amizade.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 10,
@@ -124,7 +124,7 @@
     },
     {
     "node": 16,
-    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar , tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
+    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar, tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 18,
@@ -132,7 +132,7 @@
     },
     {
     "node": 17,
-    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar , tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
+    "showdialogue": "Continuaste o resto do dia de forma normal, fazer tpc's, jantar, tomar banho e lavar os dentes, ver um bocadinho de televisão e ir para a cama.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 18,

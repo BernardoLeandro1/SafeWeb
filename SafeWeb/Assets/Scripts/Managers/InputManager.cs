@@ -55,7 +55,6 @@ public class InputManager : MonoBehaviour
     }
 
     public void Advance(){
-        Debug.Log("lineFinish: " + uIManager.lineFinish);
         if(uIManager.lineFinish){
             nodeManager.NextNode();
         }
@@ -66,7 +65,6 @@ public class InputManager : MonoBehaviour
     }
 
     public void Backtrack(){
-        Debug.Log("lineFinish: " + uIManager.lineFinish);
         if(uIManager.lineFinish){
             nodeManager.LastNode();
         }

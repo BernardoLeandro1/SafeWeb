@@ -108,5 +108,30 @@
     "id": 21,
     "name": "mission22",
     "description": "Falar com os pais. (E)"
+    },
+    {
+    "id": 22,    
+    "name": "mission23",
+    "description": "Falar com a Maria. (E)"
+    },
+    {
+    "id": 23,    
+    "name": "mission24",
+    "description": "Falar com o João. (E)"
+    },
+    {
+    "id": 24,
+    "name": "mission25",
+    "description": "Falar com a Ana. (E)"
+    },
+    {
+    "id": 25,
+    "name": "mission26",
+    "description": "Falar com o António. (E)"
+    },
+    {
+    "id": 26,
+    "name": "mission27",
+    "description": "Falar com os pais. (E)"
     }
 ]

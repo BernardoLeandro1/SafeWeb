@@ -24,6 +24,8 @@ public class LogicManager : MonoBehaviour
 
 
     public Transform salaPlayer;
+    public Transform artclubPlayer;
+
     private CinemachineCamera activeCam;
 
     private NodeManager nodeManager;
@@ -37,7 +39,7 @@ public class LogicManager : MonoBehaviour
 
     private GameObject currentMissionObject;
 
-    private bool hasDoneMission = false;
+    private bool hasDoneMission = true;
 
     public bool canGoToBed = false;
 
@@ -45,7 +47,7 @@ public class LogicManager : MonoBehaviour
 
     private string teleportFrom = "";
 
-    private int day = 4;
+    private int day = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -78,6 +80,12 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = casaPlayer.position;
                 nodeManager.NextNode();
             }
+            else if (day == 3 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
+            {
+                canGoToBed = true;
+                player.transform.position = quartoPlayer.position;
+                nodeManager.NextNode();
+            }
             else if (day == 4 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
             {
                 player.transform.position = jardimPlayer.position;
@@ -92,6 +100,11 @@ public class LogicManager : MonoBehaviour
             else if (day == 4 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
             {
                 player.transform.position = quartoPlayer.position;
+                nodeManager.NextNode();
+            }
+            else if (day == 5 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
+            {
+                player.transform.position = artclubPlayer.position;
                 nodeManager.NextNode();
             }
             else if (missionManager.solved == 4 && teleportFrom.Contains("escola"))
@@ -139,7 +152,7 @@ public class LogicManager : MonoBehaviour
                     {
                         if (interactObj.gameObject.GetComponent<MissionIDs>() != null)
                         {
-                            if ((currentMissionObject == null || interactObj == currentMissionObject) && hasDoneMission == false)
+                            if ((currentMissionObject == null || interactObj == currentMissionObject) && hasDoneMission == false && interactObj.gameObject.GetComponent<MissionIDs>().GetMissionID() >= 0)
                             {
                                 mode = "lock";
                                 activeCam = interactObj.gameObject.transform.GetChild(0).GetComponent<CinemachineCamera>();

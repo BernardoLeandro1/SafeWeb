@@ -24,7 +24,7 @@
     },
     {
     "node": 4,
-    "showdialogue": "Olá! Bonita paisagem, não achas?.",
+    "showdialogue": "Olá! Bonita paisagem, não achas?",
     "name": "António",
     "displaycamera": "foxCam",
     "nextnode":5,

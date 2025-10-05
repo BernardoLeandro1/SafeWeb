@@ -1,0 +1,200 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com o António. Ele estava a falar com o Jaime.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Olá, malta! O que é que estão a fazer?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Estamos a fazer uma pausa. Estivemos a escolher uma foto das que tirei ontem para tentar pintar.",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Sim, já temos algumas ideias. E tu, o que é que estás a fazer?",
+    "name": "Jaime",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+
+    },
+    {
+    "node": 5,
+    "showdialogue": "Estou a trabalhar no meu busto de madeira.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "Jaime, afinal sempre criaste conta na 'Cheese!'. O que te fez mudar de ideias?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Eu não criei conta. Deves estar enganado.",
+    "name": "Jaime",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode": 6
+    },
+    {
+    "node": 8,
+    "showdialogue": "Como? Eu recebi um pedido de amizade teu hoje de manhã.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode":7
+    },
+    {
+    "node": 9,
+    "showdialogue": "E aceitaste o pedido?",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode":8,
+    "checkcond": "jaime"
+    },
+    {
+    "node": 10,
+    "showdialogue": "Aceitei, claro, pensei que fosse mesmo o Jaime. Mas, agora, já vi que não é.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":9
+    },
+    {
+    "node": 11,
+    "showdialogue": "Pois não, não sou eu. Deve ser alguém a tentar enganar-te.",
+    "name": "Jaime",
+    "displaycamera": "foxCam",
+    "nextnode": 12,
+    "lastnode":10
+    },
+    {
+    "node": 12,
+    "showdialogue": "O que vais fazer?",
+    "name": "António",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":11
+    },
+    {
+    "node": 13,
+    "showchoicepanel":[
+      {"nextnode": 14, "showdialogue": "Bloquear e denunciar o utilizador.", "score": 3, "reference": "pai"},
+      {"nextnode": 16, "showdialogue": "Enviar mensagem a perguntar quem é.", "score": -3, "reference": "pai"}
+    ],
+    "nextnode": 0,
+    "lastnode":8
+    }, 
+    {
+    "node": 14,
+    "showdialogue": "Decides bloquear e denunciar o falso Jaime.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":13
+    },
+    {
+    "node": 15,
+    "showdialogue": "Continuam mais um bocado na conversa e depois cada um foi continuar o seu trabalho.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 24,
+    "lastnode":14
+    },
+    {
+    "node": 16,
+    "showdialogue": "Envias mensagem ao falso Jaime a perguntar quem é. Ele responde-te. Mostras a mensagem ao António e ao Jaime.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 17,
+    "lastnode":13
+    },
+    {
+    "node": 17,
+    "showdialogue": "free mode",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 18,
+    "lastnode":16,
+    "todo": "Pega no teu telemóvel (P).",
+    "trigger":"messages"
+    },
+    {
+    "node": 18,
+    "showdialogue": "Voltaste as atenções para eles.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 18,
+    "lastnode":17,
+    "checkcond": "jaimelink"
+    },
+    {
+    "node": 19,
+    "showdialogue": "Não me parece que seja prudente clicar naquele link. Bloqueeioi e denunciei a conta.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 20,
+    "lastnode":18
+    },
+    {
+    "node": 20,
+    "showdialogue": "Continuam mais um bocado na conversa e depois cada um foi continuar o seu trabalho.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 24,
+    "lastnode":19
+    },
+    {
+    "node": 21,
+    "showdialogue": "Cliquei no link rapazes.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 22,
+    "lastnode":18
+    },
+    {
+    "node": 22,
+    "showdialogue": "Ainda estavas a dizer aquela frase e, de repente, o António, a Maria, a Ana e o João recebem todos notificações de que tu fizeste posts a identificá-los e a gozar com eles.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 23,
+    "lastnode":21
+    },
+    {
+    "node": 23,
+    "showdialogue": "Muito envergonhado pedes desculpa a todos e acabas por bloquear e denunciar a conta. Depois disso, vais para o teu lugar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 24,
+    "lastnode":22
+    },
+    {
+    "node": 24,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]

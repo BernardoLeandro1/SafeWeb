@@ -7,11 +7,15 @@ public class MissionIDs : MonoBehaviour
     public List<int> missionIDs = new List<int>();
 
     int missionsSolved = 0;
-    int missionCounter = 3;
+    int missionCounter = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int GetMissionID()
     {
-        return missionIDs[missionCounter];
+        if (missionCounter < missionIDs.Count)
+        {
+            return missionIDs[missionCounter];
+        }
+        return -1;
     }
 
     public void MissionSolved()

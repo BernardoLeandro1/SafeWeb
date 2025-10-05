@@ -14,13 +14,13 @@ public class NodeManager : MonoBehaviour
     List<DialogueNode> dialogueNodes;
 
     
-    int node = 78;
+    int node = 0;
     int lastNode = 0;
     //int conta = 0;
     bool firstTime = false;
     public bool goShopping = false;
 
-    public bool phoneUnlocked = false;
+    public bool phoneUnlocked = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -248,37 +248,37 @@ public class NodeManager : MonoBehaviour
                 uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode - 1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode - 1].ShowDialogue);
                 uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
             }
-            else if (dialogueNodes[lastNode].ShowDialogue.Contains("free mode"))
-            {
-                if (dialogueNodes[lastNode].AvailableMissions != null)
-                {
-                    string toDoList = "";
-                    foreach (var number in dialogueNodes[lastNode].AvailableMissions)
-                    {
-                        missionManager.GetMissions()[number].available = true;
-                        toDoList += missionManager.GetMissions()[number].Description + "\n";
-                        //Debug.Log(missions[number].Description);
-                    }
-                    uIManager.DisplayToDoList(toDoList);
-                }
-                else
-                {
-                    string toDoList = "";
-                    foreach (var mission in missionManager.GetMissions())
-                    {
-                        if (mission.available == true)
-                        {
-                            toDoList += mission.Description + "\n";
-                        }
-                        //Debug.Log(missions[number].Description);
-                    }
-                    uIManager.DisplayToDoList(toDoList);
-                }
-                logicManager.ChangeMode();
-                lastNode = dialogueNodes[lastNode].LastNode - 1;
-                node = dialogueNodes[lastNode].NextNode - 1;
-            }
-            else if (lastNode >= 0)
+            // else if (dialogueNodes[lastNode].ShowDialogue.Contains("free mode"))
+            // {
+            //     if (dialogueNodes[lastNode].AvailableMissions != null)
+            //     {
+            //         string toDoList = "";
+            //         foreach (var number in dialogueNodes[lastNode].AvailableMissions)
+            //         {
+            //             missionManager.GetMissions()[number].available = true;
+            //             toDoList += missionManager.GetMissions()[number].Description + "\n";
+            //             //Debug.Log(missions[number].Description);
+            //         }
+            //         uIManager.DisplayToDoList(toDoList);
+            //     }
+            //     else
+            //     {
+            //         string toDoList = "";
+            //         foreach (var mission in missionManager.GetMissions())
+            //         {
+            //             if (mission.available == true)
+            //             {
+            //                 toDoList += mission.Description + "\n";
+            //             }
+            //             //Debug.Log(missions[number].Description);
+            //         }
+            //         uIManager.DisplayToDoList(toDoList);
+            //     }
+            //     logicManager.ChangeMode();
+            //     lastNode = dialogueNodes[lastNode].LastNode - 1;
+            //     node = dialogueNodes[lastNode].NextNode - 1;
+            // }
+            else if (lastNode >= 0 && !dialogueNodes[lastNode].ShowDialogue.Contains("free"))
             {
                 uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
                 node = dialogueNodes[lastNode].NextNode - 1;

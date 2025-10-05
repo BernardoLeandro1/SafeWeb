@@ -6,16 +6,8 @@
             {"text": "Clicas no link", "score": -3, "reference": "pai"},
             {"text": "Não clicas no link", "score": 3, "reference": "pai"}
         ],
-        "day": 2
-    },
-    {
-        "name": "Maria\nPodes clicar neste link e votar em mim para eu ganhar um concurso interescolas?",
-        "photo": "clara.png",
-        "choices":[
-            {"text": "Clicas no link", "score": -3, "reference": "pai"},
-            {"text": "Não clicas no link", "score": 3, "reference": "pai"}
-        ],
-        "day": 2
+        "day": 2,
+        "condition": "clara"
     },
     {
         "name": "Maria\n A Ana ficou muito magoada com o que disseste. Deverias pedir desculpa.",
@@ -56,5 +48,15 @@
         ],
         "day": 4,
         "condition": "dicas4"
+    },
+    {
+        "name": "Jaime\n sou o jrime o amigo do antonia se clicares neste linque podes ver uma foto minhA e del3: https://bit.ly/3GZt9hX",
+        "photo": "jaime.png",
+         "choices":[
+            {"text": "Bloqueias e denuncias o contacto'", "score": 2, "reference": "pai"},
+            {"text": "Curioso, clicas no link que recebeste.'", "score": -5, "reference": "todos"}
+        ],
+        "day": 5,
+        "condition": "jaime"
     }
 ]

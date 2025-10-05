@@ -158,7 +158,7 @@
     {
     "node": 20,
     "showdialogue": "Deixaste o João sozinho a pensar em que descrição usar.",
-    "name": "Tu",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 21,
     "lastnode":19

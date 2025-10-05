@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
@@ -30,5 +31,10 @@ public class Buttons : MonoBehaviour
     public void Sair()
     {
         Application.Quit();
+    }
+
+    public void Começar()
+    {
+        SceneManager.LoadScene(1);
     }
 }

@@ -89,7 +89,7 @@
     },
     {
     "node": 12,
-    "showdialogue": "Conversas mais um bocado com ambos e depois deixas-los na conversa deles.",
+    "showdialogue": "Conversas mais um bocado com ambos e depois deixa-los na conversa deles.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 13,

@@ -190,6 +190,36 @@ public class MissionManager : MonoBehaviour
             var json = reader.ReadToEnd();
             dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
         }
+        else if (currentMission == missions[22])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission23.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[23])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission24.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[24])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission25.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[25])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission26.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
+        else if (currentMission == missions[26])
+        {
+            StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "mission27.json"));
+            var json = reader.ReadToEnd();
+            dialogueNodes = JsonConvert.DeserializeObject<List<DialogueNode>>(json);
+        }
 
     }
 
@@ -253,12 +283,18 @@ public class MissionManager : MonoBehaviour
                 {
                     uIManager.DisplayToDoList("Volta ao teu lugar. (E)");
                 }
-                
+
                 logicManager.ChangeMode();
                 if (currentMission.Id == 0 || currentMission.Id == 1)
                 {
                     missions[0].available = false;
                     missions[1].available = false;
+                    solved += 2;
+                }
+                else if (currentMission.Id == 23 || currentMission.Id == 24)
+                {
+                    missions[23].available = false;
+                    missions[24].available = false;
                     solved += 2;
                 }
                 else
@@ -272,7 +308,7 @@ public class MissionManager : MonoBehaviour
                     charactersManager.UpdateCharacters();
                     nodeManager.NextNode();
                 }
-                
+
             }
             else
             {
@@ -314,7 +350,7 @@ public class MissionManager : MonoBehaviour
                 {
                     nodeManager.phoneUnlocked = true;
                 }
-                
+
             }
             lastNode = dialogueNodes[node].LastNode - 1;
             node = dialogueNodes[node].NextNode - 1;
@@ -445,29 +481,42 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("dicas"))
                 {
+
                     if (dialogueNodes[node].CheckCond.Contains("dicas1"))
                     {
                         scoreManager.AddScore("dicas1", 1);
+                        node = dialogueNodes[node].NextNode - 1;
+                        lastNode = dialogueNodes[node].LastNode - 1;
                     }
                     else if (dialogueNodes[node].CheckCond.Contains("dicas2"))
                     {
                         scoreManager.AddScore("dicas2", 1);
+                        node = dialogueNodes[node].NextNode - 1;
+                        lastNode = dialogueNodes[node].LastNode - 1;
                     }
                     else if (dialogueNodes[node].CheckCond.Contains("dicas3"))
                     {
                         scoreManager.AddScore("dicas3", 1);
+                        node = dialogueNodes[node].NextNode - 1;
+                        lastNode = dialogueNodes[node].LastNode - 1;
                     }
                     else if (dialogueNodes[node].CheckCond.Contains("dicas4"))
                     {
                         scoreManager.AddScore("dicas4", 1);
+                        node = dialogueNodes[node].NextNode - 1;
+                        lastNode = dialogueNodes[node].LastNode - 1;
                     }
                     else if (dialogueNodes[node].CheckCond.Contains("dicas5"))
                     {
                         scoreManager.AddScore("dicas5", 1);
+                        node = dialogueNodes[node].NextNode - 1;
+                        lastNode = dialogueNodes[node].LastNode - 1;
                     }
                     else if (dialogueNodes[node].CheckCond.Contains("dicas6"))
                     {
                         scoreManager.AddScore("dicas6", 1);
+                        node = dialogueNodes[node].NextNode - 1;
+                        lastNode = dialogueNodes[node].LastNode - 1;
                     }
                     else
                     {
@@ -483,13 +532,58 @@ public class MissionManager : MonoBehaviour
                         }
                     }
                 }
+                else if (dialogueNodes[node].CheckCond.Contains("jaime"))
+                {
+                    if (phoneManager.GetFriends().Contains("jaime"))
+                    {
+                        node = 9;
+                        lastNode = 8;
+                    }
+                    else
+                    {
+                        node = 15;
+                        lastNode = 8;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("jaimelink"))
+                {
+                    if (scoreManager.GetScore("jaimelink") == 0)
+                    {
+                        node = 18;
+                        lastNode = 17;
+                    }
+                    else
+                    {
+                        node = 20;
+                        lastNode = 17;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("jaimelink2"))
+                {
+                    if (scoreManager.GetScore("jaime") == 0 && scoreManager.GetScore("jaimelink") == 0)
+                    {
+                        node = 2;
+                        lastNode = 1;
+                    }
+                    else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 0)
+                    {
+                        node = 7;
+                        lastNode = 1;
+                    }
+                    else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 1)
+                    {
+                        node = 11;
+                        lastNode = 1;
+                    }
+                }
             }
             else
             {
-                node = dialogueNodes[node].NextNode - 1;
                 lastNode = dialogueNodes[node].LastNode - 1;
+                node = dialogueNodes[node].NextNode - 1;
             }
         }
+        Debug.Log("node: " + node + " lastnode: " + lastNode);
     }
 
     
@@ -510,140 +604,189 @@ public class MissionManager : MonoBehaviour
 
     public void LastNodeMissions()
     {
+        Debug.Log("RECUAR node: " + node + " lastnode: " + lastNode);
         //GET info from nodes and put it on screen
-        if (dialogueNodes[lastNode].ShowChoicePanel != null)
+        if (lastNode > 0)
         {
-            uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode - 1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode - 1].ShowDialogue);
-            uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
-        }
-        else if (lastNode >= 0)
-        {
-            uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
+            if (dialogueNodes[lastNode].ShowChoicePanel != null)
+            {
+                uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode - 1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode - 1].ShowDialogue);
+                uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
+                }
+            else if (lastNode >= 0 && !dialogueNodes[lastNode].ShowDialogue.Contains("free"))
+            {
+                 uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);
 
-            if (dialogueNodes[node].CheckCond != null)
-            {
-                if (dialogueNodes[node].CheckCond.Contains("conta1"))
+                if (dialogueNodes[node].CheckCond != null)
+                {
+                    if (dialogueNodes[node].CheckCond.Contains("conta1"))
+                    {
+                        node = dialogueNodes[lastNode].NextNode - 1;
+                        lastNode = dialogueNodes[lastNode].LastNode - 1;
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("conta0"))
+                    {
+                        node = dialogueNodes[lastNode].NextNode - 1;
+                        lastNode = dialogueNodes[lastNode].LastNode - 1;
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("conta"))
+                    {
+                        if (scoreManager.GetScore("conta") == 0)
+                        {
+                            node = 4;
+                            lastNode = 3;
+                        }
+                        else if (scoreManager.GetScore("conta") == 1)
+                        {
+                            node = 11;
+                            lastNode = 3;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("clara"))
+                    {
+                        if (phoneManager.GetFriends().Contains("Clara"))
+                        {
+                            scoreManager.AddScore("clara", 1);
+                            node = 9;
+                            lastNode = 8;
+                        }
+                        else
+                        {
+                            scoreManager.AddScore("clara", 0);
+                            node = 15;
+                            lastNode = 8;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("link"))
+                    {
+                        if (scoreManager.GetScore("link") == 1)
+                        {
+                            node = 12;
+                            lastNode = 11;
+                        }
+                        else
+                        {
+                            node = 13;
+                            lastNode = 11;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("post"))
+                    {
+                        if (scoreManager.GetScore("post") == -3)
+                        {
+                            node = 5;
+                            lastNode = 4;
+                        }
+                        else if (scoreManager.GetScore("post") == -1)
+                        {
+                            node = 7;
+                            lastNode = 4;
+                        }
+                        else
+                        {
+                            node = 9;
+                            lastNode = 4;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("password"))
+                    {
+                        if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-z]+$"))
+                        {
+                            node = 5;
+                            lastNode = 4;
+                            scoreManager.AddScore("password", 1);
+                        }
+                        else if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-zA-Z]+$"))
+                        {
+                            node = 5;
+                            lastNode = 4;
+                            scoreManager.AddScore("password", 2);
+                        }
+                        else if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-zA-Z0-9]+$"))
+                        {
+                            node = 6;
+                            lastNode = 4;
+                            scoreManager.AddScore("password", 3);
+                        }
+                        else if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-zA-Z0-9\W_]+$"))
+                        {
+                            node = 6;
+                            lastNode = 4;
+                            scoreManager.AddScore("password", 4);
+                        }
+                        else
+                        {
+                            Debug.Log("Password Error");
+                            node = 9;
+                            lastNode = 4;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("wifi"))
+                    {
+                        if (scoreManager.GetScore("wifi") < 0 && scoreManager.GetScore("password") < 3)
+                        {
+                            node = 1;
+                            lastNode = 0;
+                        }
+                        else
+                        {
+                            node = 7;
+                            lastNode = 0;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("jaime"))
+                    {
+                        if (phoneManager.GetFriends().Contains("jaime"))
+                        {
+                            node = 9;
+                            lastNode = 8;
+                        }
+                        else
+                        {
+                            node = 15;
+                            lastNode = 8;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("jaimelink"))
+                    {
+                        if (scoreManager.GetScore("jaimelink") == 0)
+                        {
+                            node = 18;
+                            lastNode = 17;
+                        }
+                        else
+                        {
+                            node = 20;
+                            lastNode = 17;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("jaimelink2"))
+                    {
+                        if (scoreManager.GetScore("jaime") == 0 && scoreManager.GetScore("jaimelink") == 0)
+                        {
+                            node = 2;
+                            lastNode = 1;
+                        }
+                        else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 0)
+                        {
+                            node = 7;
+                            lastNode = 1;
+                        }
+                        else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 1)
+                        {
+                            node = 11;
+                            lastNode = 1;
+                        }
+                    }
+                }
+                else
                 {
                     node = dialogueNodes[lastNode].NextNode - 1;
                     lastNode = dialogueNodes[lastNode].LastNode - 1;
                 }
-                else if (dialogueNodes[node].CheckCond.Contains("conta0"))
-                {
-                    node = dialogueNodes[lastNode].NextNode - 1;
-                    lastNode = dialogueNodes[lastNode].LastNode - 1;
-                }
-                else if (dialogueNodes[node].CheckCond.Contains("conta"))
-                {
-                    if (scoreManager.GetScore("conta") == 0)
-                    {
-                        node = 4;
-                        lastNode = 3;
-                    }
-                    else if (scoreManager.GetScore("conta") == 1)
-                    {
-                        node = 11;
-                        lastNode = 3;
-                    }
-                }
-                else if (dialogueNodes[node].CheckCond.Contains("clara"))
-                {
-                    if (phoneManager.GetFriends().Contains("Clara"))
-                    {
-                        scoreManager.AddScore("clara", 1);
-                        node = 9;
-                        lastNode = 8;
-                    }
-                    else
-                    {
-                        scoreManager.AddScore("clara", 0);
-                        node = 15;
-                        lastNode = 8;
-                    }
-                }
-                else if (dialogueNodes[node].CheckCond.Contains("link"))
-                {
-                    if (scoreManager.GetScore("link") == 1)
-                    {
-                        node = 12;
-                        lastNode = 11;
-                    }
-                    else
-                    {
-                        node = 13;
-                        lastNode = 11;
-                    }
-                }
-                else if (dialogueNodes[node].CheckCond.Contains("post"))
-                {
-                    if (scoreManager.GetScore("post") == -3)
-                    {
-                        node = 5;
-                        lastNode = 4;
-                    }
-                    else if (scoreManager.GetScore("post") == -1)
-                    {
-                        node = 7;
-                        lastNode = 4;
-                    }
-                    else
-                    {
-                        node = 9;
-                        lastNode = 4;
-                    }
-                }
-                else if (dialogueNodes[node].CheckCond.Contains("password"))
-                {
-                    if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-z]+$"))
-                    {
-                        node = 5;
-                        lastNode = 4;
-                        scoreManager.AddScore("password", 1);
-                    }
-                    else if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-zA-Z]+$"))
-                    {
-                        node = 5;
-                        lastNode = 4;
-                        scoreManager.AddScore("password", 2);
-                    }
-                    else if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-zA-Z0-9]+$"))
-                    {
-                        node = 6;
-                        lastNode = 4;
-                        scoreManager.AddScore("password", 3);
-                    }
-                    else if (Regex.IsMatch(phoneManager.GetPassword(), @"^[a-zA-Z0-9\W_]+$"))
-                    {
-                        node = 6;
-                        lastNode = 4;
-                        scoreManager.AddScore("password", 4);
-                    }
-                    else
-                    {
-                        Debug.Log("Password Error");
-                        node = 9;
-                        lastNode = 4;
-                    }
-                }
-                else if (dialogueNodes[node].CheckCond.Contains("wifi"))
-                {
-                    if (scoreManager.GetScore("wifi") < 0 && scoreManager.GetScore("password") < 3 )
-                    {
-                        node = 1;
-                        lastNode = 0;
-                    }
-                    else
-                    {
-                        node = 7;
-                        lastNode = 0;
-                    }
-                }
-            }
-            else
-            {
-                node = dialogueNodes[lastNode].NextNode - 1;
-                lastNode = dialogueNodes[lastNode].LastNode - 1;
             }
         }
+       
     }
 
 

@@ -68,7 +68,7 @@
     },
     {
     "node": 9,
-    "showdialogue": "A aula termina e vai ter com os teus amigos.",
+    "showdialogue": "A aula termina e vais ter com os teus amigos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 10,
@@ -125,7 +125,7 @@
     },
     {
     "node": 16,
-    "showdialogue": "Acaba o intervalo e começa uma nova aula. Esta é de inglês.",
+    "showdialogue": "Acaba o intervalo e começa uma nova aula. Esta é de Inglês.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 17,
@@ -133,7 +133,7 @@
     },
     {
     "node": 17,
-    "showdialogue": "Tu adoras ouvir música em, inglês e ver séries com os teus pais.",
+    "showdialogue": "Tu adoras ouvir música em Inglês e ver séries com os teus pais.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 18,
@@ -287,7 +287,7 @@
     },
     {
       "node": 35,
-      "showdialogue": "Começa a segunda aula do dia. Desta feita, a aula é de português.",
+      "showdialogue": "Começa a segunda aula do dia. Desta vez, a aula é de Português.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 36,
@@ -295,7 +295,7 @@
     },
     {
       "node": 36,
-      "showdialogue": "Tu não gostas muito de português. Tens receio de ler em voz alta e enganares-te, fazendo toda a gente se rir.",
+      "showdialogue": "Tu não gostas muito de Português. Tens receio de ler em voz alta e enganares-te, fazendo toda a gente se rir.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 37,
@@ -503,7 +503,7 @@
     },
     {
       "node": 61,
-      "showdialogue": "A primeira aula de hoje é de Educação Tecnológica. Durante estiveram a trabalhar nos projetos que cada um escolheu, com aprovação do professor.",
+      "showdialogue": "A primeira aula de hoje é de Educação Tecnológica. Durante a aula estiveram a trabalhar nos projetos que cada um escolheu, com aprovação do professor.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 62,
@@ -844,7 +844,269 @@
       "trigger":"canGoToBed"
     },
     {
-      "node": 28,
+      "node": 100,
+      "showdialogue": "Acordas. É sexta-feira. Último dia de aulas desta semana. Hoje é um dia especial, porque à tarde tens clube de arte.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 101,
+      "lastnode":99
+    },
+    {
+      "node": 101,
+      "showdialogue": "Neste clube, existe uma parte de desenho e pintura e outra de escultura. Tu preferes a parte de escultura, porque gostas de trabalhar com as mãos e criar coisas novas.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 102,
+      "lastnode":100
+    },
+    {
+      "node": 102,
+      "showdialogue": "Os teus pais incentivaram-te a inscreveres-te neste clube para melhorares as tua s habilidades.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 103,
+      "lastnode":101
+    },
+    {
+      "node": 103,
+      "showdialogue": "Assim, levantas-te e vais-te preparar para mais um dia de aulas. Entretanto, antes de saíres de casa vais ao telemóvel ver o que se passa de novo.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 104,
+      "lastnode":102
+    },
+    {
+      "node": 104,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 105,
+      "lastnode":103,
+      "todo": "Vai ao telemóvel. (P)"
+    },
+    {
+      "node": 105,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 106,
+      "lastnode":104,
+      "todo": "Sair do Quarto. (E)"
+    },
+    {
+      "node": 106,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 107,
+      "lastnode":105,
+      "todo": "Sair de Casa. (E)"
+    },
+    {
+      "node": 107,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 108,
+      "lastnode": 106,
+      "todo": "Vai para o teu lugar. (E)"
+    },
+    {
+      "node": 108,
+      "showdialogue": "A primeira aula do dia é de Matemática. Prestas muita atenção ao que a professora explica e fazes todos os exercícios propostos.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 109,
+      "lastnode": 107
+    },
+    {
+      "node": 109,
+      "showdialogue": "A aula estava a ser bastante produtiva, até que, de repente, a campainha tocou para o intervalo.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 110,
+      "lastnode": 108
+    },
+    {
+      "node": 110,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 111,
+      "lastnode":109,
+      "trigger": "characters",
+      "availablemissions":[22]
+    },
+    {
+      "node": 111,
+      "showdialogue": "Começa a segunda aula do dia. Desta feita, a aula é de português. É também a última aula antes do almoço e antes do clube de arte.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 112,
+      "lastnode":110
+    },
+    {
+      "node": 112,
+      "showdialogue": "A aula de hoje foi de prática de escrita. Todos tiveram de escrever um pequeno texto sobre o que fizeram e viram na visita de estudo do dia anterior.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 113,
+      "lastnode":111
+    },
+    {
+      "node": 113,
+      "showdialogue": "Normalmente, a escrita não é o teu forte, mas hoje sentiste-te uma inspiração diferente e conseguiste escrever um texto muito interessante.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 114,
+      "lastnode":112
+    },
+    {
+      "node": 114,
+      "showdialogue": "Depois de alguns lerem o seu texto em voz alta, a campainha tocou para o almoço.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 115,
+      "lastnode":113
+    },
+    {
+      "node": 115,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 116,
+      "lastnode":114,
+      "todo": "Sai da sala de aula. (E)"
+    },
+    {
+      "node": 116,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 117,
+      "lastnode":115,
+      "todo": "Vai para o teu lugar. (E)"
+    },
+    {
+      "node": 117,
+      "showdialogue": "Começou o clube de arte. Hoje vais continuar o busto de madeira que estavas a fazer. Estás ansioso por continuar o busto que tinhas começado na semana anterior.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 118,
+      "lastnode":116
+    },
+    {
+      "node": 118,
+      "showdialogue": "Tu e os teus amigos divertem-se muito no clube de arte porque têm muita liberdade e podem andar pela sala a ver o que os outros estão a fazer e a ajudar-se uns aos outros.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 119,
+      "lastnode":117
+    },
+    {
+      "node": 119,
+      "showdialogue": "Passado um bocado, decides fazer uma pausa e vais ver o que os teus amigos estão a fazer.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 120,
+      "lastnode":118
+    },
+    {
+      "node": 120,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 121,
+      "lastnode":119,
+      "availablemissions":[23,24,25]
+    },
+    {
+      "node": 121,
+      "showdialogue": "Voltas a trabalhar no teu busto de madeira. Estás quase a acabar e estás muito orgulhoso do que fizeste.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 122,
+      "lastnode":120
+    },
+    {
+      "node": 122,
+      "showdialogue": "Entretanto, a professora passou por ti e elogiou o teu trabalho. Ela também te disse que podes começar a pensar de que forma queres pintar o busto.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 123,
+      "lastnode":121
+    },
+    {
+      "node": 123,
+      "showdialogue": "Ficas a pensar nessa ideia durante algum tempo. Sem chegar a nenhuma conclusão, decides fazer uma nova pausa.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 124,
+      "lastnode":122
+    },
+    {
+      "node": 124,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 125,
+      "lastnode": 123
+    },
+    {
+      "node": 125,
+      "showdialogue": "Voltar ao teu lugar, mas já estás sem vontade de continuar o busto. A semana tem sido muito longa e cansativa.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 126,
+      "lastnode":124
+    },
+    {
+      "node": 126,
+      "showdialogue": "Desta forma, ficas só à espera que o tempo passe, para poderes ir para casa.",
+      "name": "Narrador",
+      "displaycamera": "foxCam",
+      "nextnode": 127,
+      "lastnode":125
+    },
+    {
+      "node": 127,
+      "showdialogue": "free mode",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 128,
+      "lastnode":126,
+      "todo":"Volta para casa. (E)"
+    },
+    {
+      "node": 128,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 129,
+      "lastnode":127,
+      "todo":"Vai falar com os teus pais. (E)",
+      "availablemissions":[26]
+    },
+    {
+      "node": 129,
+      "showdialogue": "free mode v2",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 130,
+      "lastnode":128,
+      "todo":"Vai para o teu quarto. (E)"
+    },
+    {
+      "node": 130,
+      "showdialogue": "continua free",
+      "name": "Foxie",
+      "displaycamera": "foxCam",
+      "nextnode": 131,
+      "lastnode": 129,
+      "todo":"Vai para a cama. (E)"
+    },
+    {
+      "node": 131,
       "showdialogue": "FIM",
       "name": "Narrador",
       "nextnode": -1

@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
         scoreSystem.Add("pai", 25);
         scoreSystem.Add("conta", 0);
         scoreSystem.Add("clara", 0);
+        scoreSystem.Add("jaime", 0);
         scoreSystem.Add("link", 0);
         scoreSystem.Add("post", 0);
         scoreSystem.Add("password", 0);
@@ -25,6 +26,7 @@ public class ScoreManager : MonoBehaviour
         scoreSystem.Add("dicas4", 0);
         scoreSystem.Add("dicas5", 0);
         scoreSystem.Add("dicas6", 0);
+        scoreSystem.Add("jaimelink", 0);
     }
 
     // Update is called once per frame

@@ -1,0 +1,149 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com os teus pais.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Contaste-lhe as peripécias do teu dia.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2,
+    "lastnode":1,
+    "checkcond": "jaimelink2"
+    },
+    {
+    "node": 3,
+    "showdialogue": "Alguém se fez passar pelo Jaime. Mas eu não aceitei o pedido porque ele me tinha dito que não tinha conta.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Boa, ainda bem que te lembraste desse pormenor.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+
+    },
+    {
+    "node": 5,
+    "showdialogue": "Sim e, depois, bloqueei e denunceei a conta.",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showdialogue": "É isso mesmo que te ensinamos, muito bem!",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 7,
+    "lastnode":5
+    },
+    {
+    "node": 7,
+    "showdialogue": "Continuaste o resto do dia de forma normal, até te ires deitar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 19,
+    "lastnode": 6
+    },
+    {
+    "node": 8,
+    "showdialogue": "Eu recebi um pedido do Jaime e hoje, a falar com ele vi que a conta não era dele. Eu acabei por bloquear e denunciar a conta.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 9,
+    "lastnode":2
+    },
+    
+    {
+    "node": 9,
+    "showdialogue": "Já te avisámos que deves sempre confirmar primeiro com os teus amigos.",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":8
+    },
+    {
+    "node": 10,
+    "showdialogue": "Apesar disso, ainda bem que denunciaste e bloqueaste a conta.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 11,
+    "lastnode":9
+    },
+    {
+    "node": 11,
+    "showdialogue": "Continuaste o resto do dia de forma normal, até te ires deitar.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 19,
+    "lastnode":10
+    },
+    {
+    "node": 12,
+    "showdialogue": "Eu recebi um pedido do Jaime e hoje, a falar com ele vi que a conta não era dele. Eu já tinha aceitado o pedido, então mandei mensagem para ver quem era.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 13,
+    "lastnode":2
+    },
+    {
+    "node": 13,
+    "showdialogue": "E depois?",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 14,
+    "lastnode":12
+    },
+    {
+    "node": 14,
+    "showdialogue": "Ele rspondeu-me com um link que eu cliquei. De repente, apareceram imensas publicações a gozar com os meus amigos, feitas pela minha conta.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 15 ,
+    "lastnode":13
+    },
+    {
+    "node": 16,
+    "showdialogue": "Fizeste asneira da grande. Estou muito desiludido contigo.",
+    "name": "Pai",
+    "displaycamera": "foxCam",
+    "nextnode": 17,
+    "lastnode":15
+    },
+    {
+    "node": 17,
+    "showdialogue": "Estamos os dois. Dá-nos o teu telemóvel. Estás de castigo e vamos eliminar a tua conta.",
+    "name": "Mãe",
+    "displaycamera": "foxCam",
+    "nextnode": 18,
+    "lastnode":16
+    },
+    {
+    "node": 18,
+    "showdialogue": "Após esta conversa, ficaste com vontade de te esconder. Jantaste e foste diretamente para a cama.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 19,
+    "lastnode":17
+    },
+    {
+    "node": 19,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]

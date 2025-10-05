@@ -53,9 +53,9 @@
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 8,
-    "lastnode":6
+    "lastnode":5
     },
-        {
+    {
     "node": 8,
     "showdialogue": "end of mission",
     "name": "Tu",

@@ -88,7 +88,7 @@ public class CharactersManager : MonoBehaviour
     {
 
         ChangeCubes(3);
-        if (joao.GetComponentInChildren<MissionIDs>().isSolved() )
+        if (joao.GetComponentInChildren<MissionIDs>().isSolved())
         {
             joao.SetActive(false);
             cubejoao.SetActive(false);
@@ -98,6 +98,13 @@ public class CharactersManager : MonoBehaviour
                 maria.GetComponentInChildren<MissionIDs>().MissionSolved();
                 cubemaria.SetActive(false);
                 joint = 1;
+            }
+            if (logicManager.GetDay() == 5 && joint == 1)
+            {
+                ana.SetActive(false);
+                ana.GetComponentInChildren<MissionIDs>().MissionSolved();
+                cubeana.SetActive(false);
+                joint = 2;
             }
 
         }
@@ -117,12 +124,20 @@ public class CharactersManager : MonoBehaviour
         {
             ana.SetActive(false);
             cubeana.SetActive(false);
+            if (logicManager.GetDay() == 5 && joint == 1)
+            {
+                joao.SetActive(false);
+                joao.GetComponentInChildren<MissionIDs>().MissionSolved();
+                cubejoao.SetActive(false);
+                joint = 2;
+            }
         }
         if (antonio.GetComponentInChildren<MissionIDs>().isSolved())
         {
             antonio.SetActive(false);
             cubeantonio.SetActive(false);
             jaime4.SetActive(false);
+            jaime5.SetActive(false);
             
         }
         if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved() && logicManager.GetDay() == 3)
@@ -291,9 +306,13 @@ public class CharactersManager : MonoBehaviour
         antonio.SetActive(true);
         pai.SetActive(true);
         mae.SetActive(true);
-        if(logicManager.GetDay() == 4)
+        if (logicManager.GetDay() == 4)
         {
             jaime4.SetActive(true);
+        }
+        if (logicManager.GetDay() == 5)
+        {
+            jaime5.SetActive(true);
         }
     }
 }

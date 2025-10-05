@@ -1,0 +1,85 @@
+[
+    {
+    "node": 1,
+    "showdialogue": "Foste falar com a Maria.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 2
+    },
+    {
+    "node": 2,
+    "showdialogue": "Então, Maria, tudo bem?",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 3,
+    "lastnode":1
+    },
+    {
+    "node": 3,
+    "showdialogue": "Sim e contigo?",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode": 4,
+    "lastnode":2
+    },
+    {
+    "node": 4,
+    "showdialogue": "Também! Estava muito concentrado na aula. Nem me apercebi do tempo a passar.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 5,
+    "lastnode":3
+
+    },
+    {
+    "node": 5,
+    "showdialogue": "Nem eu... A aula foi muito interessante. Queres ir comigo lanchar?",
+    "name": "Maria",
+    "displaycamera": "foxCam",
+    "nextnode": 6,
+    "lastnode":4
+    },
+    {
+    "node": 6,
+    "showchoicepanel":[
+      {"nextnode": 7, "showdialogue": "Sim.", "score": 2, "reference": "maria"},
+      {"nextnode": 9, "showdialogue": "Não.", "score": -2, "reference": "maria"}
+    ],
+    "nextnode": 0,
+    "lastnode":8
+    },
+    {
+    "node": 7,
+    "showdialogue": "Decidiste ir lanchar com a Maria. Foram ao bar comprar um sumo e um pão com manteiga.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 8,
+    "lastnode":6
+    },
+    {
+    "node": 8,
+    "showdialogue": "A seguir, foram ter com os restantes amigos e ficaram na conversa até ao final do intervalo.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":7
+    },
+    {
+    "node": 9,
+    "showdialogue": "Decidiste recusar o convite da Maria e ficaste sozinho na sala de aula até ao final do intervalo.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 10,
+    "lastnode":6,
+    "checkcond": "dicas5"
+    },
+    {
+    "node": 10,
+    "showdialogue": "end of mission",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 0,
+    "lastnode":0
+    }
+
+]
