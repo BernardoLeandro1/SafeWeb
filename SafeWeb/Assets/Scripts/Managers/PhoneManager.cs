@@ -218,6 +218,13 @@ public class PhoneManager : MonoBehaviour
                                 uIManager.DisplayToDoList("Volta a falar com a Ana. (E)");
                             }
                         }
+                        else if (logicManager.GetDay() == 4 && messagesList.Count == 0)
+                        {
+                            uIManager.HidePhone();
+                            logicManager.DeactivatePhone();
+                            uIManager.DisplayToDoList("Vai para a cama. (E)");
+                            
+                        }
 
                     }
                 });
@@ -306,6 +313,13 @@ public class PhoneManager : MonoBehaviour
                             {
                                 uIManager.DisplayToDoList("Volta a falar com a Ana. (E)");
                             }
+                        }
+                        else if (logicManager.GetDay() == 4 && postsList.Count == 0)
+                        {
+                            uIManager.HidePhone();
+                            logicManager.DeactivatePhone();
+                            uIManager.DisplayToDoList("Vai para a cama. (E)");
+                            
                         }
                         else if (logicManager.GetDay() == 5)
                         {

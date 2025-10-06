@@ -36,16 +36,16 @@
     "showdialogue": "Decides ligar-te ao Wi-Fi público.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode":5,
+    "nextnode":6,
     "lastnode":4,
     "checkcond": "password"
     },
     {
     "node": 6,
-    "showdialogue": " Sem perceberes porquê, a tua aplicação é eliminada. Após perderes uns minutos a tentar perceber o que aconteceu, voltas a baixar a aplicação.",
+    "showdialogue": " Sem perceberes porquê, a tua aplicação é eliminada. Após perderes uns minutos a tentar perceber o que aconteceu, o António recomenda instalares um antivírus para eliminares qualquer problema. Fazes isso e depois de te certificares que está tudo okay, voltas a instalar a aplicação..",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 8,
+    "nextnode": 7,
     "lastnode":5
     },
     {
@@ -54,7 +54,7 @@
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 10,
-    "lastnode":5
+    "lastnode":6
     },
     {
     "node": 8,

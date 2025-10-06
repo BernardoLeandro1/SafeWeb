@@ -1,6 +1,6 @@
 [
     {
-        "name": "Clara\nPodes clicar neste link e votar em mim para eu ganhar um concurso interescolas?",
+        "name": "<b>Clara</b>\nPodes clicar neste link e votar em mim para eu ganhar um concurso interescolas?",
         "photo": "clara.png",
         "choices":[
             {"text": "Clicas no link", "score": -3, "reference": "pai"},
@@ -10,7 +10,7 @@
         "condition": "clara"
     },
     {
-        "name": "Maria\n A Ana ficou muito magoada com o que disseste. Deverias pedir desculpa.",
+        "name": "<b>Maria</b>\n A Ana ficou muito magoada com o que disseste. Deverias pedir desculpa.",
         "photo": "maria.png",
         "choices":[
             {"text": "Pedes desculpa à Ana.", "score": 2, "reference": "ana_maria"},
@@ -20,7 +20,7 @@
         "condition": "dicas1"
     },
     {
-        "name": "Ana\n Obrigado pela dica! A foto das árvores é mesmo muito bonita.",
+        "name": "<b>Ana</b>\n Obrigado pela dica! A foto das árvores é mesmo muito bonita.",
         "photo": "ana.png",
          "choices":[
             {"text": "Respondes: 'Se não fosse eu, não percebias nada disto.'", "score": -3, "reference": "ana"},
@@ -30,7 +30,7 @@
         "condition": "dicas2"
     },
     {
-        "name": "João\n A minha mãe ficou muito chateada por eu ter dito que era no Jardim da Cidade. Achas que fizeste bem em dar-me esse conselho?",
+        "name": "<b>João</b>\n A minha mãe ficou muito chateada por eu ter dito que era no Jardim da Cidade. Achas que fizeste bem em dar-me esse conselho?",
         "photo": "joao.png",
          "choices":[
             {"text": "Respondes: 'Desculpa, não pensei que fosse tão mau.'", "score": 2, "reference": "joao"},
@@ -40,7 +40,7 @@
         "condition": "dicas3"
     },
     {
-        "name": "João\n A minha mãe agradeceu-te por me teres ajudado a escolher a descrição. Ela gostou muito.",
+        "name": "<b>João</b>\n A minha mãe agradeceu-te por me teres ajudado a escolher a descrição. Ela gostou muito.",
         "photo": "joao.png",
          "choices":[
             {"text": "Respondes: 'Não era muito difícil de escolher.'", "score": -3, "reference": "joao"},
@@ -50,7 +50,7 @@
         "condition": "dicas4"
     },
     {
-        "name": "Jaime\n sou o jrime o amigo do antonia se clicares neste linque podes ver uma foto minhA e del3: https://bit.ly/3GZt9hX",
+        "name": "<b>Jaime</b>\n sou o jrime o amigo do antonia se clicares neste linque podes ver uma foto minhA e del3: https://bit.ly/3GZt9hX",
         "photo": "jaime.png",
          "choices":[
             {"text": "Bloqueias e denuncias o contacto'", "score": 2, "reference": "pai"},

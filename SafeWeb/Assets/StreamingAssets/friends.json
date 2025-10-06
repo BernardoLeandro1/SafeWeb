@@ -1,61 +1,61 @@
 [
     {
-        "name": "Maria",
+        "name": "<b>Maria</b>",
         "photo": "maria.png",
         "day": 1
     },
     {
-        "name": "Ana",
+        "name": "<b>Ana</b>",
         "photo": "ana.png",
         "day": 1
     },
     {
-        "name": "Roberto",
+        "name": "<b>Roberto</b>",
         "photo": "roberto.png",
         "day": 1
     },
     {
-        "name": "João",
+        "name": "<b>João</b>",
         "photo": "joao.png",
         "day": 1
     },
     {
-        "name": "António",
+        "name": "<b>António</b>",
         "photo": "antonio.png",
         "day": 1
     },
     {
-        "name": "Clara",
+        "name": "<b>Clara</b>",
         "photo": "clara.png",
         "day": 1
     },
     {
-        "name": "Rita",
+        "name": "<b>Rita</b>",
         "photo": "rita.png",
         "day": 4
     },
     {
-        "name": "Gabriel",
+        "name": "<b>Gabriel</b>",
         "photo": "gabriel.png",
         "day": 4
     },
     {
-        "name": "Claúdio",
+        "name": "<b>Claúdio</b>",
         "photo": "claudio.png",
         "day": 4
     },
     {
-        "name": "Marta",
+        "name": "<b>Marta</b>",
         "photo": "marta.png",
         "day": 4
     },
     {
-        "name": "Jaime",
+        "name": "<b>Jaime</b>",
         "photo": "jaime.png",
         "day": 5
     },
     {
-        "name": "Carolina",
+        "name": "<b>Carolina</b>",
         "photo": "carolina.png",
         "day": 5
     }

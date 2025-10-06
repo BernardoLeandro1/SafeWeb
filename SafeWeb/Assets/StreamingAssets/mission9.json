@@ -111,8 +111,16 @@
     "showdialogue": "Era uma mensagem de uma rapariga que se chama Clara, a pedir para eu clicar num link para eu a ajudar numa competição. Eu não cliquei no link, porque não a conheço muito bem...",
     "name": "Tu",
     "displaycamera": "foxCam",
-    "nextnode": 15,
+    "nextnode": 115,
     "lastnode":12
+    },
+    {
+    "node": 115,
+    "showdialogue": "Fizeste bem, podia ser alguém a fazer se passar por ela ou ela não existir sequer. Podia ser um ataque de phishing, onde te roubam informações privadas.",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode": 15,
+    "lastnode":14
     },
     {
     "node": 15,

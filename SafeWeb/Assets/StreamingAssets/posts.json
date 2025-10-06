@@ -1,6 +1,6 @@
 [
     {
-        "name": "Maria\nEu e o meu desenho mais recente!\n#desenho",
+        "name": "<b>Maria</b>\nEu e o meu desenho mais recente!\n#desenho",
         "photo": "maria.png",
         "post": "mariadesenho.png",
         "choices":[
@@ -11,7 +11,7 @@
         "day": 2
     },
     {
-        "name": "António\n Força Rebels!!",
+        "name": "<b>António</b>\n Força Rebels!!",
         "photo": "antonio.png",
         "post": "antonioequipa.png",
          "choices":[
@@ -22,7 +22,7 @@
         "day": 2
     },
     {
-        "name": "Ana\n Eu e a Maria no Jardim!",
+        "name": "<b>Ana</b>\n Eu e a Maria no Jardim!",
         "photo": "ana.png",
         "post": "anaemaria.png",
          "choices":[
@@ -33,7 +33,7 @@
         "condition": "dicas1"
     },
     {
-        "name": "Ana\n Àrvores incríveis!",
+        "name": "<b>Ana</b>\n Àrvores incríveis!",
         "photo": "ana.png",
         "post": "anaarvores.png",
          "choices":[
@@ -44,7 +44,7 @@
         "condition": "dicas2"
     },
     {
-        "name": "João\n Flores amarelas no Jardim da Cidade.!!",
+        "name": "<b>João</b>\n Flores amarelas no Jardim da Cidade.!!",
         "photo": "joao.png",
         "post": "joaoflores.png",
          "choices":[
@@ -56,7 +56,7 @@
         "condition": "dicas3"
     },
     {
-        "name": "João\n As flores preferidas da minha mãe.!!",
+        "name": "<b>João</b>\n As flores preferidas da minha mãe.!!",
         "photo": "joao.png",
         "post": "joaoflores.png",
          "choices":[

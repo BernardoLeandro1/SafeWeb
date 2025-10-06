@@ -159,7 +159,7 @@
     {
     "node": 20,
     "showdialogue": "Continuam mais um bocado na conversa e depois cada um foi continuar o seu trabalho.",
-    "name": "Tu",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 24,
     "lastnode":19
@@ -174,7 +174,7 @@
     },
     {
     "node": 22,
-    "showdialogue": "Ainda estavas a dizer aquela frase e, de repente, o António, a Maria, a Ana e o João recebem todos notificações de que tu fizeste posts a identificá-los e a gozar com eles.",
+    "showdialogue": "Ainda estavas a dizer aquela frase e, de repente, o António, a Maria, a Ana e o João recebem todos notificações de que tu fizeste posts a identificá-los, a partilhar informações pessoais deles e a gozar com eles. Foste vítima de um ataque de phishing.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 23,

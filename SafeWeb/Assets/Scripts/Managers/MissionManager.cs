@@ -392,11 +392,13 @@ public class MissionManager : MonoBehaviour
                 {
                     if (phoneManager.GetFriends().Contains("Clara"))
                     {
+                        scoreManager.AddScore("clara", 1);
                         node = 9;
                         lastNode = 8;
                     }
                     else
                     {
+                        scoreManager.AddScore("clara", 0);
                         node = 15;
                         lastNode = 8;
                     }
@@ -535,11 +537,13 @@ public class MissionManager : MonoBehaviour
                 {
                     if (phoneManager.GetFriends().Contains("jaime"))
                     {
+                        scoreManager.AddScore("jaime", 1);
                         node = 9;
                         lastNode = 8;
                     }
                     else
                     {
+                        scoreManager.AddScore("jaime", 0);
                         node = 15;
                         lastNode = 8;
                     }
