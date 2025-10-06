@@ -1,15 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI; 
-using UnityEngine.Networking;
-using UnityEngine.Windows;
-using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using System;
-using UnityEngine.SocialPlatforms.Impl;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 public class PhoneManager : MonoBehaviour
 {

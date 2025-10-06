@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class CharactersManager : MonoBehaviour
