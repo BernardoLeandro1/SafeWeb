@@ -332,7 +332,6 @@ public class MissionManager : MonoBehaviour
             }
             if (dialogueNodes[node].Trigger != null)
             {
-                Debug.Log("AIAI: " + dialogueNodes[node].Trigger);
                 if (dialogueNodes[node].Trigger.Contains("posts"))
                 {
                     phoneManager.ShowPosts();
@@ -390,7 +389,7 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("clara"))
                 {
-                    if (phoneManager.GetFriends().Contains("Clara"))
+                    if (phoneManager.GetFriends().Contains("<b>Clara</b>"))
                     {
                         scoreManager.AddScore("clara", 1);
                         node = 9;
@@ -399,7 +398,7 @@ public class MissionManager : MonoBehaviour
                     else
                     {
                         scoreManager.AddScore("clara", 0);
-                        node = 15;
+                        node = 16;
                         lastNode = 8;
                     }
                 }
@@ -535,7 +534,7 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("jaime"))
                 {
-                    if (phoneManager.GetFriends().Contains("jaime"))
+                    if (phoneManager.GetFriends().Contains("<b>Jaime</b>"))
                     {
                         scoreManager.AddScore("jaime", 1);
                         node = 9;
@@ -607,12 +606,12 @@ public class MissionManager : MonoBehaviour
 
     public void LastNodeMissions()
     {
-        Debug.Log("RECUAR node: " + node + " lastnode: " + lastNode);
         //GET info from nodes and put it on screen
         if (lastNode > 0)
         {
             if (dialogueNodes[lastNode].ShowChoicePanel != null)
             {
+                scoreManager.RetractScore();
                 uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode - 1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode - 1].ShowDialogue);
                 uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
                 }
@@ -647,7 +646,7 @@ public class MissionManager : MonoBehaviour
                     }
                     else if (dialogueNodes[node].CheckCond.Contains("clara"))
                     {
-                        if (phoneManager.GetFriends().Contains("Clara"))
+                        if (phoneManager.GetFriends().Contains("<b>Clara</b>"))
                         {
                             scoreManager.AddScore("clara", 1);
                             node = 9;
@@ -656,7 +655,7 @@ public class MissionManager : MonoBehaviour
                         else
                         {
                             scoreManager.AddScore("clara", 0);
-                            node = 15;
+                            node = 16;
                             lastNode = 8;
                         }
                     }
@@ -739,13 +738,15 @@ public class MissionManager : MonoBehaviour
                     }
                     else if (dialogueNodes[node].CheckCond.Contains("jaime"))
                     {
-                        if (phoneManager.GetFriends().Contains("jaime"))
+                        if (phoneManager.GetFriends().Contains("<b>Jaime</b>"))
                         {
+                            scoreManager.AddScore("jaime", 1);
                             node = 9;
                             lastNode = 8;
                         }
                         else
                         {
+                            scoreManager.AddScore("jaime", 0);
                             node = 15;
                             lastNode = 8;
                         }

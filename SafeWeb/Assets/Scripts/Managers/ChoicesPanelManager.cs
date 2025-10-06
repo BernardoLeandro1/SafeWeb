@@ -9,11 +9,11 @@ public class ChoicesPanelManager : MonoBehaviour
     public static ChoicesPanelManager instance {set; get;}
 
     private const float BUTTON_MIN_WIDTH = 150;
-    private const float BUTTON_MAX_WIDTH = 1000;
-    private const float BUTTON_WIDTH_PADDING = 30;
+    private const float BUTTON_MAX_WIDTH = 300;
+    private const float BUTTON_WIDTH_PADDING = 20;
 
-    private const float BUTTON_HEIGHT_LINE = 60;
-    private const float BUTTON_HEIGHT_PADDING = 10;
+    private const float BUTTON_HEIGHT_LINE = 40;
+    private const float BUTTON_HEIGHT_PADDING = 20;
 
     public TMP_FontAsset asset;
 
@@ -113,7 +113,7 @@ public class ChoicesPanelManager : MonoBehaviour
             nodeManager.HasChoosen(decision.choices[index].NextNode);
             if (decision.choices[index].Score != 0)
             {
-                nodeManager.UpdateScores(decision.choices[index].Score);
+                nodeManager.UpdateScores(score: decision.choices[index].Score);
                 scoreManager.AddScore(decision.choices[index].Reference, decision.choices[index].Score);
             }
         }
