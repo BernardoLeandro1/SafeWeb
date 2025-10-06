@@ -8,12 +8,12 @@ public class ChoicesPanelManager : MonoBehaviour
 {
     public static ChoicesPanelManager instance {set; get;}
 
-    private const float BUTTON_MIN_WIDTH = 252;
+    private const float BUTTON_MIN_WIDTH = 150;
     private const float BUTTON_MAX_WIDTH = 1000;
-    private const float BUTTON_WIDTH_PADDING = 80;
+    private const float BUTTON_WIDTH_PADDING = 30;
 
-    private const float BUTTON_HEIGHT_LINE = 112;
-    private const float BUTTON_HEIGHT_PADDING = 34;
+    private const float BUTTON_HEIGHT_LINE = 60;
+    private const float BUTTON_HEIGHT_PADDING = 10;
 
     public TMP_FontAsset asset;
 

@@ -108,7 +108,7 @@ public class CharactersManager : MonoBehaviour
         }
         if (maria.GetComponentInChildren<MissionIDs>().isSolved())
         {
-            if (logicManager.GetDay() == 1 && joint==0)
+            if (logicManager.GetDay() == 1 && joint == 0)
             {
                 joao.SetActive(false);
                 joao.GetComponentInChildren<MissionIDs>().MissionSolved();
@@ -136,13 +136,14 @@ public class CharactersManager : MonoBehaviour
             cubeantonio.SetActive(false);
             jaime4.SetActive(false);
             jaime5.SetActive(false);
-            
+
         }
         if (joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved() && logicManager.GetDay() == 3)
         {
             day3Chars.SetActive(true);
         }
-        else {
+        else
+        {
             day3Chars.SetActive(false);
         }
         if (logicManager.GetDay() == 4 && !(joao.GetComponentInChildren<MissionIDs>().isSolved() && maria.GetComponentInChildren<MissionIDs>().isSolved() && ana.GetComponentInChildren<MissionIDs>().isSolved() && antonio.GetComponentInChildren<MissionIDs>().isSolved()))
@@ -294,6 +295,10 @@ public class CharactersManager : MonoBehaviour
         maria.GetComponentInChildren<MissionIDs>().ResetMissions();
         antonio.GetComponentInChildren<MissionIDs>().ResetMissions();
         pai.GetComponentInChildren<MissionIDs>().ResetMissions();
+        if (logicManager.GetDay() == 4)
+        {
+            ChangeCubes(2);
+        }
     }
 
     public void ShowCharacters()
@@ -312,5 +317,11 @@ public class CharactersManager : MonoBehaviour
         {
             jaime5.SetActive(true);
         }
+    }
+    public void ShowParents()
+    {
+        pai.SetActive(true);
+        mae.SetActive(true);
+       
     }
 }

@@ -802,7 +802,8 @@
       "displaycamera": "foxCam",
       "nextnode": 96,
       "lastnode":94,
-      "todo":"Volta para casa. (E)"
+      "todo":"Volta para casa. (E)",
+      "trigger": "showdad"
     },
     {
       "node": 96,

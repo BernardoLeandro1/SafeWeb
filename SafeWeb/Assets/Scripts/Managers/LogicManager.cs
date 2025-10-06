@@ -9,6 +9,16 @@ public class LogicManager : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject casa;
+
+    public GameObject salaAula;
+
+    public GameObject salaArt;
+
+    public GameObject cinema;
+
+    public GameObject jardim;
+
     public Transform freePlayer;
 
 
@@ -69,6 +79,11 @@ public class LogicManager : MonoBehaviour
         {
             if (day == 3 && nodeManager.goShopping == true && teleportFrom.Contains("escola"))
             {
+                //casa.SetActive(false);
+                salaArt.SetActive(false);
+                salaAula.SetActive(false);
+                cinema.SetActive(true);
+                jardim.SetActive(false);
                 player.transform.position = shoppingPlayer.position;
                 nodeManager.NextNode();
                 hasDoneMission = true;
@@ -76,6 +91,11 @@ public class LogicManager : MonoBehaviour
             }
             else if (day == 3 && missionManager.solved == 5 && teleportFrom.Contains("shopping"))
             {
+                //casa.SetActive(true);
+                salaArt.SetActive(false);
+                salaAula.SetActive(false);
+                cinema.SetActive(false);
+                jardim.SetActive(false);
                 player.transform.position = casaPlayer.position;
                 nodeManager.NextNode();
             }
@@ -87,12 +107,22 @@ public class LogicManager : MonoBehaviour
             }
             else if (day == 4 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
             {
+                //casa.SetActive(false);
+                salaArt.SetActive(false);
+                salaAula.SetActive(false);
+                cinema.SetActive(false);
+                jardim.SetActive(true);
                 player.transform.position = jardimPlayer.position;
                 hasDoneMission = true;
                 nodeManager.NextNode();
             }
             else if (day == 4 && missionManager.solved == 5 && teleportFrom.Contains("jardim"))
             {
+                //casa.SetActive(true);
+                salaArt.SetActive(false);
+                salaAula.SetActive(false);
+                cinema.SetActive(false);
+                jardim.SetActive(false);
                 player.transform.position = casaPlayer.position;
                 nodeManager.NextNode();
             }
@@ -103,16 +133,31 @@ public class LogicManager : MonoBehaviour
             }
             else if (day == 5 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
             {
+                //casa.SetActive(false);
+                salaArt.SetActive(true);
+                salaAula.SetActive(false);
+                cinema.SetActive(false);
+                jardim.SetActive(false);
                 player.transform.position = artclubPlayer.position;
                 nodeManager.NextNode();
             }
             else if (missionManager.solved == 4 && teleportFrom.Contains("escola"))
             {
+                //casa.SetActive(true);
+                salaArt.SetActive(false);
+                salaAula.SetActive(false);
+                cinema.SetActive(false);
+                jardim.SetActive(false);
                 player.transform.position = casaPlayer.position;
                 nodeManager.NextNode();
             }
             else if (missionManager.solved == 0 && teleportFrom.Contains(value: "casa"))
             {
+                //casa.SetActive(false);
+                salaArt.SetActive(false);
+                salaAula.SetActive(true);
+                cinema.SetActive(false);
+                jardim.SetActive(false);
                 player.transform.position = aulaPlayer.position;
                 nodeManager.NextNode();
             }

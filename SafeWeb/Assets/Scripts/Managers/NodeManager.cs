@@ -130,13 +130,17 @@ public class NodeManager : MonoBehaviour
                     {
                         logicManager.canGoToBed = true;
                     }
-                    if (dialogueNodes[node].Trigger.Contains("posts"))
+                    else if (dialogueNodes[node].Trigger.Contains("posts"))
                     {
                         phoneManager.ShowPosts();
                     }
-                    if (dialogueNodes[node].Trigger.Contains("messages"))
+                    else if (dialogueNodes[node].Trigger.Contains("messages"))
                     {
                         phoneManager.ShowMessages();
+                    }
+                    else if (dialogueNodes[node].Trigger.Contains("showdad"))
+                    {
+                        charactersManager.ShowParents();
                     }
                 }
                 if (dialogueNodes[node].ShowDialogue.Contains("free mode v2"))
@@ -177,6 +181,10 @@ public class NodeManager : MonoBehaviour
                     else if (dialogueNodes[node].Trigger.Contains("phone"))
                     {
                         phoneUnlocked = true;
+                    }
+                    else if (dialogueNodes[node].Trigger.Contains("showdad"))
+                    {
+                        charactersManager.ShowParents();
                     }
                     
                 }
