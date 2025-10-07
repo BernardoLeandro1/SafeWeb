@@ -188,7 +188,7 @@ public class CharactersManager : MonoBehaviour
         else if (i == 2)
         {
             cubeback.SetActive(false);
-            cubeback2.SetActive(true);
+            cubeback2.SetActive(false);
         }
         else if (i == 3)
         {
