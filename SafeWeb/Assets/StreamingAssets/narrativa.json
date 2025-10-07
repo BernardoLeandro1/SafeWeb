@@ -186,7 +186,8 @@
       "displaycamera": "foxCam",
       "nextnode": 24,
       "lastnode":22,
-      "todo":"Volta para casa. (E)"
+      "todo":"Volta para casa. (E)",
+      "trigger": "showdad"
     },
     {
       "node": 24,
@@ -436,7 +437,8 @@
       "displaycamera": "foxCam",
       "nextnode": 54,
       "lastnode":52,
-      "todo":"Volta para casa. (E)"
+      "todo":"Volta para casa. (E)",
+      "trigger": "showdad"
     },
     {
       "node": 54,
@@ -629,7 +631,8 @@
       "displaycamera": "foxCam",
       "nextnode": 76,
       "lastnode":74,
-      "todo":"Volta para casa. (E)"
+      "todo":"Volta para casa. (E)",
+      "trigger": "showdad"
     },
     {
       "node": 76,

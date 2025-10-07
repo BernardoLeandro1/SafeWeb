@@ -260,7 +260,7 @@ public class LogicManager : MonoBehaviour
                             {
                                 hasDoneMission = true;
                                 freewalk = 1;
-
+                                charactersManager.ChangeCubes(4);
                             }
                             
                             player.GetComponent<Rigidbody>().isKinematic = true;

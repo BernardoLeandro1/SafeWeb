@@ -526,7 +526,8 @@ public class PhoneManager : MonoBehaviour
             {
                 uIManager.HidePhone();
                 logicManager.DeactivatePhone();
-                nodeManager.NextNode();
+                uIManager.DisplayToDoList("Volta a falar com eles. (E)");
+                //nodeManager.NextNode();
 
                 //missionManager.UpdateNodes();
                 //missionManager.NextNodeMissions();
@@ -562,7 +563,8 @@ public class PhoneManager : MonoBehaviour
             {
                 uIManager.HidePhone();
                 logicManager.DeactivatePhone();
-                nodeManager.NextNode();
+                //nodeManager.NextNode();
+                uIManager.DisplayToDoList("Volta a falar com eles. (E)");
                 //missionManager.UpdateNodes();
                 //missionManager.NextNodeMissions();
             }

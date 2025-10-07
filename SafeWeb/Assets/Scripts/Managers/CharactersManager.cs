@@ -23,6 +23,7 @@ public class CharactersManager : MonoBehaviour
     public GameObject cubeana;
 
     public GameObject cubeback;
+    public GameObject cubeback2;
 
 
     public GameObject characters;
@@ -177,14 +178,17 @@ public class CharactersManager : MonoBehaviour
             cubeana.SetActive(false);
             cubeantonio.SetActive(false);
             cubeback.SetActive(false);
+            cubeback2.SetActive(false);
         }
         else if (i == 1)
-        { 
+        {
             cubeback.SetActive(true);
+            cubeback2.SetActive(true);
         }
         else if (i == 2)
         {
             cubeback.SetActive(false);
+            cubeback2.SetActive(true);
         }
         else if (i == 3)
         {
@@ -207,6 +211,10 @@ public class CharactersManager : MonoBehaviour
             {
                 cubeantonio.SetActive(true);
             }
+        }
+        else if (i == 4)
+        {
+            cubeback2.SetActive(true);
         }
 
     }
