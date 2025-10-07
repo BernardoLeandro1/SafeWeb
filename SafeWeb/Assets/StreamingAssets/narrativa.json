@@ -862,7 +862,7 @@
     },
     {
       "node": 102,
-      "showdialogue": "Os teus pais incentivaram-te a inscreveres-te neste clube para melhorares as tua s habilidades.",
+      "showdialogue": "Os teus pais incentivaram-te a inscreveres-te neste clube para melhorares as tuas habilidades.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 103,
@@ -883,7 +883,8 @@
       "displaycamera": "foxCam",
       "nextnode": 105,
       "lastnode":103,
-      "todo": "Vai ao telemóvel. (P)"
+      "todo": "Vai ao telemóvel. (P)",
+      "trigger": "requests"
     },
     {
       "node": 105,
@@ -926,7 +927,8 @@
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 110,
-      "lastnode": 108
+      "lastnode": 108,
+      "trigger": "characters"
     },
     {
       "node": 110,
@@ -935,7 +937,6 @@
       "displaycamera": "foxCam",
       "nextnode": 111,
       "lastnode":109,
-      "trigger": "characters",
       "availablemissions":[22]
     },
     {
@@ -968,7 +969,8 @@
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 115,
-      "lastnode":113
+      "lastnode":113,
+      "trigger": "hideChars"
     },
     {
       "node": 115,
@@ -977,7 +979,8 @@
       "displaycamera": "foxCam",
       "nextnode": 116,
       "lastnode":114,
-      "todo": "Sai da sala de aula. (E)"
+      "todo": "Sai da sala de aula. (E)",
+      "trigger": "hideChars"
     },
     {
       "node": 116,
@@ -1010,7 +1013,8 @@
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 120,
-      "lastnode":118
+      "lastnode":118,
+      "trigger": "characters"
     },
     {
       "node": 120,
@@ -1076,7 +1080,8 @@
       "displaycamera": "foxCam",
       "nextnode": 128,
       "lastnode":126,
-      "todo":"Volta para casa. (E)"
+      "todo":"Volta para casa. (E)",
+      "trigger": "showdad"
     },
     {
       "node": 128,

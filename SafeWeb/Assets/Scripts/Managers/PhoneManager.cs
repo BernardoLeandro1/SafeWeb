@@ -50,6 +50,8 @@ public class PhoneManager : MonoBehaviour
 
     ScoreManager scoreManager;
 
+    NodeManager nodeManager;
+
     List<Friend> friendNodes;
 
     List<PostMade> postNodes;
@@ -77,6 +79,7 @@ public class PhoneManager : MonoBehaviour
         logicManager = GetComponent<LogicManager>();
         missionManager = GetComponent<MissionManager>();
         scoreManager = GetComponent<ScoreManager>();
+        nodeManager = GetComponent<NodeManager>();
         StreamReader reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "friends.json"));
         var json = reader.ReadToEnd();
         friendNodes = JsonConvert.DeserializeObject<List<Friend>>(json);
@@ -222,7 +225,8 @@ public class PhoneManager : MonoBehaviour
                         {
                             uIManager.HidePhone();
                             logicManager.DeactivatePhone();
-                            uIManager.DisplayToDoList("Vai para a cama. (E)");
+                            nodeManager.NextNode();
+                            logicManager.canGoToBed = true;
                             
                         }
 
@@ -318,7 +322,8 @@ public class PhoneManager : MonoBehaviour
                         {
                             uIManager.HidePhone();
                             logicManager.DeactivatePhone();
-                            uIManager.DisplayToDoList("Vai para a cama. (E)");
+                            nodeManager.NextNode();
+                            logicManager.canGoToBed = true;
                             
                         }
                         else if (logicManager.GetDay() == 5)
@@ -517,6 +522,23 @@ public class PhoneManager : MonoBehaviour
                 //missionManager.UpdateNodes();
                 //missionManager.NextNodeMissions();
             }
+            else if (logicManager.GetDay() == 4)
+            {
+                uIManager.HidePhone();
+                logicManager.DeactivatePhone();
+                nodeManager.NextNode();
+
+                //missionManager.UpdateNodes();
+                //missionManager.NextNodeMissions();
+            }
+            else if (logicManager.GetDay() == 5)
+            {
+                uIManager.HidePhone();
+                logicManager.DeactivatePhone();
+                nodeManager.NextNode();
+                //missionManager.UpdateNodes();
+                //missionManager.NextNodeMissions();
+            }
         }
 
     }
@@ -533,6 +555,22 @@ public class PhoneManager : MonoBehaviour
                 uIManager.HidePhone();
                 logicManager.DeactivatePhone();
                 uIManager.DisplayToDoList("Volta a falar com eles. (E)");
+                //missionManager.UpdateNodes();
+                //missionManager.NextNodeMissions();
+            }
+            else if (logicManager.GetDay() == 4)
+            {
+                uIManager.HidePhone();
+                logicManager.DeactivatePhone();
+                nodeManager.NextNode();
+                //missionManager.UpdateNodes();
+                //missionManager.NextNodeMissions();
+            }
+            else if (logicManager.GetDay() == 5)
+            {
+                uIManager.HidePhone();
+                logicManager.DeactivatePhone();
+                nodeManager.NextNode();
                 //missionManager.UpdateNodes();
                 //missionManager.NextNodeMissions();
             }

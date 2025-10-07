@@ -58,6 +58,8 @@ public class LogicManager : MonoBehaviour
 
     private int day = 1;
 
+    private int freewalk = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -80,7 +82,7 @@ public class LogicManager : MonoBehaviour
             if (day == 3 && nodeManager.goShopping == true && teleportFrom.Contains("escola"))
             {
                 //casa.SetActive(false);
-                salaArt.SetActive(false);
+                //salaArt.SetActive(false);
                 salaAula.SetActive(false);
                 cinema.SetActive(true);
                 jardim.SetActive(false);
@@ -92,7 +94,7 @@ public class LogicManager : MonoBehaviour
             else if (day == 3 && missionManager.solved == 5 && teleportFrom.Contains("shopping"))
             {
                 //casa.SetActive(true);
-                salaArt.SetActive(false);
+                //salaArt.SetActive(false);
                 salaAula.SetActive(false);
                 cinema.SetActive(false);
                 jardim.SetActive(false);
@@ -108,7 +110,7 @@ public class LogicManager : MonoBehaviour
             else if (day == 4 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
             {
                 //casa.SetActive(false);
-                salaArt.SetActive(false);
+                //salaArt.SetActive(false);
                 salaAula.SetActive(false);
                 cinema.SetActive(false);
                 jardim.SetActive(true);
@@ -119,7 +121,7 @@ public class LogicManager : MonoBehaviour
             else if (day == 4 && missionManager.solved == 5 && teleportFrom.Contains("jardim"))
             {
                 //casa.SetActive(true);
-                salaArt.SetActive(false);
+                //salaArt.SetActive(false);
                 salaAula.SetActive(false);
                 cinema.SetActive(false);
                 jardim.SetActive(false);
@@ -134,7 +136,7 @@ public class LogicManager : MonoBehaviour
             else if (day == 5 && missionManager.solved == 1 && teleportFrom.Contains("escola"))
             {
                 //casa.SetActive(false);
-                salaArt.SetActive(true);
+                //salaArt.SetActive(true);
                 salaAula.SetActive(false);
                 cinema.SetActive(false);
                 jardim.SetActive(false);
@@ -144,7 +146,7 @@ public class LogicManager : MonoBehaviour
             else if (missionManager.solved == 4 && teleportFrom.Contains("escola"))
             {
                 //casa.SetActive(true);
-                salaArt.SetActive(false);
+                //salaArt.SetActive(false);
                 salaAula.SetActive(false);
                 cinema.SetActive(false);
                 jardim.SetActive(false);
@@ -154,7 +156,7 @@ public class LogicManager : MonoBehaviour
             else if (missionManager.solved == 0 && teleportFrom.Contains(value: "casa"))
             {
                 //casa.SetActive(false);
-                salaArt.SetActive(false);
+                //salaArt.SetActive(false);
                 salaAula.SetActive(true);
                 cinema.SetActive(false);
                 jardim.SetActive(false);
@@ -173,11 +175,6 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = quartoPlayer.position;
                 nodeManager.NextNode();
             }
-            // else if (missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
-            // {
-            //     player.transform.position = salaPlayer.position;
-            //     nodeManager.NextNode();
-            // }
             teleport = false;
         }
         
@@ -186,6 +183,7 @@ public class LogicManager : MonoBehaviour
 
     public void ChangeMode(GameObject interactObj = null, string stringObj = null)
     {
+        Debug.Log(hasDoneMission);
         if (GetMode() == "free")
         {
             if (interactObj != null)
@@ -258,6 +256,13 @@ public class LogicManager : MonoBehaviour
                             Cursor.visible = true;
                             nodeManager.NextNode();
                             hasDoneMission = false;
+                            if (day == 5 && freewalk == 0 && missionManager.solved == 1)
+                            {
+                                hasDoneMission = true;
+                                freewalk = 1;
+
+                            }
+                            
                             player.GetComponent<Rigidbody>().isKinematic = true;
                             charactersManager.unlockCharacters = true;
                             charactersManager.UpdateCharacters();
@@ -304,33 +309,28 @@ public class LogicManager : MonoBehaviour
                             teleport = true;
                             teleportFrom = "bedroom";
                         }
-                        //interactObj.GetComponent<Animator>().SetTrigger("Open");
+                        else if (interactObj.name.Contains("escola") && day == 5 && missionManager.solved == 1)
+                        {
+                            teleport = true;
+                            teleportFrom = "escola";
+                        }
                         else if (interactObj.name.Contains("escola") && missionManager.solved == 4)
                         {
-                            // player.transform.position = casaPlayer.position;
-                            // nodeManager.NextNode();
                             teleport = true;
                             teleportFrom = "escola";
                         }
                         else if (interactObj.name.Contains("casa") && missionManager.solved == 0)
                         {
-                            // player.transform.position = aulaPlayer.position;
-                            // nodeManager.NextNode();
                             teleport = true;
                             teleportFrom = "casa";
                         }
                         else if (interactObj.name.Contains("bedroom") && missionManager.solved == 0)
                         {
-                            // player.transform.position = salaPlayer.position;
-                            // nodeManager.NextNode();
                             teleport = true;
                             teleportFrom = "bedroom";
                         }
                         else if (interactObj.name.Contains("bedroom") && missionManager.solved == 5)
                         {
-                            // canGoToBed = true;
-                            // player.transform.position = quartoPlayer.position;
-                            // nodeManager.NextNode();
                             teleport = true;
                             teleportFrom = "bedroom";
                         }
@@ -338,14 +338,6 @@ public class LogicManager : MonoBehaviour
                         {
                             Debug.Log("Dead end 2");
                         }
-                        // else if (interactObj.name.Contains("bedroom") && missionManager.solved == 6)
-                        // {
-                        //     // canGoToBed = true;
-                        //     // player.transform.position = quartoPlayer.position;
-                        //     // nodeManager.NextNode();
-                        //     teleport = true;
-                        //     teleportFrom = "bedroom";
-                        // }
 
                     }
                 }
@@ -395,10 +387,14 @@ public class LogicManager : MonoBehaviour
         }
         else if (day == 4)
         {
-            if (missionManager.GetMissions()[16].available == false)
+            if (missionManager.GetMissions()[16].available == false && missionManager.GetCurrentMission() != missionManager.GetMissions()[21])
             {
                 hasDoneMission = false;
                 currentMissionObject = null;
+            }
+            else if (missionManager.GetCurrentMission() != missionManager.GetMissions()[21])
+            {
+                charactersManager.ChangeCubes(1);
             }
             
         }
@@ -444,5 +440,6 @@ public class LogicManager : MonoBehaviour
         mode = "free";
         player.GetComponent<Rigidbody>().isKinematic = false;
         uIManager.DisplayToDoList("");
+        charactersManager.UpdateCharactersPositions(day);
     }
 }

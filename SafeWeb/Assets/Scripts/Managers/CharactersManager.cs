@@ -179,11 +179,8 @@ public class CharactersManager : MonoBehaviour
             cubeback.SetActive(false);
         }
         else if (i == 1)
-        {
-            if (logicManager.GetDay() != 4)
-            {
-                cubeback.SetActive(true);
-            }
+        { 
+            cubeback.SetActive(true);
         }
         else if (i == 2)
         {
@@ -218,7 +215,12 @@ public class CharactersManager : MonoBehaviour
     public void Wave(GameObject character)
     {
         //Debug.Log(character.gameObject.name);
-        if (character.gameObject.name.Contains("joao") || character.gameObject.name.Contains("maria"))
+        if (logicManager.GetDay() == 5 && (character.gameObject.name.Contains("joao") || character.gameObject.name.Contains("ana")))
+        {
+            joao.GetComponent<Animator>().SetTrigger("Wave");
+            ana.GetComponent<Animator>().SetTrigger("Wave");
+        }
+        else if (character.gameObject.name.Contains("joao") || character.gameObject.name.Contains("maria"))
         {
             joao.GetComponent<Animator>().SetTrigger("Wave");
             maria.GetComponent<Animator>().SetTrigger("Wave");
@@ -228,6 +230,7 @@ public class CharactersManager : MonoBehaviour
             pai.GetComponent<Animator>().SetTrigger("Wave");
             mae.GetComponent<Animator>().SetTrigger("Wave");
         }
+
         else
         {
             character.GetComponent<Animator>().SetTrigger("Wave");
@@ -299,6 +302,10 @@ public class CharactersManager : MonoBehaviour
         {
             ChangeCubes(2);
         }
+        if (logicManager.GetDay() == 5)
+        {
+            ChangeCubes(1);
+        }
     }
 
     public void ShowCharacters()
@@ -318,10 +325,27 @@ public class CharactersManager : MonoBehaviour
             jaime5.SetActive(true);
         }
     }
+    public void HideCharacters2()
+    {
+        joao.SetActive(false);
+        ana.SetActive(false);
+        maria.SetActive(false);
+        antonio.SetActive(false);
+        pai.SetActive(false);
+        mae.SetActive(false);
+        if (logicManager.GetDay() == 4)
+        {
+            jaime4.SetActive(false);
+        }
+        if (logicManager.GetDay() == 5)
+        {
+            jaime5.SetActive(false);
+        }
+    }
     public void ShowParents()
     {
         pai.SetActive(true);
         mae.SetActive(true);
-       
+
     }
 }

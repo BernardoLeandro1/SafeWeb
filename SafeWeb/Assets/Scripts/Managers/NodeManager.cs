@@ -126,21 +126,30 @@ public class NodeManager : MonoBehaviour
                         charactersManager.day4CharsJardim.SetActive(false);
                         charactersManager.ShowCharacters();
                     }
+                    else if (dialogueNodes[node].Trigger.Contains("hideChars"))
+                    {
+                        charactersManager.HideCharacters2();
+                    }
                     else if (dialogueNodes[node].Trigger.Contains("canGoToBed"))
                     {
                         logicManager.canGoToBed = true;
                     }
-                    else if (dialogueNodes[node].Trigger.Contains("posts"))
-                    {
-                        phoneManager.ShowPosts();
-                    }
-                    else if (dialogueNodes[node].Trigger.Contains("messages"))
-                    {
-                        phoneManager.ShowMessages();
-                    }
+
                     else if (dialogueNodes[node].Trigger.Contains("showdad"))
                     {
                         charactersManager.ShowParents();
+                    }
+                    if (dialogueNodes[node].Trigger.Contains("posts"))
+                    {
+                        phoneManager.ShowPosts();
+                    }
+                    if (dialogueNodes[node].Trigger.Contains("messages"))
+                    {
+                        phoneManager.ShowMessages();
+                    }
+                    if (dialogueNodes[node].Trigger.Contains("requests"))
+                    {
+                        phoneManager.ShowRequests();
                     }
                 }
                 if (dialogueNodes[node].ShowDialogue.Contains("free mode v2"))
@@ -162,6 +171,14 @@ public class NodeManager : MonoBehaviour
                 {
                     uIManager.DisplayToDoList(dialogueNodes[node].ToDo);
                 }
+
+                else if (dialogueNodes[node].Trigger != null) {
+                    if (dialogueNodes[node].Trigger.Contains("canGoToBed"))
+                    {
+                        logicManager.canGoToBed = true;
+                    }
+                }
+                
                 
                 lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
@@ -185,6 +202,10 @@ public class NodeManager : MonoBehaviour
                     else if (dialogueNodes[node].Trigger.Contains("showdad"))
                     {
                         charactersManager.ShowParents();
+                    }
+                    if (dialogueNodes[node].Trigger.Contains("hideChars"))
+                    {
+                        charactersManager.HideCharacters2();
                     }
                     
                 }

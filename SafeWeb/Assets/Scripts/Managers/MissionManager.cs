@@ -736,34 +736,6 @@ public class MissionManager : MonoBehaviour
                             lastNode = 0;
                         }
                     }
-                    else if (dialogueNodes[node].CheckCond.Contains("jaime"))
-                    {
-                        if (phoneManager.GetFriends().Contains("<b>Jaime</b>"))
-                        {
-                            scoreManager.AddScore("jaime", 1);
-                            node = 9;
-                            lastNode = 8;
-                        }
-                        else
-                        {
-                            scoreManager.AddScore("jaime", 0);
-                            node = 15;
-                            lastNode = 8;
-                        }
-                    }
-                    else if (dialogueNodes[node].CheckCond.Contains("jaimelink"))
-                    {
-                        if (scoreManager.GetScore("jaimelink") == 0)
-                        {
-                            node = 18;
-                            lastNode = 17;
-                        }
-                        else
-                        {
-                            node = 20;
-                            lastNode = 17;
-                        }
-                    }
                     else if (dialogueNodes[node].CheckCond.Contains("jaimelink2"))
                     {
                         if (scoreManager.GetScore("jaime") == 0 && scoreManager.GetScore("jaimelink") == 0)
@@ -782,6 +754,35 @@ public class MissionManager : MonoBehaviour
                             lastNode = 1;
                         }
                     }
+                    else if (dialogueNodes[node].CheckCond.Contains("jaimelink"))
+                    {
+                        if (scoreManager.GetScore("jaimelink") == 0)
+                        {
+                            node = 18;
+                            lastNode = 17;
+                        }
+                        else
+                        {
+                            node = 20;
+                            lastNode = 17;
+                        }
+                    }
+                    else if (dialogueNodes[node].CheckCond.Contains("jaime"))
+                    {
+                        if (phoneManager.GetFriends().Contains("<b>Jaime</b>"))
+                        {
+                            scoreManager.AddScore("jaime", 1);
+                            node = 9;
+                            lastNode = 8;
+                        }
+                        else
+                        {
+                            scoreManager.AddScore("jaime", 0);
+                            node = 15;
+                            lastNode = 8;
+                        }
+                    }
+                    
                 }
                 else
                 {

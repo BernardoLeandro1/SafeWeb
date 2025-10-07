@@ -64,33 +64,25 @@
     "lastnode":7
     },
     {
-    "node": 8,
+    "node": 9,
     "showdialogue": "O que achas que o João deve fazer?",
     "name": "Ana",
     "displaycamera": "foxCam",
-    "nextnode": 9,
-    "lastnode":7
-    },
-    {
-    "node": 9,
-    "showchoicepanel":[
-      {"nextnode": 10, "showdialogue": "Não participar no passatempo", "score": 3, "reference": "joao_ana"},
-      {"nextnode": 14, "showdialogue": "Participar no passatempo", "score": -3, "reference": "joao_ana"}
-    ],
-    "nextnode": 0,
-    "lastnode":8
+    "nextnode": 10,
+    "lastnode": 8
     },
     {
     "node": 10,
-    "showdialogue": "Mesmo com tantos amigos em comum, como não conheces bem esse Pedro, o melhor é não participares no passatempo.",
-    "name": "Tu",
-    "displaycamera": "foxCam",
-    "nextnode": 11,
+    "showchoicepanel":[
+      {"nextnode": 11, "showdialogue": "Não participar no passatempo", "score": 3, "reference": "joao_ana"},
+      {"nextnode": 15, "showdialogue": "Participar no passatempo", "score": -3, "reference": "joao_ana"}
+    ],
+    "nextnode": 0,
     "lastnode":9
     },
     {
     "node": 11,
-    "showdialogue": "Não concordas Ana?",
+    "showdialogue": "Mesmo com tantos amigos em comum, como não conheces bem esse Pedro, o melhor é não participares no passatempo.",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 12,
@@ -98,55 +90,55 @@
     },
     {
     "node": 12,
-    "showdialogue": "Faz sentido o que estás a dizer, apesar de parecer um passatempo legítimo, não sabes o que vão fazer com os teus dados.",
-    "name": "Ana",
+    "showdialogue": "Não concordas Ana?",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 13,
     "lastnode":11
     },
     {
     "node": 13,
-    "showdialogue": "O João segue o vosso conselho e não participa no passatempo.",
-    "name": "Narrador",
+    "showdialogue": "Faz sentido o que estás a dizer, apesar de parecer um passatempo legítimo, não sabes o que vão fazer com os teus dados.",
+    "name": "Ana",
     "displaycamera": "foxCam",
-    "nextnode": 33,
-    "lastnode": 12
+    "nextnode": 14,
+    "lastnode":12
     },
     {
     "node": 14,
-    "showdialogue": "Se tens tantos amigos em comum com o Pedro, então deve ser uma pessoa porreira. Participa no passatempo, não perdes nada. Podes ganhar um telemóvel novo!",
-    "name": "Tu",
+    "showdialogue": "O João segue o vosso conselho e não participa no passatempo.",
+    "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 15,
-    "lastnode":13
+    "nextnode": 34,
+    "lastnode": 13
     },
     {
     "node": 15,
-    "showdialogue": "Não concordas Ana?",
+    "showdialogue": "Se tens tantos amigos em comum com o Pedro, então deve ser uma pessoa porreira. Participa no passatempo, não perdes nada. Podes ganhar um telemóvel novo!",
     "name": "Tu",
     "displaycamera": "foxCam",
-    "nextnode": 16 ,
-    "lastnode":14
+    "nextnode": 16,
+    "lastnode":10
     },
     {
     "node": 16,
-    "showdialogue": "Sim, não iam ter tantos amigos em comum se não fosse uma pessoa porreira. Vai nessa!",
-    "name": "Ana",
+    "showdialogue": "Não concordas Ana?",
+    "name": "Tu",
     "displaycamera": "foxCam",
-    "nextnode": 17,
+    "nextnode": 17 ,
     "lastnode":15
     },
     {
-    "node": 17,
-    "showdialogue": "O João segue o vosso conselho e participa no passatempo.",
-    "name": "Narrador",
+    "node": 1176,
+    "showdialogue": "Sim, não iam ter tantos amigos em comum se não fosse uma pessoa porreira. Vai nessa!",
+    "name": "Ana",
     "displaycamera": "foxCam",
     "nextnode": 18,
     "lastnode":16
     },
     {
     "node": 18,
-    "showdialogue": "Passado um bocado, o joão vê uma publicação nova no seu telemóvel.",
+    "showdialogue": "O João segue o vosso conselho e participa no passatempo.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 19,
@@ -154,15 +146,15 @@
     },
     {
     "node": 19,
-    "showdialogue": "AHHHH!!! Não acredito! O Pedro publicou uma foto minha com o meu nome completo e a minha morada!",
-    "name": "João",
+    "showdialogue": "Passado um bocado, o joão vê uma publicação nova no seu telemóvel.",
+    "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 20,
     "lastnode":18
     },
     {
     "node": 20,
-    "showdialogue": "O que devo fazer agora?",
+    "showdialogue": "AHHHH!!! Não acredito! O Pedro publicou uma foto minha com o meu nome completo e a minha morada!",
     "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 21,
@@ -170,15 +162,15 @@
     },
     {
     "node": 21,
-    "showdialogue": "Ou denuncias a publicação e o utilizador ou desinstalas a aplicação.",
-    "name": "Ana",
+    "showdialogue": "O que devo fazer agora?",
+    "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 22,
     "lastnode":20
     },
     {
     "node": 22,
-    "showdialogue": "O que achas?",
+    "showdialogue": "Ou denuncias a publicação e o utilizador ou desinstalas a aplicação.",
     "name": "Ana",
     "displaycamera": "foxCam",
     "nextnode": 23,
@@ -186,72 +178,72 @@
     },
     {
     "node": 23,
-    "showchoicepanel":[
-      {"nextnode": 24, "showdialogue": "Denunciar a publicação e o utilizador", "score": 2, "reference": "joao_ana"},
-      {"nextnode": 28, "showdialogue": "Desinstalar a aplicação", "score": -5, "reference": "joao_ana"}
-    ],
-    "nextnode": 0,
-    "lastnode":8
+    "showdialogue": "O que achas?",
+    "name": "Ana",
+    "displaycamera": "foxCam",
+    "nextnode": 24,
+    "lastnode":22
     },
     {
     "node": 24,
-    "showdialogue": "Acho que deves denunciar a publicação e o utilizador. Assim evitas que outras pessoas passem pelo mesmo que tu e é a única forma da publicação ser eliminada",
-    "name": "Tu",
-    "displaycamera": "foxCam",
-    "nextnode": 25,
+    "showchoicepanel":[
+      {"nextnode": 25, "showdialogue": "Denunciar a publicação e o utilizador", "score": 2, "reference": "joao_ana"},
+      {"nextnode": 29, "showdialogue": "Desinstalar a aplicação", "score": -5, "reference": "joao_ana"}
+    ],
+    "nextnode": 0,
     "lastnode":23
     },
     {
     "node": 25,
-    "showdialogue": "Nós também vamos denunciar a publicação e o utilizador.",
-    "name": "Ana",
+    "showdialogue": "Acho que deves denunciar a publicação e o utilizador. Assim evitas que outras pessoas passem pelo mesmo que tu e é a única forma da publicação ser eliminada",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 26,
     "lastnode":24
     },
     {
     "node": 26,
-    "showdialogue": "A publicação e o utilizador foram denunciados com sucesso. Passado um bocado, o utilizador e a publicação foram removidos.",
-    "name": "Narrador",
+    "showdialogue": "Nós também vamos denunciar a publicação e o utilizador.",
+    "name": "Ana",
     "displaycamera": "foxCam",
     "nextnode": 27,
     "lastnode":25
     },
     {
     "node": 27,
-    "showdialogue": "O João sentiu-se aliviado por ter resolvido a situação. No entanto, as informações pessoais dele já estavam na internet e não sabia quem as poderia ter visto.",
+    "showdialogue": "A publicação e o utilizador foram denunciados com sucesso. Passado um bocado, o utilizador e a publicação foram removidos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 34,
+    "nextnode": 28,
     "lastnode":26
     },
     {
     "node": 28,
-    "showdialogue": "Acho que deves apagar a aplicação e não voltar a usá-la durante algum tempo. Depois crias uma conta nova.",
-    "name": "Tu",
+    "showdialogue": "O João sentiu-se aliviado por ter resolvido a situação. No entanto, as informações pessoais dele já estavam na internet e não sabia quem as poderia ter visto.",
+    "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 29,
-    "lastnode":23
+    "nextnode": 35,
+    "lastnode":27
     },
     {
     "node": 29,
-    "showdialogue": "Sim, é uma boa ideia! Assim evitas mais problemas.",
-    "name": "Ana",
+    "showdialogue": "Acho que deves apagar a aplicação e não voltar a usá-la durante algum tempo. Depois crias uma conta nova.",
+    "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 30,
-    "lastnode":28
+    "lastnode":24
     },
     {
     "node": 30,
-    "showdialogue": "O João segue o vosso conselho. No entanto, passado um bocado, a mãe dele liga-lhe. ",
-    "name": "Narrador",
+    "showdialogue": "Sim, é uma boa ideia! Assim evitas mais problemas.",
+    "name": "Ana",
     "displaycamera": "foxCam",
     "nextnode": 31,
     "lastnode":29
     },
     {
     "node": 31,
-    "showdialogue": "Ela diz-lhe que está muito desiludida com ele e que vai buscá-lo à escola e tirar-lhe o telemóvel por um tempo.",
+    "showdialogue": "O João segue o vosso conselho. No entanto, passado um bocado, a mãe dele liga-lhe. ",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 32,
@@ -259,38 +251,46 @@
     },
     {
     "node": 32,
-    "showdialogue": "O João fica muito triste e despede-se de vocês.",
+    "showdialogue": "Ela diz-lhe que está muito desiludida com ele e que vai buscá-lo à escola e tirar-lhe o telemóvel por um tempo.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 35,
+    "nextnode": 33,
     "lastnode":31
     },
     {
     "node": 33,
-    "showdialogue": "Conversas mais um pouco com eles e depois decides ir embora.",
+    "showdialogue": "O João fica muito triste e despede-se de vocês.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 36,
-    "lastnode":13
+    "lastnode":31
     },
     {
     "node": 34,
     "showdialogue": "Conversas mais um pouco com eles e depois decides ir embora.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 36,
-    "lastnode":27
+    "nextnode": 37,
+    "lastnode":14
     },
     {
     "node": 35,
-    "showdialogue": "Decides ir embora dali.",
+    "showdialogue": "Conversas mais um pouco com eles e depois decides ir embora.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 36,
-    "lastnode":27
+    "nextnode": 37,
+    "lastnode":28
     },
     {
     "node": 36,
+    "showdialogue": "Decides ir embora dali.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 37,
+    "lastnode":33
+    },
+    {
+    "node": 37,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",
