@@ -46,6 +46,8 @@ public class LogicManager : MonoBehaviour
 
     private CharactersManager charactersManager;
 
+    private SkyboxManager skyboxManager;
+
     private GameObject currentMissionObject;
 
     private bool hasDoneMission = true;
@@ -69,6 +71,7 @@ public class LogicManager : MonoBehaviour
         nodeManager = GetComponent<NodeManager>();
         missionManager = GetComponent<MissionManager>();
         charactersManager = GetComponent<CharactersManager>();
+        skyboxManager = GetComponent<SkyboxManager>();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         cam.GetComponent<CinemachineInputAxisController>().enabled = false;
@@ -87,6 +90,7 @@ public class LogicManager : MonoBehaviour
                 cinema.SetActive(true);
                 jardim.SetActive(false);
                 player.transform.position = shoppingPlayer.position;
+                skyboxManager.ChangeSkyBox("mall");
                 nodeManager.NextNode();
                 hasDoneMission = true;
                 charactersManager.UpdateCharactersPositions(3);
@@ -99,6 +103,7 @@ public class LogicManager : MonoBehaviour
                 cinema.SetActive(false);
                 jardim.SetActive(false);
                 player.transform.position = casaPlayer.position;
+                skyboxManager.ChangeSkyBox("home");
                 nodeManager.NextNode();
             }
             else if (day == 3 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
@@ -115,6 +120,7 @@ public class LogicManager : MonoBehaviour
                 cinema.SetActive(false);
                 jardim.SetActive(true);
                 player.transform.position = jardimPlayer.position;
+                skyboxManager.ChangeSkyBox("jardim");
                 hasDoneMission = true;
                 nodeManager.NextNode();
             }
@@ -126,6 +132,7 @@ public class LogicManager : MonoBehaviour
                 cinema.SetActive(false);
                 jardim.SetActive(false);
                 player.transform.position = casaPlayer.position;
+                skyboxManager.ChangeSkyBox("home");
                 nodeManager.NextNode();
             }
             else if (day == 4 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
@@ -151,6 +158,7 @@ public class LogicManager : MonoBehaviour
                 cinema.SetActive(false);
                 jardim.SetActive(false);
                 player.transform.position = casaPlayer.position;
+                skyboxManager.ChangeSkyBox("home");
                 nodeManager.NextNode();
             }
             else if (missionManager.solved == 0 && teleportFrom.Contains(value: "casa"))
@@ -161,6 +169,7 @@ public class LogicManager : MonoBehaviour
                 cinema.SetActive(false);
                 jardim.SetActive(false);
                 player.transform.position = aulaPlayer.position;
+                skyboxManager.ChangeSkyBox("school");
                 nodeManager.NextNode();
             }
             else if (missionManager.solved == 0 && teleportFrom.Contains("bedroom"))
@@ -168,6 +177,7 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = salaPlayer.position;
                 nodeManager.NextNode();
                 charactersManager.UpdateCharacters();
+                skyboxManager.ChangeSkyBox("newday");
             }
             else if (missionManager.solved == 5 && teleportFrom.Contains("bedroom"))
             {
@@ -314,7 +324,7 @@ public class LogicManager : MonoBehaviour
                             teleport = true;
                             teleportFrom = "escola";
                         }
-                        else if (interactObj.name.Contains("escola") && missionManager.solved == 4)
+                        else if (interactObj.name.Contains("escola") && missionManager.solved == 4 && (day==1 || day == 2 || day == 5))
                         {
                             teleport = true;
                             teleportFrom = "escola";
@@ -329,7 +339,7 @@ public class LogicManager : MonoBehaviour
                             teleport = true;
                             teleportFrom = "bedroom";
                         }
-                        else if (interactObj.name.Contains("bedroom") && missionManager.solved == 5)
+                        else if (interactObj.name.Contains("bedroom") && missionManager.solved == 5 && (day==1 || day == 2 || day == 5))
                         {
                             teleport = true;
                             teleportFrom = "bedroom";
