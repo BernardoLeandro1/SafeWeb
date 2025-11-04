@@ -118,7 +118,7 @@
     "showdialogue": "Continuam mais um bocado na conversa e depois cada um foi continuar o seu trabalho.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 24,
+    "nextnode": 27,
     "lastnode":14
     },
     {
@@ -150,7 +150,7 @@
     },
     {
     "node": 19,
-    "showdialogue": "Não me parece que seja prudente clicar naquele link. Bloqueeioi e denunciei a conta.",
+    "showdialogue": "Não me parece que seja prudente clicar naquele link. Bloqueei-o e denunciei a conta.",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 20,
@@ -161,7 +161,7 @@
     "showdialogue": "Continuam mais um bocado na conversa e depois cada um foi continuar o seu trabalho.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 24,
+    "nextnode": 27,
     "lastnode":19
     },
     {
@@ -185,11 +185,35 @@
     "showdialogue": "Muito envergonhado pedes desculpa a todos e acabas por bloquear e denunciar a conta. Depois disso, vais para o teu lugar.",
     "name": "Narrador",
     "displaycamera": "foxCam",
-    "nextnode": 24,
+    "nextnode": 27,
     "lastnode":22
     },
     {
     "node": 24,
+    "showdialogue": "Não, recusei, porque não tinha a certeza se eras tu.",
+    "name": "Tu",
+    "displaycamera": "foxCam",
+    "nextnode": 25,
+    "lastnode":9
+    },
+    {
+    "node": 25,
+    "showdialogue": "Ainda bem que não aceitaste! Deve ser alguém a tentar enganar-te.",
+    "name": "Jaime",
+    "displaycamera": "foxCam",
+    "nextnode": 26,
+    "lastnode":24
+    },
+    {
+    "node": 26,
+    "showdialogue": "Continuam mais um bocado na conversa e depois cada um foi continuar o seu trabalho.",
+    "name": "Narrador",
+    "displaycamera": "foxCam",
+    "nextnode": 27,
+    "lastnode":25
+    },
+    {
+    "node": 27,
     "showdialogue": "end of mission",
     "name": "Tu",
     "displaycamera": "foxCam",

@@ -356,4 +356,13 @@ public class CharactersManager : MonoBehaviour
         mae.SetActive(true);
 
     }
+
+    public void loadCharacters(int missionCounter)
+    {
+        joao.GetComponentInChildren<MissionIDs>().setMissionCounter(missionCounter);
+        ana.GetComponentInChildren<MissionIDs>().setMissionCounter(missionCounter);
+        maria.GetComponentInChildren<MissionIDs>().setMissionCounter(missionCounter);
+        antonio.GetComponentInChildren<MissionIDs>().setMissionCounter(missionCounter);
+        pai.GetComponentInChildren<MissionIDs>().setMissionCounter(missionCounter);
+    }
 }

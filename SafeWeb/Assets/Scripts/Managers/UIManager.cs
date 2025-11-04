@@ -23,11 +23,22 @@ public class UIManager : MonoBehaviour
 
     public TMP_Text toDoListText;
 
+    public GameObject finalAdviceBox;
+    public TMP_Text finalAdviceText;
+
+    public GameObject buttonAdvance;
+
+    public GameObject buttonBack;
+
+    public GameObject optionsMenu;
+
     private string dialogueChecker = "";
     public bool lineFinish = false;
     private float textSpeed = 0.05f;
 
     ChoicesPanelManager choicePanel;
+
+    private int help = 0;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,7 +51,18 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (optionsMenu.activeSelf && help == 0)
+        {
+            help = 1;
+            buttonAdvance.GetComponent<Button>().interactable = false;
+            buttonBack.GetComponent<Button>().interactable = false;
+        }
+        else if (!optionsMenu.activeSelf && help == 1)
+        {
+            help = 0;
+            buttonAdvance.GetComponent<Button>().interactable = true;
+            buttonBack.GetComponent<Button>().interactable = true;
+        }
     }
 
     public void ChangeUI()
@@ -155,5 +177,10 @@ public class UIManager : MonoBehaviour
     public void HidePhone()
     {
         phone.SetActive(false);
+    }
+    public void ShowFinalAdvice(string advices)
+    {
+        finalAdviceBox.SetActive(true);
+        finalAdviceText.text = advices;
     }
 }

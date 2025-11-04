@@ -37,4 +37,9 @@ public class MissionIDs : MonoBehaviour
     {
         missionsSolved = 0;
     }
+    
+    public void setMissionCounter(int savedMissionCounter)
+    {
+        missionCounter = savedMissionCounter;
+    }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -64,12 +65,19 @@ public class InputManager : MonoBehaviour
         
     }
 
-    public void Backtrack(){
-        if(uIManager.lineFinish){
+    public void Backtrack()
+    {
+        if (uIManager.lineFinish)
+        {
             nodeManager.LastNode();
         }
-        else {
+        else
+        {
             uIManager.FinishLine();
         }
+    }
+    public void Terminar()
+    {
+        SceneManager.LoadScene(2);
     }
 }

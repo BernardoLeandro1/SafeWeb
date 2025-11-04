@@ -11,6 +11,8 @@ public class NodeManager : MonoBehaviour
     MissionManager missionManager;
 
     CharactersManager charactersManager;
+
+    ScoreManager scoreManager;
     List<DialogueNode> dialogueNodes;
 
     
@@ -38,13 +40,25 @@ public class NodeManager : MonoBehaviour
         missionManager = GetComponent<MissionManager>();
         charactersManager = GetComponent<CharactersManager>();
         phoneManager = GetComponent<PhoneManager>();
+        scoreManager = GetComponent<ScoreManager>();
         //NextNode();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+
+    public int getNode()
+    {
+        return node;
+    }
+    
+    public void setNode(int savedNode)
+    {
+        node = savedNode;
     }
 
     public void OpenNodeFile(){
@@ -64,7 +78,8 @@ public class NodeManager : MonoBehaviour
             }
             else if (node < 0)
             {
-                uIManager.ShowText("Desenvolvedor de Jogo", "É tudo, por agora!");
+                scoreManager.FinalAdvice();
+
                 lastNode = dialogueNodes.Count - 1;
                 firstTime = true;
 
@@ -212,31 +227,6 @@ public class NodeManager : MonoBehaviour
                 uIManager.ShowText(dialogueNodes[node].Name, dialogueNodes[node].ShowDialogue);
                 lastNode = dialogueNodes[node].LastNode - 1;
                 node = dialogueNodes[node].NextNode - 1;
-                // if (dialogueNodes[node].CheckCond != null)
-                // {
-                //     if (dialogueNodes[node].CheckCond.Contains("conta"))
-                //     {
-                //         if (conta == 1)
-                //         {
-                //             node = 4;
-                //             lastNode = 3;
-                //         }
-                //         else if (conta == 0)
-                //         {
-                //             node = 10;
-                //             lastNode = 3;
-                //         }
-                //     }
-                //     else if (dialogueNodes[node].CheckCond.Contains("conta1"))
-                //     {
-                //         conta = 1;
-                //     }
-                //     if (dialogueNodes[node].CheckCond.Contains("conta0"))
-                //     {
-                //         conta = 0;
-                //     }
-                // }
-                
             } 
         }
     }
@@ -277,36 +267,7 @@ public class NodeManager : MonoBehaviour
                 uIManager.ShowTextAfterBackwords(dialogueNodes[dialogueNodes[lastNode].LastNode - 1].Name, dialogueNodes[dialogueNodes[lastNode].LastNode - 1].ShowDialogue);
                 uIManager.DisplayChoicesPanel(dialogueNodes[lastNode].ShowChoicePanel.ToArray());
             }
-            // else if (dialogueNodes[lastNode].ShowDialogue.Contains("free mode"))
-            // {
-            //     if (dialogueNodes[lastNode].AvailableMissions != null)
-            //     {
-            //         string toDoList = "";
-            //         foreach (var number in dialogueNodes[lastNode].AvailableMissions)
-            //         {
-            //             missionManager.GetMissions()[number].available = true;
-            //             toDoList += missionManager.GetMissions()[number].Description + "\n";
-            //             //Debug.Log(missions[number].Description);
-            //         }
-            //         uIManager.DisplayToDoList(toDoList);
-            //     }
-            //     else
-            //     {
-            //         string toDoList = "";
-            //         foreach (var mission in missionManager.GetMissions())
-            //         {
-            //             if (mission.available == true)
-            //             {
-            //                 toDoList += mission.Description + "\n";
-            //             }
-            //             //Debug.Log(missions[number].Description);
-            //         }
-            //         uIManager.DisplayToDoList(toDoList);
-            //     }
-            //     logicManager.ChangeMode();
-            //     lastNode = dialogueNodes[lastNode].LastNode - 1;
-            //     node = dialogueNodes[lastNode].NextNode - 1;
-            // }
+            
             else if (lastNode >= 0 && !dialogueNodes[lastNode].ShowDialogue.Contains("free"))
             {
                 uIManager.ShowTextAfterBackwords(dialogueNodes[lastNode].Name, dialogueNodes[lastNode].ShowDialogue);

@@ -48,6 +48,8 @@ public class LogicManager : MonoBehaviour
 
     private SkyboxManager skyboxManager;
 
+    public StartGame startGame;
+
     private GameObject currentMissionObject;
 
     private bool hasDoneMission = true;
@@ -251,6 +253,7 @@ public class LogicManager : MonoBehaviour
                                 {
                                     charactersManager.UpdateCharacters();
                                 }
+                                startGame.SaveGame();
                             }
 
                         }
@@ -266,18 +269,19 @@ public class LogicManager : MonoBehaviour
                             Cursor.visible = true;
                             nodeManager.NextNode();
                             hasDoneMission = false;
-                            if (day == 5 && freewalk == 0 && missionManager.solved == 1)
-                            {
-                                hasDoneMission = true;
-                                freewalk = 1;
-                                charactersManager.ChangeCubes(4);
-                            }
+                            
                             
                             player.GetComponent<Rigidbody>().isKinematic = true;
                             charactersManager.unlockCharacters = true;
                             charactersManager.UpdateCharacters();
                             charactersManager.HideCharacters();
                             charactersManager.ChangeCubes(2);
+                            if (day == 5 && freewalk == 0 && missionManager.solved == 1)
+                            {
+                                hasDoneMission = true;
+                                freewalk = 1;
+                                charactersManager.ChangeCubes(4);
+                            }
                             freePlayer.position = player.transform.position;
                             currentMissionObject = null;
                         }
@@ -432,6 +436,11 @@ public class LogicManager : MonoBehaviour
     public int GetDay()
     {
         return day;
+    }
+
+    public void SetDay(int savedDay)
+    {
+        day = savedDay;
     }
 
     public void ActivatePhone()

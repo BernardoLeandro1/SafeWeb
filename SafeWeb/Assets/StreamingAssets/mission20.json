@@ -91,7 +91,7 @@
     },
     {
     "node": 12,
-    "showdialogue": "Publicaste a foto com todos. Pouco depois, um utilizador estranho comenta na foto a dizer que conhece o Parque onde estão.",
+    "showdialogue": "Publicaste a foto com todos. Pouco depois, um utilizador estranho comenta na foto a dizer que conhece o Jardim onde estão.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 13,
@@ -125,8 +125,8 @@
     {
     "node": 16,
     "showchoicepanel":[
-      {"nextnode": 17, "showdialogue": "Denúncias o utilizador e retiras a publicação.", "score": 3, "reference": "todos"},
-      {"nextnode": 18, "showdialogue": "Denúncias o utilizador.", "score": 1, "reference": "todos"},
+      {"nextnode": 17, "showdialogue": "Denuncias o utilizador e retiras a publicação.", "score": 3, "reference": "todos"},
+      {"nextnode": 18, "showdialogue": "Denuncias o utilizador.", "score": 1, "reference": "todos"},
       {"nextnode": 19, "showdialogue": "Retiras a publicação.", "score": 1, "reference": "todos"},
       {"nextnode": 20, "showdialogue": "Fazes uma publicação a pedir desculpa à Maria.", "score": -3, "reference": "todos"}
     ],

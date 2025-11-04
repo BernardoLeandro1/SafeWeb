@@ -7,6 +7,8 @@ public class Buttons : MonoBehaviour
     public PhoneManager phoneManager;
 
     public GameObject controlos;
+    public GameObject opcoes;
+    public GameObject saida;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,11 +39,33 @@ public class Buttons : MonoBehaviour
 
     public void Começar()
     {
-        SceneManager.LoadScene(1);
+        GameSaveManager.Instance.NewGame();
+    }
+
+    public void Continuar()
+    {
+        GameSaveManager.Instance.LoadExistingGame();
     }
 
     public void Controlos()
     {
+        if(saida.activeSelf){
+            saida.SetActive(false);
+        }
         controlos.SetActive(!controlos.activeSelf);
+    }
+
+    public void Opcoes()
+    {
+        
+        opcoes.SetActive(!opcoes.activeSelf);
+    }
+    
+    public void ConfirmarSaida()
+    {
+        if(controlos.activeSelf){
+            controlos.SetActive(false);
+        }
+        saida.SetActive(!saida.activeSelf);
     }
 }

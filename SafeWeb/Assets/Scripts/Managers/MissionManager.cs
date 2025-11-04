@@ -534,50 +534,50 @@ public class MissionManager : MonoBehaviour
                 }
                 else if (dialogueNodes[node].CheckCond.Contains("jaimelink2"))
                     {
-                        if (scoreManager.GetScore("jaime") == 0 && scoreManager.GetScore("jaimelink") == 0)
-                        {
-                            node = 2;
-                            lastNode = 1;
-                        }
-                        else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 0)
-                        {
-                            node = 7;
-                            lastNode = 1;
-                        }
-                        else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 1)
-                        {
-                            node = 11;
-                            lastNode = 1;
-                        }
-                    }
-                    else if (dialogueNodes[node].CheckCond.Contains("jaimelink"))
+                    if (scoreManager.GetScore("jaime") == 0 && scoreManager.GetScore("jaimelink") == 0)
                     {
-                        if (scoreManager.GetScore("jaimelink") == 0)
-                        {
-                            node = 18;
-                            lastNode = 17;
-                        }
-                        else
-                        {
-                            node = 20;
-                            lastNode = 17;
-                        }
+                        node = 2;
+                        lastNode = 1;
                     }
-                    else if (dialogueNodes[node].CheckCond.Contains("jaime"))
+                    else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 0)
                     {
-                        if (phoneManager.GetFriends().Contains("<b>Jaime</b>"))
-                        {
-                            scoreManager.AddScore("jaime", 1);
-                            node = 9;
-                            lastNode = 8;
-                        }
-                        else
-                        {
-                            scoreManager.AddScore("jaime", 0);
-                            node = 15;
-                            lastNode = 8;
-                        }
+                        node = 7;
+                        lastNode = 1;
                     }
+                    else if (scoreManager.GetScore("jaime") == 1 && scoreManager.GetScore("jaimelink") == 1)
+                    {
+                        node = 11;
+                        lastNode = 1;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("jaimelink"))
+                {
+                    if (scoreManager.GetScore("jaimelink") == 0)
+                    {
+                        node = 18;
+                        lastNode = 17;
+                    }
+                    else
+                    {
+                        node = 20;
+                        lastNode = 17;
+                    }
+                }
+                else if (dialogueNodes[node].CheckCond.Contains("jaime"))
+                {
+                    if (phoneManager.GetFriends().Contains("<b>Jaime</b>"))
+                    {
+                        scoreManager.AddScore("jaime", 1);
+                        node = 9;
+                        lastNode = 8;
+                    }
+                    else
+                    {
+                        scoreManager.AddScore("jaime", 0);
+                        node = 23;
+                        lastNode = 8;
+                    }
+                }
             }
             else
             {
@@ -778,7 +778,7 @@ public class MissionManager : MonoBehaviour
                         else
                         {
                             scoreManager.AddScore("jaime", 0);
-                            node = 15;
+                            node = 23;
                             lastNode = 8;
                         }
                     }
