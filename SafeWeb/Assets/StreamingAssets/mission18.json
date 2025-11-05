@@ -16,7 +16,7 @@
     },
     {
     "node": 3,
-    "showdialogue": "Está  a correr bem! Já vi 3 tipos de àrvores diferentes.",
+    "showdialogue": "Está a correr bem! Já vi 3 tipos de àrvores diferentes.",
     "name": "Ana",
     "displaycamera": "foxCam",
     "nextnode": 4,
@@ -33,7 +33,7 @@
     },
     {
     "node": 5,
-    "showdialogue": "Ainda não sei. Tenho duas fotos muito boas. Queres me ajudar a escolher?",
+    "showdialogue": "Ainda não sei. Tenho duas fotos muito boas. Queres ajudar-me a escolher?",
     "name": "Ana",
     "displaycamera": "foxCam",
     "nextnode": 6,
@@ -126,7 +126,7 @@
     },
     {
     "node": 16,
-    "showdialogue": "Ela agradece-te pelo conselho que lhe deste e tu decides deixa-la a ver os commentários todos.",
+    "showdialogue": "Ela agradece-te pelo conselho que lhe deste e tu decides deixa-la a ver os comentários todos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 18,

@@ -37,6 +37,11 @@ public class Buttons : MonoBehaviour
         Application.Quit();
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void Começar()
     {
         GameSaveManager.Instance.NewGame();
@@ -49,9 +54,13 @@ public class Buttons : MonoBehaviour
 
     public void Controlos()
     {
-        if(saida.activeSelf){
-            saida.SetActive(false);
+        if (saida != null)
+        {
+            if(saida.activeSelf){
+                saida.SetActive(false);
+            }
         }
+        
         controlos.SetActive(!controlos.activeSelf);
     }
 

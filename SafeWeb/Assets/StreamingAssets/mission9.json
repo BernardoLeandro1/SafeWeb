@@ -32,7 +32,7 @@
     },
     {
     "node": 5,
-    "showdialogue": "Tu devias começar a fazer publicações na tua conta para que ela cresça. Eu publico sobre tudo, o meu cão, o quanto adoro estudar, sobre os sitios onde vou no fim de semana.",
+    "showdialogue": "Tu devias começar a fazer publicações na tua conta para que ela cresça. Eu publico sobre tudo, o meu cão, o quanto adoro estudar, sobre os sítios onde vou no fim de semana.",
     "name": "Ana",
     "displaycamera": "foxCam",
     "nextnode": 6,
@@ -48,7 +48,7 @@
     },
     {
     "node": 7,
-    "showdialogue": "Segues o conselho da Ana e vais ao teu telemóvel. Mas antes de fazeres alguma publicação, vês os posts dos teus amigos,",
+    "showdialogue": "Segues o conselho da Ana e vais ao teu telemóvel. Mas antes de fazeres alguma publicação, vês os posts dos teus amigos.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 8,

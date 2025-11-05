@@ -49,7 +49,7 @@
     },
     {
     "node": 7,
-    "showdialogue": "Okay! Queres me dar uma ajuda a escolher uma descrição para publicar a foto que mandei à minha mãe?",
+    "showdialogue": "Okay! Queres dar-me uma ajuda a escolher uma descrição para publicar a foto que mandei à minha mãe?",
     "name": "João",
     "displaycamera": "foxCam",
     "nextnode": 8,
@@ -141,7 +141,7 @@
     },
     {
     "node": 18,
-    "showdialogue": "Poucos minutos depois, a mãe dele liga-lhe e a dizer que viu a publicação dele e que ele fez bem em não dizer onde estava. Deixaste-o a falar com a sua mãe.",
+    "showdialogue": "Poucos minutos depois, a mãe dele liga-lhe e disse que viu a publicação dele e que ele fez bem em não dizer onde estava. Deixaste-o a falar com a sua mãe.",
     "name": "Narrador",
     "displaycamera": "foxCam",
     "nextnode": 21,

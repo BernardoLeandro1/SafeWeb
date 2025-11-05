@@ -8,7 +8,7 @@
     },
     {
     "node": 2,
-    "showdialogue": "Então, Maria, já já viste muitos pássaros?",
+    "showdialogue": "Então, Maria, já viste muitos pássaros?",
     "name": "Tu",
     "displaycamera": "foxCam",
     "nextnode": 3,
@@ -66,8 +66,8 @@
     {
     "node": 9,
     "showchoicepanel":[
-      {"nextnode": 10, "showdialogue": "Partilhas a foto apenas amigos", "score": 3, "reference": "maria"},
-      {"nextnode": 12, "showdialogue": "Partilhas a foto com todos", "score": -3, "reference": "maria"}
+      {"nextnode": 10, "showdialogue": "Partilhas a foto apenas amigos.", "score": 3, "reference": "maria"},
+      {"nextnode": 12, "showdialogue": "Partilhas a foto com todos.", "score": -3, "reference": "maria"}
     ],
     "nextnode": 0,
     "lastnode":8

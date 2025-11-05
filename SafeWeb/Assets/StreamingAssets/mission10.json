@@ -81,7 +81,7 @@
     },
     {
     "node": 11,
-    "showdialogue": "Boa! O Lulu adora jogar à bola connosco",
+    "showdialogue": "Boa! O Lulu adora jogar à bola connosco.",
     "name": "Pai",
     "displaycamera": "foxCam",
     "nextnode": 12,

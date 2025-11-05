@@ -30,17 +30,18 @@ public class GameSaveManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-        private void Start()
+    private void Update()
     {
         // Enable or disable Continue button based on save file
-        if (SaveFileExists())
+        if (continueButton != null)
         {
-            continueButton.interactable = true;
+            continueButton.interactable = SaveFileExists();
         }
         else
         {
-            continueButton.interactable = false;
+            continueButton = GameObject.Find("Continuar")?.GetComponent<Button>();
         }
+        //continueButton.interactable = SaveFileExists();
     }
 
     public static bool SaveFileExists()

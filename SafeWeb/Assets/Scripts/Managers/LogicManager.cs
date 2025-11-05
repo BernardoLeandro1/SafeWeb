@@ -96,6 +96,7 @@ public class LogicManager : MonoBehaviour
                 nodeManager.NextNode();
                 hasDoneMission = true;
                 charactersManager.UpdateCharactersPositions(3);
+                AudioManager.Instance.PlayShopping();
             }
             else if (day == 3 && missionManager.solved == 5 && teleportFrom.Contains("shopping"))
             {
@@ -107,6 +108,7 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = casaPlayer.position;
                 skyboxManager.ChangeSkyBox("home");
                 nodeManager.NextNode();
+                AudioManager.Instance.PlayHouse();
             }
             else if (day == 3 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
             {
@@ -125,6 +127,7 @@ public class LogicManager : MonoBehaviour
                 skyboxManager.ChangeSkyBox("jardim");
                 hasDoneMission = true;
                 nodeManager.NextNode();
+                AudioManager.Instance.PlayPark();
             }
             else if (day == 4 && missionManager.solved == 5 && teleportFrom.Contains("jardim"))
             {
@@ -136,6 +139,7 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = casaPlayer.position;
                 skyboxManager.ChangeSkyBox("home");
                 nodeManager.NextNode();
+                AudioManager.Instance.PlayHouse();
             }
             else if (day == 4 && missionManager.solved == 6 && teleportFrom.Contains("bedroom"))
             {
@@ -162,6 +166,7 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = casaPlayer.position;
                 skyboxManager.ChangeSkyBox("home");
                 nodeManager.NextNode();
+                AudioManager.Instance.PlayHouse();
             }
             else if (missionManager.solved == 0 && teleportFrom.Contains(value: "casa"))
             {
@@ -173,6 +178,7 @@ public class LogicManager : MonoBehaviour
                 player.transform.position = aulaPlayer.position;
                 skyboxManager.ChangeSkyBox("school");
                 nodeManager.NextNode();
+                AudioManager.Instance.PlaySchool();
             }
             else if (missionManager.solved == 0 && teleportFrom.Contains("bedroom"))
             {

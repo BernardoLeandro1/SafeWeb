@@ -75,7 +75,7 @@
     {
     "node": 10,
     "showchoicepanel":[
-      {"nextnode": 11, "showdialogue": "Partilhas a foto para quem quiser ver", "score": -5, "reference": "todos"},
+      {"nextnode": 11, "showdialogue": "Partilhas a foto para quem quiser ver.", "score": -5, "reference": "todos"},
       {"nextnode": 14, "showdialogue": "Partilhas a foto apenas para os teus amigos verem.", "score": 5, "reference": "todos"}
     ],
     "nextnode": 0,

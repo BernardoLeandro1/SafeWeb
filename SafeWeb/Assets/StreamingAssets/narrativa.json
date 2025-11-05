@@ -254,7 +254,7 @@
     },
     {
       "node": 31,
-      "showdialogue": "A primeira aula é de matemática, disciplina que tu adoras. Nesta aula falam sobre sólidos geoméricos e volumes.",
+      "showdialogue": "A primeira aula é de Matemática, disciplina que tu adoras. Nesta aula falam sobre sólidos geoméricos e volumes.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 32,
@@ -262,7 +262,7 @@
     },
     {
       "node": 32,
-      "showdialogue": "É uma matéria que tu já dominas, porque a tua mãe é professora de matemática e explica-te o que vai ser dado antes das aulas.",
+      "showdialogue": "É uma matéria que tu já dominas, porque a tua mãe é professora de Matemática e explica-te o que vai ser dado antes das aulas.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 33,
@@ -384,7 +384,7 @@
     },
     {
       "node": 47,
-      "showdialogue": "Desta forma, apesar da aula ser de história, uma aula que, normalmente, achas interessante, esta foi bastante enfadonha para ti e demorou imenso tempo a passar.",
+      "showdialogue": "Desta forma, apesar da aula ser de História, uma aula que, normalmente, achas interessante, esta foi bastante enfadonha para ti e demorou imenso tempo a passar.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 48,
@@ -521,7 +521,7 @@
     },
     {
       "node": 63,
-      "showdialogue": "Assim, começa a aula seguinte, que é de matemática. Continuam a matéria da aula passada, mas, desta vez, a aula passa mais devagar, uma vez que só consegues pensar na tarde no centro comercial com os teus amigos.",
+      "showdialogue": "Assim, começa a aula seguinte, que é de Matemática. Continuam a matéria da aula passada, mas, desta vez, a aula passa mais devagar, uma vez que só consegues pensar na tarde no centro comercial com os teus amigos.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 64,
@@ -672,7 +672,7 @@
     },
     {
       "node": 80,
-      "showdialogue": "Em ciências, estás a aprender a forma como as plantas se alimentam e por isso vão ao Jardim Botânico da cidade vizinha.",
+      "showdialogue": "Em Ciências, estás a aprender a forma como as plantas se alimentam e por isso vão ao Jardim Botânico da cidade vizinha.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 81,
@@ -944,7 +944,7 @@
     },
     {
       "node": 111,
-      "showdialogue": "Começa a segunda aula do dia. Desta feita, a aula é de português. É também a última aula antes do almoço e antes do clube de arte.",
+      "showdialogue": "Começa a segunda aula do dia. Desta feita, a aula é de Português. É também a última aula antes do almoço e antes do clube de arte.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 112,
@@ -960,7 +960,7 @@
     },
     {
       "node": 113,
-      "showdialogue": "Normalmente, a escrita não é o teu forte, mas hoje sentiste-te uma inspiração diferente e conseguiste escrever um texto muito interessante.",
+      "showdialogue": "Normalmente, a escrita não é o teu forte, mas hoje sentiste uma inspiração diferente e conseguiste escrever um texto muito interessante.",
       "name": "Narrador",
       "displaycamera": "foxCam",
       "nextnode": 114,

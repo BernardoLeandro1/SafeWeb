@@ -558,6 +558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneManager: {fileID: 0}
   controlos: {fileID: 124967844}
+  opcoes: {fileID: 0}
+  saida: {fileID: 0}
 --- !u!114 &242803668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2313,7 +2315,19 @@ MonoBehaviour:
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1830656494}
+        m_TargetAssemblyTypeName: MusicOptions, Assembly-CSharp
+        m_MethodName: OnMusicScrollbarChanged
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1157952314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2542,6 +2556,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneManager: {fileID: 0}
   controlos: {fileID: 0}
+  opcoes: {fileID: 0}
+  saida: {fileID: 0}
 --- !u!114 &1291233896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4061,6 +4077,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneManager: {fileID: 0}
   controlos: {fileID: 124967844}
+  opcoes: {fileID: 0}
+  saida: {fileID: 0}
 --- !u!114 &1685946703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4654,6 +4672,168 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830152283}
   m_CullTransparentMesh: 1
+--- !u!1 &1830656490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830656491}
+  - component: {fileID: 1830656492}
+  - component: {fileID: 1830656493}
+  - component: {fileID: 1830656494}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1830656491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830656490}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 453.5706, y: 262.40942, z: -2.9892414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830656492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830656490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b55f1725463144780bb2570ee7086a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 1830656493}
+  fadeDuration: 1
+  houseMusic: {fileID: 8300000, guid: 37d97778c56b6ab429d501169741a64b, type: 3}
+  parkMusic: {fileID: 8300000, guid: 4ec4da793f9e89340aae5821bfad507d, type: 3}
+  schoolMusic: {fileID: 8300000, guid: 2621e8c860efd3e4ba7ac43ece0beaf4, type: 3}
+  shoppingMusic: {fileID: 8300000, guid: 352c8980d63080943a12aa3bf1ac5516, type: 3}
+--- !u!82 &1830656493
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830656490}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1830656494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830656490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec0ace3fd26db741b56d803cc875a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicScrollbar: {fileID: 1157952313}
 --- !u!1 &1866820795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4985,6 +5165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneManager: {fileID: 0}
   controlos: {fileID: 0}
+  opcoes: {fileID: 0}
+  saida: {fileID: 0}
 --- !u!1 &1912883282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5968,6 +6150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneManager: {fileID: 0}
   controlos: {fileID: 0}
+  opcoes: {fileID: 0}
+  saida: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5977,3 +6161,4 @@ SceneRoots:
   - {fileID: 1882922268}
   - {fileID: 2065128489}
   - {fileID: 255724094}
+  - {fileID: 1830656491}

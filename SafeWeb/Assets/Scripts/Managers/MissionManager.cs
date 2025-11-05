@@ -276,7 +276,7 @@ public class MissionManager : MonoBehaviour
             isWaiting = false;
             logicManager.MissionComplete();
             charactersManager.ChangeCubes(1);
-            if (currentMission.Id != 4 && currentMission.Id != 9)
+            if (currentMission.Id != 4 && currentMission.Id != 9 && currentMission.Id != 26)
             {
                 if (logicManager.GetDay() != 3 && logicManager.GetDay() != 4)
                 {
